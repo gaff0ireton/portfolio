@@ -1,0 +1,42 @@
+.swiper {
+    width: 90%;
+    height: 500px;
+
+    .swiper-slide {
+        width: 100%;
+        border: solid 1px rgba(236, 12, 94, 1);
+        position: relative;
+
+        p{
+            position: absolute;
+            top: 92%;
+            left: 0%;
+            color: rgba(236, 12, 94, 1);
+            font-size: 4rem;
+            font-weight: bold;
+            font-family: 'Dela Gothic One';
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+}
+
+.swiper.gallery{
+    width: 30%;
+
+    .swiper-slide {
+        width: 100%;
+        margin: 0 0 1rem 0;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+}

@@ -1,0 +1,32 @@
+.contactSec {
+  display: flex;
+  flex-flow: column;
+  padding: 4rem 0;
+  /* margin: 0 auto; */
+}
+
+.contactSec .contactBox {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contactSec .contactBox .twitter {
+  width: 100%;
+  height: 500px;
+}
+
+.contactSec .contactBox .twitter iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.contactSec .contactBox .form {
+  width: 100%;
+  height: 500px;
+}
+
+.contactSec .contactBox .form iframe {
+  width: 100%;
+  height: 100%;
+}
