@@ -52,7 +52,7 @@
 }
 
 
-@media (width <=800px) {  /* メディアクエリの値はお好みで */
+@media (max-width : 800px) {  /* メディアクエリの値はお好みで */
 
     .toggleButton {
         position: fixed;
