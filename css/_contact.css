@@ -11,13 +11,26 @@
   width: 100%;
 }
 
+@media (max-width: 600px) {
+  .contactSec .contactBox {
+    flex-wrap: wrap;
+  }
+}
+
 .contactSec .contactBox .twitter {
   width: 100%;
   height: 500px;
 }
 
+@media (max-width: 600px) {
+  .contactSec .contactBox .twitter {
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+}
+
 .contactSec .contactBox .twitter iframe {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
 }
 

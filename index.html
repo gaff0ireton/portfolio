@@ -23,7 +23,18 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
+<body id="targetElement">
+
+    <div class="loading_bg">
+        <div class="semipolar-spinner" :style="spinnerStyle">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+    </div>
+
 
     <div class="headerWrap">
 
@@ -74,6 +85,31 @@
 
             </h2>
         </div>
+        <div class="name">
+
+            <h1 class="h1NameSp glitchText none" data-text="">
+
+            </h1>
+            <h1 class="h1NameSp glitchText none" data-text="">
+
+            </h1>
+            <h1 class="h1NameSp glitchText none" data-text="">
+
+            </h1>
+            <h2 class="h2NameSp glitchText none" data-text="">
+
+            </h2>
+            <h2 class="h2NameSp glitchText none" data-text="">
+
+            </h2>
+            <h2 class="h2NameSp glitchText none" data-text="">
+
+            </h2>
+            <h2 class="h2NameSp glitchText none" data-text="">
+
+            </h2>
+        </div>
+
 
     </div>
 
@@ -106,21 +142,25 @@
                         </i>
                         PROFILE
                     </h3>
-                    <p>
+                    <p class="js_typing">
                         大学卒業後、ニート期間を経て、IT企業へ未経験からプログラマーを6ヶ月間経験
-                        <br>
+                    </p>
+                    <p class="js_typing">
                         PHPや、JavaScriptで開発されたシステムのデバッグをメインに従事
-                        <br>
+                    </p>
+                    <p class="js_typing">
                         2023年9月職業訓練校(創造社リカレントスクール)へ入校
-                        <br>
+                    </p>
+                    <p class="js_typing">
                         グラフィック・Webデザインスキルを習得
-                    </p><!-- ここに自己紹介や経歴を記入します。 -->
+                    </p>
+                    <!-- ここに自己紹介や経歴を記入します。 -->
                     <h3>
                         <i class="icon-rectangle">
                         </i>
                         LIKE
                     </h3>
-                    <p>
+                    <p class="js_typing">
                         ・ゲーム・絵を描くこと・音楽鑑賞・映画鑑賞
                         <br>
                         ロボットと、SF/サイバーパンクな世界が、三度の飯より好き
@@ -457,11 +497,15 @@
 
         </div>
     </footer>
+    <script src="js/load.js"></script>
+    <script src="js/shuffle-text.js"></script>
+    <script src="js/pText.js"></script>
     <script src="js/scrollEvent.js"></script>
     <script src="js/drawerMenu.js"></script>
     <script src="js/swiperController.js"></script>
     <script src="js/video.js"></script>
     <script src="js/button.js"></script>
+    <script src="js/mobileH1H2.js"></script>
     <script src="js/gsap.js"></script>
 </body>
 

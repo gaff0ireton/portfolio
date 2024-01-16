@@ -27,11 +27,14 @@ sectionTitles.forEach((sectionTitle) => {
 
     const q = gsap.utils.selector(sectionTitle);
     const groups = q(".code");
+    const groupOpen = q(".code.opne");
 
     groups.forEach((group) => {
         const gLen = group.innerHTML.length;
+        
         tl_Gallery.from(group, { text: textJumble(10), duration: 0.4 }, ">");
     });
+
 });
 
 const menuTabText = document.getElementById("menu-tab-text");

@@ -1,6 +1,13 @@
 .swiper {
   width: 90%;
-  height: 500px;
+  max-height: 500px;
+}
+
+@media (max-width: 800px) {
+  .swiper {
+    flex-wrap: wrap;
+    aspect-ratio: 16/8;
+  }
 }
 
 .swiper .swiper-slide {
@@ -11,12 +18,33 @@
 
 .swiper .swiper-slide p {
   position: absolute;
-  top: 92%;
+  bottom: 17px;
   left: 0%;
   color: #ec0c5e;
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: bold;
-  font-family: 'Dela Gothic One';
+  font-family: "kalibers";
+}
+
+@media (max-width: 800px) {
+  .swiper .swiper-slide p {
+    font-size: 5.5rem;
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .swiper .swiper-slide p {
+    font-size: 3.2rem;
+    bottom: 3px;
+  }
+}
+
+@media (max-width: 375px) {
+  .swiper .swiper-slide p {
+    font-size: 2.6rem;
+    bottom: 0px;
+  }
 }
 
 .swiper .swiper-slide img {
@@ -29,9 +57,32 @@
   width: 30%;
 }
 
+@media (max-width: 800px) {
+  .swiper.gallery {
+    width: 90%;
+    max-height: 200px;
+  }
+}
+
 .swiper.gallery .swiper-slide {
   width: 100%;
   margin: 0 0 1rem 0;
+}
+
+@media (max-width: 800px) {
+  .swiper.gallery .swiper-slide {
+    max-width: 250px;
+    max-height: 150px;
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .swiper.gallery .swiper-slide {
+    max-width: 250px;
+    max-height: 100px;
+    margin: 0 5px;
+  }
 }
 
 .swiper.gallery .swiper-slide img {

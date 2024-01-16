@@ -1,9 +1,17 @@
 const swiper2 = new Swiper('.swiper.gallery', {
     // Optional parameters
-    direction: 'vertical',
+    
+    direction: 'horizontal',
     loop: true,
     speed: 600,
-    slidesPerView: 5,
+    slidesPerView: 2,
+    breakpoints: {
+        // スライドの表示枚数：800px以上の場合
+        800: {
+            direction: 'vertical',
+            slidesPerView: 5,
+        }
+    },
 
     // If we need pagination
     pagination: {

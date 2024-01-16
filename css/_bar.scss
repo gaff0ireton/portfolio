@@ -1,0 +1,31 @@
+.siteToggleBar{
+    width: 100%;
+    background-color: #333;
+    color:  rgba(236, 12, 94, 1);
+    text-align: right;
+    cursor: pointer;
+    border-top: 2px solid  rgba(236, 12, 94, 1);
+    position: fixed;
+    padding: 1rem 4rem;
+    bottom: 0;
+    z-index: 100;
+    .barBox{
+        margin: auto;
+        max-width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        .returnIcon{
+            max-width: 5%;
+        }
+        p{
+            // width: fit-content;
+            margin: initial;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            strong{
+                font-weight: bolder;
+            }
+        }
+    }
+}
