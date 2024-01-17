@@ -1264,7 +1264,7 @@ section h2 {
   positon: absolute;
   top: 50%;
   right: 50%;
-  transform: (50%,-50%);
+  transform: translate(50%,-50%);
 /*   display: table-cell; */
 /*   vertical-align: middle; */
   z-index: 1;
