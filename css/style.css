@@ -1261,8 +1261,12 @@ section h2 {
 }
 
 .name {
-  display: table-cell;
-  vertical-align: middle;
+  positon: absolute;
+  top: 50%;
+  right: 50%;
+  transform: (50%,-50%);
+/*   display: table-cell; */
+/*   vertical-align: middle; */
   z-index: 1;
 }
 
