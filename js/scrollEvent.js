@@ -15,6 +15,14 @@
 //     scrollAbout();
 // })
 
+// const aboutText = document.querySelector('.aboutText p');
+
+// function typing(){
+//     aboutText.classList.add("typing-animation");
+// }
+
+// window.addEventListener('scroll', typing);
+
 const aboutElement = document.getElementById("about");
 
 function scrollAbout() {

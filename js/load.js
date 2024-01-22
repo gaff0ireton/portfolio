@@ -7,5 +7,5 @@ function loading() {
     setTimeout(function () {
         loadBG.classList.add('active');
         // document.body.style.overflow = '';
-    }, 6500);
+    }, 10000);
 }
