@@ -31,7 +31,6 @@ sectionTitles.forEach((sectionTitle) => {
 
     groups.forEach((group) => {
         const gLen = group.innerHTML.length;
-        
         tl_Gallery.from(group, { text: textJumble(10), duration: 0.4 }, ">");
     });
 
@@ -56,13 +55,13 @@ function textJumble(length) {
 }
 
 // Pre-order sliding
-const editionCards = document.querySelectorAll(".edition");
+// const editionCards = document.querySelectorAll(".edition");
 
-for (let card of editionCards) {
-    card.addEventListener("click", function () {
-        for (let openCard of editionCards) {
-            openCard.classList.remove("open");
-        }
-        this.classList.add("open");
-    });
-}
+// for (let card of editionCards) {
+//     card.addEventListener("click", function () {
+//         for (let openCard of editionCards) {
+//             openCard.classList.remove("open");
+//         }
+//         this.classList.add("open");
+//     });
+// }
