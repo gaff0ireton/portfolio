@@ -20,6 +20,8 @@
     padding: 1rem;/* マウスが反応する範囲を少し広げている*/
     opacity: 1;
     transition: all .4s ease-in-out;
+    display: flex;
+    justify-content: center;
 }
 
 // #drawerMenu a {

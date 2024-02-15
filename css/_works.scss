@@ -1,8 +1,10 @@
 .bannerBox{
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
     
     .bannerItem{
-        width: 50%;
+        width: 30%;
     }
 }

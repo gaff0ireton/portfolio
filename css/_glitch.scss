@@ -192,7 +192,7 @@ body {
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
     animation: noise-anim 2s infinite linear alternate-reverse;
-    
+
 }
 
 @keyframes noise-anim-2 {
@@ -246,12 +246,12 @@ body {
     left: 2px;
     text-shadow: -1px 0 red;
     top: 0;
-    color:(175, 175, 175);
-    background: rgb(0, 0, 0);
+    color: (175, 175, 175);
+    background-color: #323133;
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
     animation: noise-anim 2s infinite linear alternate-reverse;
-    
+
 }
 
 @keyframes noise-anim-2 {
@@ -271,8 +271,19 @@ body {
     text-shadow: 1px 0 blue;
     top: 0;
     color: (175, 175, 175);
-    background: rgb(0, 0, 0);
+    background-color: #323133;
+
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
     animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes lines {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 0px 25px;
+    }
 }

@@ -1,9 +1,26 @@
 .loading_bg {
   width: 100%;
   height: 100vh;
-  background-color: black;
+  background-color: #323133;
   position: fixed;
   z-index: 200;
+  padding: 1rem;
+}
+
+.loading_bg:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1000;
+  background: repeating-linear-gradient(0deg, #111 0px, #111 1px, transparent 2px, transparent 5px);
+  background-size: 100% 5px;
+  animation: lines 2s ease-out infinite;
+  opacity: 0.3;
+  mix-blend-mode: color-burn;
+  pointer-events: none;
 }
 
 .loading_bg .semipolar-spinner,

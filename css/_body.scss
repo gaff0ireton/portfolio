@@ -33,20 +33,31 @@ h4 {
 p {
     line-height: 1.5rem;
     font-size: 16px;
-    font-family: 'Noto Sans';
-    font-weight: bold;
+    font-family: 'glitchGothic';
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
 @font-face {
     font-family: "kalibers";
     src:
-        url("../font/kalibers.ttf") format("truetype"),
+        url("../font/kalibers.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: 'hologen';
+    src: url(../font/HalogenbyPixelSurplus-Regular.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "glitchGothic";
+    src:
+        url("../font/瀞ノグリッチ黒体H1.otf") format("opentype");
+}
+
 
 body {
     // font-family: 'Dela Gothic One', sans-serif;
@@ -109,16 +120,88 @@ nav ul li {
 }
 
 nav a {
+    position: relative;
     text-decoration: none;
     color: #fff;
     font-size: 2rem;
     letter-spacing: 0.2rem;
 }
 
+// === Variables =====
+$perspective:     60rem;
+$font-size:       4.25rem;
+$split-position:  49%;
+$split-thickness: 4px;
+$split-color:     #FF2C75;
+
+// === Menu item =====
+.Menu-list-item {
+    position: relative;
+    color: transparent;
+    cursor: pointer;
+
+    // === Split Line =====
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: $split-position;
+        left: -10%;
+        right: -10%;
+        height: $split-thickness;
+        border-radius: $split-thickness;
+        margin-top: -($split-thickness / 2);
+        background: transparent;
+        transform: scale(0);
+        transition: transform .8s cubic-bezier(.16, 1.08, .38, .98);
+        z-index: 1;
+    }
+}
+
+// === Top/bottom mask =====
+.Mask {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    height: $split-position;
+    transition: all .8s cubic-bezier(.16, 1.08, .38, .98);
+
+    span {
+        display: block;
+    }
+}
+
+// === Bottom mask specific =====
+.Mask+.Mask {
+    top: $split-position - 0.1;
+    height: 100 - $split-position + 0.1;
+
+    span {
+        transform: translateY(-$split-position);
+    }
+}
+
+// === Where the fun stuff happens =====
+.Menu-list-item:hover,
+.Menu-list-item:active {
+    .Mask {
+        transform: skewX(12deg) translateX(5px);
+    }
+
+    .Mask+.Mask {
+        transform: skewX(12deg) translateX(-5px);
+    }
+
+    &::before {
+        transform: scale(1);
+    }
+}
+
 /* セクションスタイル */
 .titleBox {
     p {
-        color: rgba(236, 12, 94, 0.307);
+        color: #8c1e46;
     }
 
     h2::before {
@@ -157,7 +240,7 @@ nav a {
     max-width: 1200px;
     margin: 0 auto;
     padding: 10rem 1rem;
-    
+
 }
 
 .aboutSec {
@@ -243,7 +326,7 @@ nav a {
 }
 
 section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 #work {
@@ -368,9 +451,14 @@ section h2 {
 }
 
 .name {
-    display: table-cell;
-    vertical-align: middle;
-    
+    // display: table-cell;
+    // vertical-align: middle;
+
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+
     // position: absolute;
     // top: 0;
     // right: 0;
@@ -411,6 +499,7 @@ section h2 {
     @media (max-width : 700px) {
         font-size: 4rem;
     }
+
     @media (max-width : 390px) {
         font-size: 3rem;
     }
@@ -544,4 +633,32 @@ section h2 {
 
 .none {
     display: none;
+}
+
+.TextTyping span {
+    display: none;
+}
+
+/*文字列後ろの線の設定*/
+.TextTyping::after {
+    content: "_";
+    animation: typinganime .8s ease infinite;
+}
+
+@keyframes typinganime {
+    0% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    51% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
