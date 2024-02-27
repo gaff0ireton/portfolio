@@ -3,7 +3,11 @@
 
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 5rem;
+
+    @media (max-width : 575px) {
+        font-size: 3.5rem;
+    }
 }
 
 h3 {
@@ -128,11 +132,11 @@ nav a {
 }
 
 // === Variables =====
-$perspective:     60rem;
-$font-size:       4.25rem;
-$split-position:  49%;
+$perspective: 60rem;
+$font-size: 4.25rem;
+$split-position: 49%;
 $split-thickness: 4px;
-$split-color:     #FF2C75;
+$split-color: #FF2C75;
 
 // === Menu item =====
 .Menu-list-item {
@@ -200,6 +204,8 @@ $split-color:     #FF2C75;
 
 /* セクションスタイル */
 .titleBox {
+    padding-top: 10rem;
+
     p {
         color: #8c1e46;
     }
@@ -207,9 +213,14 @@ $split-color:     #FF2C75;
     h2::before {
         content: '-->';
         position: relative;
-        bottom: 6px;
-        font-size: 1rem;
+        bottom: 15px;
+        font-size: 2rem;
         font-family: 'Dela Gothic One';
+
+        @media (max-width : 575px) {
+            bottom: 10px;
+            font-size: 1.5rem;
+        }
     }
 
     .caret {
@@ -237,47 +248,47 @@ $split-color:     #FF2C75;
 }
 
 .mainWrap {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 10rem 1rem;
 
 }
 
-.aboutSec {
-    gap: 2rem;
-    background-image: url(../images/backGround.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: white;
-    padding: 10rem 5rem;
-    width: 100%;
-    margin: 0 auto;
-    align-items: center;
+// .aboutSec {
+//     gap: 2rem;
+//     background-image: url(../images/backGround.png);
+//     background-repeat: no-repeat;
+//     background-size: 100% 100%;
+//     color: white;
+//     padding: 10rem 5rem;
+//     width: 100%;
+//     margin: 0 auto;
+//     align-items: center;
 
-    @media (max-width : 834px) {
-        background-image: url(../images/back.png);
-        padding: 10rem 2.5rem;
-        border-top: solid 1px rgba(236, 12, 94, 1);
-        border-bottom: solid 1px rgba(236, 12, 94, 1);
-    }
+//     @media (max-width : 834px) {
+//         background-image: url(../images/back.png);
+//         padding: 10rem 2.5rem;
+//         border-top: solid 1px rgba(236, 12, 94, 1);
+//         border-bottom: solid 1px rgba(236, 12, 94, 1);
+//     }
 
-    @media (max-width: 600px) {
-        background-size: cover;
-        background-position: center;
-    }
+//     @media (max-width: 600px) {
+//         background-size: cover;
+//         background-position: center;
+//     }
 
-    @media (max-width: 555px) {
-        border-bottom: none;
-        border-left: solid 1px rgba(236, 12, 94, 1);
-        border-right: solid 1px rgba(236, 12, 94, 1);
-    }
+//     @media (max-width: 555px) {
+//         border-bottom: none;
+//         border-left: solid 1px rgba(236, 12, 94, 1);
+//         border-right: solid 1px rgba(236, 12, 94, 1);
+//     }
 
-    @media (max-width: 490px) {
-        padding: 10rem 1rem;
-    }
+//     @media (max-width: 490px) {
+//         padding: 10rem 1rem;
+//     }
 
 
-}
+// }
 
 .aboutText {
     margin: 0 auto;
@@ -327,12 +338,6 @@ $split-color:     #FF2C75;
 
 section h2 {
     margin-bottom: 2rem;
-}
-
-#work {
-    padding: 4rem 0;
-
-
 }
 
 .mainVisual {
@@ -457,7 +462,7 @@ section h2 {
     position: absolute;
     top: 50%;
     right: 50%;
-    transform: translate(50%,-50%);
+    transform: translate(50%, -50%);
 
     // position: absolute;
     // top: 0;
@@ -477,6 +482,19 @@ section h2 {
     // -webkit-transform: translate(-50%, -50%);
     // -ms-transform: translate(-50%, -50%);
     z-index: 1;
+}
+
+.noticeBox {
+    display: flex;
+
+    .noticeItem {
+        width: 50%;
+    }
+
+    .twitter {
+        max-width: 500px;
+        width: 100%;
+    }
 }
 
 .name h1 {
@@ -662,3 +680,72 @@ section h2 {
         opacity: 0;
     }
 }
+
+.hoverA {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.caption {
+    font-size: 130%;
+    color: #000000;
+    padding-top: 80px;
+    padding-left: 20px;
+}
+
+.mask {
+    width: 50%;
+    /* 画像の半分の大きさにする */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -50%;
+    /* 枠の左に置いて表示させない */
+    background-color: rgba(236, 12, 94, 1);
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.hoverA:hover .mask {
+    margin-left: 0px;
+    /* 右にずらして表示する */
+}
+
+.hoverA a img {
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.hoverA a:hover img {
+    margin-left: 50%;
+    /* 画像を半分サイズ、右にずらす */
+}
+
+// .caption {
+//     font-size: 130%;
+//     text-align: center;
+//     padding-top: 80px;
+//     color: #fff;
+// }
+
+// .mask {
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     /* 絶対位置指定 */
+//     top: 0;
+//     left: 0;
+//     opacity: 0;
+//     /* マスクを表示しない */
+//     background-color: rgba(0, 0, 0, 0.4);
+//     /* マスクは半透明 */
+//     -webkit-transition: all 0.2s ease;
+//     transition: all 0.2s ease;
+// }
+
+// .hoverA:hover .mask {
+//     opacity: 1;
+//     /* マスクを表示する */
+// }

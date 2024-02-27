@@ -19,7 +19,8 @@
 }
 
 .siteToggleBar .barBox .returnIcon {
-  max-width: 5%;
+  max-width: 50px;
+  width: 100%;
 }
 
 .siteToggleBar .barBox p {
@@ -27,6 +28,8 @@
   font-size: 20px;
   display: flex;
   align-items: center;
+  flex-flow: wrap;
+  justify-content: end;
 }
 
 .siteToggleBar .barBox p strong {
