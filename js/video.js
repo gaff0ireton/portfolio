@@ -1,13 +1,9 @@
 // 再生アイテム
 let play_item = [
-    '../video/mA01',
-    '../video/mA02',
-    '../video/mA03',
-    '../video/mA04',
-    '../video/mD201',
-    '../video/mD202',
-    '../video/mG01',
-    '../video/mG02'
+    '../video/AC01',
+    '../video/AC02',
+    '../video/AC03',
+    '../video/AC04',
 ];
 
 let play_monika = ['../video/justMonika'];
