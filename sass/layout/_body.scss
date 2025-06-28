@@ -77,11 +77,8 @@ body {
     padding: 20px;
 } */
 
-.headerWrap {
-    max-width: 1900px;
-}
-
 .headerBox {
+    display: none;
     background-color: rgba(0, 0, 0, 0.3);
     /* 透明度を調整 */
     padding: 50px;
@@ -286,13 +283,14 @@ $split-color: #FF2C75;
 
 
 // }
+.contentWrap {
+    background: rgba(0, 0, 0, 0.5);
+}
 
 .aboutText {
     margin: 0 auto;
-    display: flex;
-    flex-flow: column;
     justify-content: center;
-    width: 80%;
+    width: 682px;
 }
 
 .aboutText {
@@ -317,7 +315,9 @@ $split-color: #FF2C75;
     }
 }
 
-#about,#work,#contact{
+#about,
+#work,
+#contact {
     width: 1024px;
     margin: 0 auto;
 }
@@ -356,7 +356,7 @@ section h2 {
     object-position: 15%;
 }
 
-.movieOuter{
+.movieOuter {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -462,14 +462,27 @@ section h2 {
     min-height: 100vh;
 }
 
+.noticeBox {
+    display: flex;
+
+    .noticeItem {
+        width: 50%;
+    }
+
+    .twitter {
+        max-width: 500px;
+        width: 100%;
+    }
+}
+
 .name {
     // display: table-cell;
     // vertical-align: middle;
 
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
+    position: fixed;
+    font-size: 32px;
+    bottom: calc(45/1920*100vw);
+    left: calc(107/1920*100vw);
 
     // position: absolute;
     // top: 0;
@@ -491,18 +504,6 @@ section h2 {
     z-index: 1;
 }
 
-.noticeBox {
-    display: flex;
-
-    .noticeItem {
-        width: 50%;
-    }
-
-    .twitter {
-        max-width: 500px;
-        width: 100%;
-    }
-}
 
 .name h1 {
     text-align: center;
@@ -648,7 +649,7 @@ section h2 {
 .icon-rectangle::before {
     font-family: 'Dela Gothic One';
     position: relative;
-    bottom: 3px;
+    bottom: 1px;
     left: 6px;
     content: "〼";
     font-size: 1.5rem;
@@ -757,15 +758,81 @@ section h2 {
 //     /* マスクを表示する */
 // }
 
-    canvas {
-      position: absolute;
-      top: 0;
-      width: 15%;
-      height: 100%;
-    }
-    #canvas-left {
-      left: 0;
-    }
-    #canvas-right {
-      right: 0;
-    }
+canvas {
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+}
+
+#canvas-left {
+    left: 0;
+}
+
+#canvas-right {
+    right: 0;
+}
+
+.cyber-frame {
+    width: 90%;
+    height: 90vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    overflow: visible; /* 偽要素のはみ出しを許可 */
+}
+
+/* 元の静的な白枠 */
+.cyber-frame::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10;
+    clip-path: polygon(
+        0 100%, 0 25px, 25px 0,
+        100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%,
+        1px 100%, 1px calc(100% - 1px), calc(100% - 26px) calc(100% - 1px),
+        calc(100% - 1px) calc(100% - 26px), calc(100% - 1px) 1px, 26px 1px,
+        1px 26px, 1px 100%
+    );
+}
+
+// /* グリッチ用の揺らぎ枠 */
+// .cyber-frame::after {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: 0;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     width: 100%;
+//     height: 100%;
+//     border: 1px solid rgba(255,255,255,0.8);
+//     z-index: 20;
+//     pointer-events: none;
+//     mix-blend-mode: difference;
+//     clip-path: polygon(
+//         0 100%, 0 25px, 25px 0,
+//         100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%,
+//         1px 100%, 1px calc(100% - 1px), calc(100% - 26px) calc(100% - 1px),
+//         calc(100% - 1px) calc(100% - 26px), calc(100% - 1px) 1px, 26px 1px,
+//         1px 26px, 1px 100%
+//     );
+//     animation: borderGlitch 0.6s infinite steps(2);
+// }
+
+// @keyframes borderGlitch {
+//     0%   { transform: translateX(-50%) translate(  0px,  0px) rotate( 0.1deg) skew( 0.5deg,-0.3deg); opacity:1; }
+//     25%  { transform: translateX(-50%) translate(  2px,-1px) rotate(-0.2deg) skew(-0.4deg, 0.6deg); opacity:0.8; }
+//     50%  { transform: translateX(-50%) translate( -1px, 2px) rotate( 0.3deg) skew( 0.2deg,-0.2deg); opacity:0.9; }
+//     75%  { transform: translateX(-50%) translate(  1px,-2px) rotate(-0.1deg) skew(-0.3deg, 0.4deg); opacity:0.7; }
+//     100% { transform: translateX(-50%) translate(  0px,  0px) rotate( 0deg ) skew( 0deg,  0deg ); opacity:1; }
+// }
