@@ -122,60 +122,70 @@
         </header>
     </div>
 
-    <div class="movieWrap glitch">
+    <div class="movieOuter">
+        <div class="movieWrap glitch">
 
-        <div class="channel r">
-            <video id="hero-movie01" muted playsinline>
-                <source type="video/mp4" id="hero-movie01-mp4">
-            </video>
+            <div class="channel r">
+                <video id="hero-movie01" muted playsinline>
+                    <source type="video/mp4" id="hero-movie01-mp4">
+                </video>
+            </div>
+            <div class="channel g">
+                <video id="hero-movie02" muted playsinline>
+                    <source type="video/mp4" id="hero-movie02-mp4">
+                </video>
+            </div>
+            <div class="channel b">
+                <video id="hero-movie03" muted playsinline>
+                    <source type="video/mp4" id="hero-movie03-mp4">
+                </video>
+            </div>
+
+            <div class="name" id="realtime">
+            </div>
+
         </div>
-        <div class="channel g">
-            <video id="hero-movie02" muted playsinline>
-                <source type="video/mp4" id="hero-movie02-mp4">
-            </video>
-        </div>
-        <div class="channel b">
-            <video id="hero-movie03" muted playsinline>
-                <source type="video/mp4" id="hero-movie03-mp4">
-            </video>
-        </div>
-
-        <div class="name">
-            <h1 id="h1Name" class="glitchText" data-text="">
-
-            </h1>
-            <h2 id="h2Name" class="glitchText" data-text="">
-
-            </h2>
-        </div>
-        <div class="name">
-            <h1 class="h1NameSp glitchText none" data-text="">
-
-            </h1>
-            <h1 class="h1NameSp glitchText none" data-text="">
-
-            </h1>
-            <h1 class="h1NameSp glitchText none" data-text="">
-
-            </h1>
-            <h2 class="h2NameSp glitchText none" data-text="">
-
-            </h2>
-            <h2 class="h2NameSp glitchText none" data-text="">
-
-            </h2>
-            <h2 class="h2NameSp glitchText none" data-text="">
-
-            </h2>
-            <h2 class="h2NameSp glitchText none" data-text="">
-
-            </h2>
-        </div>
-
-
     </div>
 
+
     <div class="mainWrap">
+
+        <canvas id="canvas-left"></canvas>
+        <canvas id="canvas-right"></canvas>
+
+        <section id="title">
+            <h1>
+                <span>4</span>
+                <span>4</span>
+                <span>K</span>
+                <span>C</span>
+                <span>4</span>
+                <span>4</span>
+                <span>G</span>
+                <span>o</span>
+                <span>4</span>
+                <span>4</span>
+                <span>G</span>
+                <span>v</span>
+                <span>4</span>
+                <span>4</span>
+                <span>G</span>
+                <span>f</span>
+                <span>4</span>
+                <span>4</span>
+                <span>K</span>
+                <span>C</span>
+                <span>4</span>
+                <span>4</span>
+                <span>G</span>
+                <span>T</span>
+                <span>4</span>
+                <span>4</span>
+                <span>G</span>
+                <span>u</span>
+            </h1>
+
+        </section>
 
         <section id="about">
             <div class="titleBox">
@@ -282,6 +292,9 @@
                         </p>
                         <p>
                             <iconify-icon icon="simple-icons:xampp"></iconify-icon>
+                        </p>
+                        <p>
+                            <iconify-icon icon="devicon-plain:git"></iconify-icon>
                         </p>
                         <p>
                             <iconify-icon icon="devicon-plain:tortoisegit"></iconify-icon>
@@ -572,16 +585,6 @@
             </div>
         </a>
     </div>
-    <footer>
-        <div class="footerBox">
-            <p>
-                <small>
-                    こぴーらいと
-                </small>
-            </p>
-
-        </div>
-    </footer>
     <script src="js/shuffle-text.js" defer></script>
     <script src="js/pText.js" defer></script>
     <script src="js/justMonika.js"></script>

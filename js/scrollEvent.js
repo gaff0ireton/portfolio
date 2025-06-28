@@ -1,103 +1,62 @@
-// const aboutLeft = document.getElementById("about").getBoundingClientRect().left;
-// const aboutTop = document.getElementById("about").getBoundingClientRect().top;
+// // --- 要素キャッシュ ---
+// const movieWrap = document.querySelector('.movieWrap');
+// const headerBox = document.querySelector('.headerBox');
+// const againBtn  = document.querySelector('.siteToggleBar');
 
-// function scrollAbout () {
-//     window.scrollTo({
-//         left: aboutLeft,
-//         top: aboutTop,
-//         behavior: 'smooth'
-//     });
+// let headerThreshold;  // ヘッダー切り替え用
+// let btnThreshold;     // ボタン切り替え用
+
+// // 閾値を計算
+// function calcThresholds() {
+//   const top    = movieWrap.offsetTop;
+//   const height = movieWrap.offsetHeight;
+//   headerThreshold = top + height;
+//   // 「画面下（scrollY + innerHeight）がmovieWrap下端を超えた＝ボタンが領域外に出た」
+//   // → scrollY > (top + height - innerHeight)
+//   btnThreshold    = top + height - window.innerHeight;
 // }
 
-// const clickAbout = document.querySelector(".about");
+// // スクロール処理
+// function handleScroll() {
+//   const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-// clickAbout.addEventListener('click', function () {
-//     scrollAbout();
-// })
+//   // ヘッダー判定
+//   if (scrollY > headerThreshold) {
+//     headerBox.classList.add('headerBoxSc');
+//   } else {
+//     headerBox.classList.remove('headerBoxSc');
+//   }
 
-// const aboutText = document.querySelector('.aboutText p');
-
-// function typing(){
-//     aboutText.classList.add("typing-animation");
+//   // ボタン判定
+//   if (scrollY > btnThreshold) {
+//     againBtn.style.display = 'block';
+//   } else {
+//     againBtn.style.display = 'none';
+//   }
 // }
 
-// window.addEventListener('scroll', typing);
+// // 初期化
+// window.addEventListener('DOMContentLoaded', () => {
+//   calcThresholds();
+//   handleScroll();
+// });
 
-const aboutElement = document.getElementById("about");
+// // リサイズ対応
+// window.addEventListener('resize', () => {
+//   calcThresholds();
+//   handleScroll();
+// });
 
-function scrollAbout() {
-    aboutElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'  // 'start', 'center', 'end', 'nearest'
-    });
-}
-
-const clickAbout = document.querySelector(".about");
-
-clickAbout.addEventListener('click', function () {
-    scrollAbout();
-});
-
-const workElement = document.getElementById("work");
-
-function scrollWork() {
-    workElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'  // 'start', 'center', 'end', 'nearest'
-    });
-}
-
-const clickWork = document.querySelector(".work");
-
-clickWork.addEventListener('click', function () {
-    scrollWork();
-});
-
-const contactElement = document.getElementById("contact");
-
-function scrollContact() {
-    contactElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'  // 'start', 'center', 'end', 'nearest'
-    });
-}
-
-const clickContact = document.querySelector(".contact");
-
-clickContact.addEventListener('click', function () {
-    scrollContact();
-});
-
-
-
-// スクロール検知用の関数
-function handleScroll() {
-    // .movieWrap要素を取得
-    const movieWrap = document.querySelector('.movieWrap');
-
-    // .headerBox要素を取得
-    const headerBox = document.querySelector('.headerBox');
-
-    // .movieWrapと.headerBoxの位置とサイズを取得
-    const movieRect = movieWrap.getBoundingClientRect();
-    const headerRect = headerBox.getBoundingClientRect();
-
-    // 画面の高さを取得
-    const windowHeight = window.innerHeight;
-
-    // .movieWrapが画面外に出ているか判定
-    const isMovieOutOfViewport = movieRect.bottom < 0 || movieRect.top > windowHeight;
-
-    // 画面外に出ている場合は.headerBoxにheaderBoxScクラスを追加、そうでない場合は削除
-    if (isMovieOutOfViewport) {
-        headerBox.classList.add('headerBoxSc');
-    } else {
-        headerBox.classList.remove('headerBoxSc');
-    }
-}
-
-// スクロールイベントにhandleScroll関数を登録
+// スクロール登録
 window.addEventListener('scroll', handleScroll);
 
-// ページ読み込み時にも初回の判定を行う
-window.addEventListener('load', handleScroll);
+// --- スムーススクロール （おまけ） ---
+document.querySelector('.about').addEventListener('click', () => {
+  document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+});
+document.querySelector('.work').addEventListener('click', () => {
+  document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
+});
+document.querySelector('.contact').addEventListener('click', () => {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+});
