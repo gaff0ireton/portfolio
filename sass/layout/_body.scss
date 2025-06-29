@@ -813,7 +813,7 @@ canvas {
 
 .cyber-frame {
     width: 90%;
-    height: 90vh;
+    height: 90svh;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -881,7 +881,7 @@ canvas {
                 background-image:
         radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
         background-size: 12px 12px;  /* ドット間隔を調整 */
-        height: 100vh;
+        height: 100svh;
         .inner{
             width: calc(1027/1920*100vw);
             margin: 0 auto;
