@@ -9,7 +9,7 @@ html, body {
 
 
 h2 {
-    font-size: 100px;
+    font-size: calc(100/1920*100vw);
     white-space: nowrap;
 
     @media (max-width : 575px) {
@@ -111,6 +111,7 @@ body {
     font-family: 'kalibers';
     background-color: black;
     color: white;
+    cursor: crosshair
 }
 
 /* ヘッダースタイル */
@@ -892,3 +893,19 @@ canvas {
     }
     
 }
+
+    /* カスタムカーソル用の円 */
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      margin-top: -10px;  /* 真ん中に合わせる */
+      margin-left: -10px;
+      background-color: rgba(0, 255, 234, 0.3);
+      border-radius: 50%;
+      pointer-events: none;  /* マウス操作を邪魔しない */
+      transition: transform 0.1s ease-out;
+      mix-blend-mode: difference;
+    }
