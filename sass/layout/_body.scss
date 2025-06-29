@@ -909,3 +909,17 @@ canvas {
       transition: transform 0.1s ease-out;
       mix-blend-mode: difference;
     }
+
+    html, body {
+  height:100%;
+  margin:0;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.mainWrap > section,
+.mainWrap .contentWrap > section {
+  height:100svh;
+  scroll-snap-align: start;
+}
