@@ -9,7 +9,7 @@ html, body {
 
 
 h2 {
-    font-size: 5rem;
+    font-size: 100px;
 
     @media (max-width : 575px) {
         font-size: 3.5rem;
@@ -207,7 +207,8 @@ $split-color: #FF2C75;
 
 /* セクションスタイル */
 .titleBox {
-    padding-top: calc(72/ 1920* 90vw);
+    // padding-top: calc(72/ 1920* 90vw);
+    padding-top: 72px;
 
     p {
         color: #8c1e46;
@@ -841,7 +842,7 @@ canvas {
         background-color: rgba(0, 0, 0, 0.5);
         height: 100vh;
         .inner{
-            width: 1024px;
+            width: calc(1027/1920*100vw);
             margin: 0 auto;
         }
 
