@@ -1,26 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
   const sections = Array.from(document.querySelectorAll('.mainWrap > section'));
-  let current = 0;
-  let isThrottled = false;
-  const THROTTLE = 700; // 調整可
+  const SWIPE_THRESHOLD = 5;     // スワイプ判定の最小距離（px）
+  let touchStartY = 0;
+  let isScrolling = false;
+  const THROTTLE = 600;          // 連続スクロール防止(ms)
 
-  function scrollToSection(idx) {
-    isThrottled = true;
-    sections[idx].scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => isThrottled = false, THROTTLE);
+  // 「現在どのセクションにいるか」を返す
+  function getCurrentIndex() {
+    return sections.findIndex(sec => {
+      const r = sec.getBoundingClientRect();
+      // セクションの上端がビューポートの中央付近にあるものを「今いる」とみなす
+      return r.top >= -r.height/2 && r.top <= r.height/2;
+    });
   }
 
+  // 指定方向にスクロール
+  function scrollDir(dir) {
+    if (isScrolling) return;
+    isScrolling = true;
+
+    let idx = getCurrentIndex();
+    if (idx < 0) idx = 0;
+    const next = Math.max(0, Math.min(sections.length - 1, idx + dir));
+    sections[next].scrollIntoView({ behavior: 'smooth' });
+
+    setTimeout(() => isScrolling = false, THROTTLE);
+  }
+
+  // マウスホイール（デスクトップ）
   window.addEventListener('wheel', e => {
-    if (isThrottled) return;
-    // 通常スクロールは止めず、手前スクロールのみキャンセル
     e.preventDefault();
-    const dir = e.deltaY > 0 ? 1 : -1;
-    const next = Math.min(sections.length - 1, Math.max(0, current + dir));
-    if (next !== current) {
-      current = next;
-      scrollToSection(current);
-    }
+    scrollDir(e.deltaY > 0 ? 1 : -1);
   }, { passive: false });
+
+  // タッチ開始
+  window.addEventListener('touchstart', e => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  // タッチ終了
+  window.addEventListener('touchend', e => {
+    const dy = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(dy) < SWIPE_THRESHOLD) return;
+    scrollDir(dy > 0 ? 1 : -1);
+  }, { passive: true });
 });
 
     const cursor = document.getElementById('cursor');
@@ -53,3 +76,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ループ開始
     render();
+
+    
