@@ -1,5 +1,11 @@
 /* ページ全体のスタイル */
 
+html, body {
+  /* これが無いか、 auto / scroll になっていることを確認 */
+  overflow-y: auto;
+  height: auto;
+  margin: 0;
+}
 
 
 h2 {
@@ -201,7 +207,7 @@ $split-color: #FF2C75;
 
 /* セクションスタイル */
 .titleBox {
-    padding-top: 10rem;
+    padding-top: calc(72/ 1920* 90vw);
 
     p {
         color: #8c1e46;
@@ -313,13 +319,6 @@ $split-color: #FF2C75;
             padding-bottom: 0;
         }
     }
-}
-
-#about,
-#work,
-#contact {
-    width: 1024px;
-    margin: 0 auto;
 }
 
 .aboutImg {
@@ -836,3 +835,19 @@ canvas {
 //     75%  { transform: translateX(-50%) translate(  1px,-2px) rotate(-0.1deg) skew(-0.3deg, 0.4deg); opacity:0.7; }
 //     100% { transform: translateX(-50%) translate(  0px,  0px) rotate( 0deg ) skew( 0deg,  0deg ); opacity:1; }
 // }
+
+.mainWrap {
+    section{
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100vh;
+        .inner{
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        &:first-child{
+            background-color: transparent;
+        }
+    }
+    
+}
