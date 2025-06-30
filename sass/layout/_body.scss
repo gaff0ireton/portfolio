@@ -922,7 +922,8 @@ canvas {
             overflow-y: auto;
   overscroll-behavior: contain;
         .inner{
-            width: calc(1027/1920*100vw);
+            width: 1024px;
+            height: 100%;
             margin: 0 auto;
 
             @include sp{
