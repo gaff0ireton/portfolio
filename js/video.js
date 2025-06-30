@@ -11,7 +11,8 @@ addEventListener("DOMContentLoaded", function () {
     '../video/AC07',
     '../video/AC08',
     '../video/AC09',
-    '../video/AC10'
+    '../video/AC10',
+    '../video/AC11',
   ];
 
 
