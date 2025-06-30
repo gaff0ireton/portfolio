@@ -1,3 +1,9 @@
+// ① math モジュール
+@use "sass:math";
+
+// ② common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
 /* ページ全体のスタイル */
 
 html, body {
@@ -12,13 +18,18 @@ h2 {
     font-size: calc(100/1920*100vw);
     white-space: nowrap;
 
-    @media (max-width : 575px) {
-        font-size: 3.5rem;
+    @include sp{
+        font-size: getvw(60);
+        margin-bottom: getvw(32);
     }
 }
 
 h3 {
     font-size: 2rem;
+
+    @include sp{
+        font-size: getvw(48);
+    }
 }
 
 h1,
@@ -45,6 +56,10 @@ p {
     line-height: 1.5rem;
     font-size: 16px;
     font-family: 'glitchGothic';
+
+    @include sp{
+        font-size: getvw(24);
+    }
 }
 
 img {
@@ -248,8 +263,16 @@ $split-color: #FF2C75;
     // padding-top: calc(72/ 1920* 90vw);
     padding-top: 72px;
 
+    @include  sp{
+        padding-top: getvw(120);
+    }
+
     p {
         color: #8c1e46;
+
+        @include sp{
+            font-size: getvw(24);
+        }
     }
 
     h2::before {
@@ -259,8 +282,13 @@ $split-color: #FF2C75;
         font-size: 2rem;
         font-family: 'Dela Gothic One';
 
+        @include sp{
+            font-size: getvw(32);
+
+        }
+
         @media (max-width : 575px) {
-            bottom: 10px;
+            bottom: getvw(5);
             font-size: 1.5rem;
         }
     }
@@ -336,16 +364,15 @@ $split-color: #FF2C75;
     margin: 0 auto;
     justify-content: center;
     width: calc(682/1920*100vw);
+
+    @include sp{
+        width: 100%;
+    }
 }
 
 .aboutText {
     line-height: 2rem;
     letter-spacing: 0.05rem;
-
-    p,
-    h3 {
-        padding-bottom: 1rem;
-    }
 
     .skillBox {
         display: flex;
@@ -355,6 +382,10 @@ $split-color: #FF2C75;
 
         p {
             font-size: 3rem;
+
+            @include sp{
+                font-size: getvw(48);
+            }
             padding-bottom: 0;
         }
     }
@@ -373,10 +404,6 @@ $split-color: #FF2C75;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-}
-
-section h2 {
-    margin-bottom: 2rem;
 }
 
 .mainVisual {
@@ -885,6 +912,10 @@ canvas {
         .inner{
             width: calc(1027/1920*100vw);
             margin: 0 auto;
+
+            @include sp{
+                width: getvw(640);
+            }
         }
 
         &:first-child{
