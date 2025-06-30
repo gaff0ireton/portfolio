@@ -549,6 +549,12 @@ $split-color: #FF2C75;
     bottom: 45px;
     left: calc(107/1920*100vw);
 
+    @include sp{
+        font-family: 'Melete', sans-serif;
+        font-size: getvw(20);
+        bottom: getvw(40);
+    }
+
     // position: absolute;
     // top: 0;
     // right: 0;
