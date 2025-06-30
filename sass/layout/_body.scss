@@ -37,7 +37,7 @@ h2,
 h3,
 h4 {
     letter-spacing: 0.5rem;
-    color: rgba(236, 12, 94, 1);
+    color: $mainColor;
 
 
 
@@ -149,7 +149,7 @@ body {
 }
 
 .headerBoxSc {
-    background-color: rgba(236, 12, 94, 1);
+    background-color: $mainColor;
 
     a {
         color: black;
@@ -268,7 +268,7 @@ $split-color: #FF2C75;
     }
 
     p {
-        color: #8c1e46;
+        color: $subColor;
 
         @include sp{
             font-size: getvw(24);
@@ -335,8 +335,8 @@ $split-color: #FF2C75;
 //     @media (max-width : 834px) {
 //         background-image: url(../images/back.png);
 //         padding: 10rem 2.5rem;
-//         border-top: solid 1px rgba(236, 12, 94, 1);
-//         border-bottom: solid 1px rgba(236, 12, 94, 1);
+//         border-top: solid 1px $mainColor;
+//         border-bottom: solid 1px $mainColor;
 //     }
 
 //     @media (max-width: 600px) {
@@ -346,8 +346,8 @@ $split-color: #FF2C75;
 
 //     @media (max-width: 555px) {
 //         border-bottom: none;
-//         border-left: solid 1px rgba(236, 12, 94, 1);
-//         border-right: solid 1px rgba(236, 12, 94, 1);
+//         border-left: solid 1px $mainColor;
+//         border-right: solid 1px $mainColor;
 //     }
 
 //     @media (max-width: 490px) {
@@ -724,8 +724,8 @@ $split-color: #FF2C75;
     left: 6px;
     content: "〼";
     font-size: 1.5rem;
-    color: rgba(236, 12, 94, 1);
-    text-shadow: rgba(198, 14, 77, 0.9) 0px 0.03em 0.5em, rgba(0, 0, 0, 0.3) 0px 0.202532em 0.139241em;
+    color: rgb(12, 236, 124);
+    text-shadow: rgba(12, 236, 124, 0.9) 0px 0.03em 0.5em, rgba(0, 0, 0, 0.3) 0px 0.202532em 0.139241em;
 }
 
 .none {
@@ -782,7 +782,7 @@ $split-color: #FF2C75;
     left: 0;
     margin-left: -50%;
     /* 枠の左に置いて表示させない */
-    background-color: rgba(236, 12, 94, 1);
+    background-color: $mainColor;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }

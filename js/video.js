@@ -170,7 +170,7 @@ function twoDigit(num) {
     let nowMin = twoDigit(nowTime.getMinutes());
     let nowSec = twoDigit(nowTime.getSeconds());
     let nowMSec = threeDigit(nowTime.getMilliseconds());
-    let msg = `${nowYear}:${nowMonth}:${nowDate}:${nowHour}:${nowMin}:${nowSec}:${nowMSec}`;
+    let msg = `${nowYear}:${nowMonth}:${nowDate}:${nowHour}:${nowMin}:${nowSec}`;
     document.getElementById("realtime").innerHTML = msg;
   }
   setInterval("showClock()", 1);

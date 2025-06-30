@@ -9,6 +9,19 @@
   height: 100vh;
   position: relative;
 
+  .titleInner{
+    width: 100%;
+    height: 90dvh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include sp{
+      height: 95dvh;
+    }
+  }
+
   h1 {
     position: absolute;
     color: #fff;
