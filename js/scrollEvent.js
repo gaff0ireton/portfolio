@@ -44,7 +44,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (Math.abs(dy) < SWIPE_THRESHOLD) return;
     scrollDir(dy > 0 ? 1 : -1);
   }, { passive: true });
+  
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.aboutBtn');
+  const texts = document.querySelectorAll('.aboutText');
+
+  // 初期表示（profileを表示）
+  showSection('profile');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.dataset.id;
+      showSection(targetId);
+    });
+  });
+
+  function showSection(id) {
+    texts.forEach(text => {
+      if (text.dataset.id === id) {
+        text.style.display = 'block';
+      } else {
+        text.style.display = 'none';
+      }
+    });
+  }
+});
+
 
     const cursor = document.getElementById('cursor');
 
@@ -77,4 +104,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // ループ開始
     render();
 
+    
     

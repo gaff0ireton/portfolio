@@ -15,8 +15,10 @@ html, body {
 
 
 h2 {
-    font-size: calc(100/1920*100vw);
+    font-size: 128px;
     white-space: nowrap;
+    line-height: 0.75em;
+    padding-bottom: 32px;
 
     @include sp{
         font-size: getvw(60);
@@ -25,7 +27,8 @@ h2 {
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 64px;
+    line-height: 0.8em;
 
     @include sp{
         font-size: getvw(48);
@@ -269,6 +272,8 @@ $split-color: #FF2C75;
 
     p {
         color: $subColor;
+        font-size: 24px;
+        line-height: 1.25em;
 
         @include sp{
             font-size: getvw(24);
@@ -279,7 +284,7 @@ $split-color: #FF2C75;
         content: '-->';
         position: relative;
         bottom: 15px;
-        font-size: 2rem;
+        font-size: 96px;
         font-family: 'Dela Gothic One';
 
         @include sp{
@@ -360,10 +365,45 @@ $split-color: #FF2C75;
     background: rgba(0, 0, 0, 0.5);
 }
 
+.aboutOuter{
+    display: flex;
+    gap: 32px;
+
+    @include sp{
+        flex-direction: column;
+    }
+}
+.aboutBtnbox{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include sp{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.aboutBtn{
+    width: 240px;
+    position: relative;
+
+    @include sp{
+        width: getvw(304);
+    }
+
+    p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $mainColor;
+    }
+}
+
 .aboutText {
     margin: 0 auto;
     justify-content: center;
-    width: calc(682/1920*100vw);
 
     @include sp{
         width: 100%;
@@ -374,6 +414,15 @@ $split-color: #FF2C75;
     line-height: 2rem;
     letter-spacing: 0.05rem;
 
+    p{
+        font-size: 16px;
+        line-height: 2em;
+
+        @include sp{
+            font-size: getvw(24);
+        }
+    }
+
     .skillBox {
         display: flex;
         flex-wrap: wrap;
@@ -381,7 +430,7 @@ $split-color: #FF2C75;
         padding-bottom: 1rem;
 
         p {
-            font-size: 3rem;
+            font-size: 64px;
 
             @include sp{
                 font-size: getvw(48);
@@ -723,7 +772,7 @@ $split-color: #FF2C75;
     bottom: 1px;
     left: 6px;
     content: "〼";
-    font-size: 1.5rem;
+    font-size: 32px;
     color: rgb(12, 236, 124);
     text-shadow: rgba(12, 236, 124, 0.9) 0px 0.03em 0.5em, rgba(0, 0, 0, 0.3) 0px 0.202532em 0.139241em;
 }
@@ -853,6 +902,7 @@ canvas {
     transform: translate(-50%, -50%);
     z-index: 1000;
     overflow: visible; /* 偽要素のはみ出しを許可 */
+    pointer-events: none;
 
     @include sp{
         height: 95dvh;
@@ -922,7 +972,7 @@ canvas {
             overflow-y: auto;
   overscroll-behavior: contain;
         .inner{
-            width: 1024px;
+            width: 80vw;
             height: 100%;
             margin: 0 auto;
 
