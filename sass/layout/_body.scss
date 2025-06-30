@@ -15,23 +15,24 @@ html, body {
 
 
 h2 {
-    font-size: 128px;
+    font-size: getvwpc(128);
     white-space: nowrap;
     line-height: 0.75em;
-    padding-bottom: 32px;
+    padding-top: getvwpc(16);
+    padding-bottom: getvwpc(32);
 
     @include sp{
-        font-size: getvw(60);
-        margin-bottom: getvw(32);
+        font-size: getvwsp(60);
+        margin-bottom: getvwsp(32);
     }
 }
 
 h3 {
-    font-size: 64px;
+    font-size: getvwpc(64);
     line-height: 0.8em;
 
     @include sp{
-        font-size: getvw(48);
+        font-size: getvwsp(48);
     }
 }
 
@@ -61,7 +62,7 @@ p {
     font-family: 'glitchGothic';
 
     @include sp{
-        font-size: getvw(24);
+        font-size: getvwsp(24);
     }
 }
 
@@ -263,38 +264,34 @@ $split-color: #FF2C75;
 
 /* セクションスタイル */
 .titleBox {
-    // padding-top: calc(72/ 1920* 90vw);
-    padding-top: 72px;
+    padding-top: calc(164/ 1920* 100vh);
 
     @include  sp{
-        padding-top: getvw(80);
+        padding-top: getvwsp(80);
     }
 
     p {
         color: $subColor;
-        font-size: 24px;
+        font-size: getvwpc(24);
         line-height: 1.25em;
 
         @include sp{
-            font-size: getvw(24);
+            font-size: getvwsp(24);
         }
     }
 
     h2::before {
         content: '-->';
         position: relative;
-        bottom: 15px;
-        font-size: 96px;
+        font-size: getvwpc(96);
         font-family: 'Dela Gothic One';
+        display: inline-block;
+        top: 50%;
+        transform: translateY(-50%);
 
         @include sp{
-            font-size: getvw(32);
+            font-size: getvwsp(32);
 
-        }
-
-        @media (max-width : 575px) {
-            bottom: getvw(5);
-            font-size: 1.5rem;
         }
     }
 
@@ -385,11 +382,11 @@ $split-color: #FF2C75;
 }
 
 .aboutBtn{
-    width: 240px;
+    width: getvwpc(240);
     position: relative;
 
     @include sp{
-        width: getvw(304);
+        width: getvwsp(304);
     }
 
     p{
@@ -419,7 +416,7 @@ $split-color: #FF2C75;
         line-height: 2em;
 
         @include sp{
-            font-size: getvw(24);
+            font-size: getvwsp(24);
         }
     }
 
@@ -433,7 +430,7 @@ $split-color: #FF2C75;
             font-size: 64px;
 
             @include sp{
-                font-size: getvw(48);
+                font-size: getvwsp(48);
             }
             padding-bottom: 0;
         }
@@ -596,12 +593,12 @@ $split-color: #FF2C75;
     font-family: 'Melete', sans-serif;
     position: fixed;
     font-size: 32px;
-    bottom: 45px;
+    bottom: calc(54 / 1080 * 100vh);
     left: calc(107/1920*100vw);
 
     @include sp{
-        font-size: getvw(20);
-        bottom: getvw(40);
+        font-size: getvwsp(20);
+        bottom: getvwsp(40);
     }
 
     // position: absolute;
@@ -977,7 +974,7 @@ canvas {
             margin: 0 auto;
 
             @include sp{
-                width: getvw(640);
+                width: getvwsp(640);
             }
         }
 

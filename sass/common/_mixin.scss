@@ -1,6 +1,11 @@
 @use "sass:math";
 
-@function getvw($fontsize, $viewport: 750) {
+@function getvwsp($fontsize, $viewport: 750) {
+  $rate: 100 / $viewport;
+  @return $rate * $fontsize * 1vw;
+}
+
+@function getvwpc($fontsize, $viewport: 1920) {
   $rate: 100 / $viewport;
   @return $rate * $fontsize * 1vw;
 }
