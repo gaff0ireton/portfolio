@@ -847,6 +847,10 @@ canvas {
     transform: translate(-50%, -50%);
     z-index: 1000;
     overflow: visible; /* 偽要素のはみ出しを許可 */
+
+    @include sp{
+        height: 95svh;
+    }
 }
 
 /* 元の静的な白枠 */
