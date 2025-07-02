@@ -286,8 +286,6 @@ $split-color: #FF2C75;
         font-size: getvwpc(96);
         font-family: 'Dela Gothic One';
         display: inline-block;
-        top: 50%;
-        transform: translateY(-50%);
 
         @include sp{
             font-size: getvwsp(32);

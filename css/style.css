@@ -122,44 +122,44 @@ body {
 }
 @keyframes glitch-before {
   0% {
-    clip-path: polygon(0% 78.9145270587%, 100% 78.9145270587%, 100% 88.2013422083%, 0% 88.2013422083%);
-    transform: translate(3.2738032313%, 0.0306672864%);
+    clip-path: polygon(0% 40.4485713055%, 100% 40.4485713055%, 100% 45.7361638521%, 0% 45.7361638521%);
+    transform: translate(-7.1450023104%, 0.1801236692%);
   }
   2% {
-    clip-path: polygon(0% 73.4037339642%, 100% 73.4037339642%, 100% 81.797258693%, 0% 81.797258693%);
-    transform: translate(0.2102861542%, -0.1194640172%);
+    clip-path: polygon(0% 56.3691117011%, 100% 56.3691117011%, 100% 60.2923390451%, 0% 60.2923390451%);
+    transform: translate(4.3826412368%, -0.0381184951%);
   }
   4% {
-    clip-path: polygon(0% 7.5369425934%, 100% 7.5369425934%, 100% 12.1329448913%, 0% 12.1329448913%);
-    transform: translate(-7.7871333333%, 0.335237347%);
+    clip-path: polygon(0% 77.2716996595%, 100% 77.2716996595%, 100% 79.8859801819%, 0% 79.8859801819%);
+    transform: translate(1.3445060524%, -0.0687952237%);
   }
   6% {
-    clip-path: polygon(0% 35.9143355002%, 100% 35.9143355002%, 100% 40.1518825892%, 0% 40.1518825892%);
-    transform: translate(-3.6967497371%, 0.3228343476%);
+    clip-path: polygon(0% 33.7599950802%, 100% 33.7599950802%, 100% 39.0736185214%, 0% 39.0736185214%);
+    transform: translate(6.8937586917%, 0.3755224295%);
   }
   8% {
-    clip-path: polygon(0% 27.8470571508%, 100% 27.8470571508%, 100% 29.9241427188%, 0% 29.9241427188%);
-    transform: translate(6.8834452607%, 0.2175379131%);
+    clip-path: polygon(0% 27.5977769885%, 100% 27.5977769885%, 100% 34.1325809538%, 0% 34.1325809538%);
+    transform: translate(-6.4979690619%, -0.0607844642%);
   }
   10% {
-    clip-path: polygon(0% 56.3631675009%, 100% 56.3631675009%, 100% 62.9436316051%, 0% 62.9436316051%);
-    transform: translate(-4.8757761785%, 0.241063246%);
+    clip-path: polygon(0% 11.4178985734%, 100% 11.4178985734%, 100% 13.1736638257%, 0% 13.1736638257%);
+    transform: translate(-3.1509771901%, 0.1657538351%);
   }
   12% {
-    clip-path: polygon(0% 9.6236649889%, 100% 9.6236649889%, 100% 17.2482889948%, 0% 17.2482889948%);
-    transform: translate(-0.8694117878%, 0.4308364541%);
+    clip-path: polygon(0% 30.8711817202%, 100% 30.8711817202%, 100% 37.7057806316%, 0% 37.7057806316%);
+    transform: translate(0.8749170287%, 0.4487979239%);
   }
   14% {
-    clip-path: polygon(0% 62.6559861077%, 100% 62.6559861077%, 100% 71.8837960632%, 0% 71.8837960632%);
-    transform: translate(2.7188681639%, 0.246779322%);
+    clip-path: polygon(0% 19.7019010764%, 100% 19.7019010764%, 100% 26.8622414547%, 0% 26.8622414547%);
+    transform: translate(-0.5634767875%, -0.3295315567%);
   }
   16% {
-    clip-path: polygon(0% 20.3408987503%, 100% 20.3408987503%, 100% 28.8879035484%, 0% 28.8879035484%);
-    transform: translate(-3.5700976136%, 0.2303943833%);
+    clip-path: polygon(0% 13.5781626124%, 100% 13.5781626124%, 100% 23.0872535403%, 0% 23.0872535403%);
+    transform: translate(5.1558832812%, 0.4150260437%);
   }
   18% {
-    clip-path: polygon(0% 7.3069801155%, 100% 7.3069801155%, 100% 9.7666699438%, 0% 9.7666699438%);
-    transform: translate(4.9706820457%, 0.1122161721%);
+    clip-path: polygon(0% 50.3945951904%, 100% 50.3945951904%, 100% 57.7140049836%, 0% 57.7140049836%);
+    transform: translate(2.2959739577%, -0.4896964925%);
   }
   20%, 100% {
     clip-path: none;
@@ -172,44 +172,44 @@ body {
 }
 @keyframes glitch-after {
   0% {
-    clip-path: polygon(0% 29.6384224587%, 100% 29.6384224587%, 100% 32.3369445356%, 0% 32.3369445356%);
-    transform: translate(-6.7704420708%, 0.0803368946%);
+    clip-path: polygon(0% 74.9184802283%, 100% 74.9184802283%, 100% 76.3615587457%, 0% 76.3615587457%);
+    transform: translate(-2.7039555516%, 0.133651373%);
   }
   2% {
-    clip-path: polygon(0% 82.0060668999%, 100% 82.0060668999%, 100% 83.6407831643%, 0% 83.6407831643%);
-    transform: translate(-3.5603242198%, -0.1092443238%);
+    clip-path: polygon(0% 17.7561675218%, 100% 17.7561675218%, 100% 26.1972411015%, 0% 26.1972411015%);
+    transform: translate(-3.2514464048%, -0.0292923596%);
   }
   4% {
-    clip-path: polygon(0% 75.9170932904%, 100% 75.9170932904%, 100% 85.2162829023%, 0% 85.2162829023%);
-    transform: translate(2.8514129407%, 0.1018045971%);
+    clip-path: polygon(0% 55.4443468399%, 100% 55.4443468399%, 100% 61.9875592823%, 0% 61.9875592823%);
+    transform: translate(-0.3051748646%, 0.0239550325%);
   }
   6% {
-    clip-path: polygon(0% 27.8393605242%, 100% 27.8393605242%, 100% 36.2816215323%, 0% 36.2816215323%);
-    transform: translate(2.3365807078%, 0.0276716881%);
+    clip-path: polygon(0% 22.7413852982%, 100% 22.7413852982%, 100% 28.2123699391%, 0% 28.2123699391%);
+    transform: translate(-2.5832168374%, -0.0093109216%);
   }
   8% {
-    clip-path: polygon(0% 81.3678978998%, 100% 81.3678978998%, 100% 86.7568084328%, 0% 86.7568084328%);
-    transform: translate(7.0426567424%, 0.4790721493%);
+    clip-path: polygon(0% 66.3494888877%, 100% 66.3494888877%, 100% 69.037720532%, 0% 69.037720532%);
+    transform: translate(-5.9430204903%, -0.1833202532%);
   }
   10% {
-    clip-path: polygon(0% 32.85797605%, 100% 32.85797605%, 100% 35.1064837466%, 0% 35.1064837466%);
-    transform: translate(2.9986549695%, -0.1592344217%);
+    clip-path: polygon(0% 48.450210958%, 100% 48.450210958%, 100% 58.2859848135%, 0% 58.2859848135%);
+    transform: translate(7.5217638825%, -0.2982977402%);
   }
   12% {
-    clip-path: polygon(0% 11.887033737%, 100% 11.887033737%, 100% 21.8607808523%, 0% 21.8607808523%);
-    transform: translate(1.6741700491%, -0.4016127006%);
+    clip-path: polygon(0% 66.1502101571%, 100% 66.1502101571%, 100% 67.3082754666%, 0% 67.3082754666%);
+    transform: translate(7.8295102497%, 0.3540058302%);
   }
   14% {
-    clip-path: polygon(0% 20.8276396972%, 100% 20.8276396972%, 100% 26.9947476631%, 0% 26.9947476631%);
-    transform: translate(-6.0047364967%, -0.0921914701%);
+    clip-path: polygon(0% 54.0750797833%, 100% 54.0750797833%, 100% 58.5157489884%, 0% 58.5157489884%);
+    transform: translate(6.8332902592%, 0.3238512717%);
   }
   16% {
-    clip-path: polygon(0% 62.6898097467%, 100% 62.6898097467%, 100% 66.3939223127%, 0% 66.3939223127%);
-    transform: translate(3.2030168587%, -0.3152006655%);
+    clip-path: polygon(0% 49.9921455866%, 100% 49.9921455866%, 100% 57.7242486964%, 0% 57.7242486964%);
+    transform: translate(-3.5239668576%, -0.2753769451%);
   }
   18% {
-    clip-path: polygon(0% 63.0673093737%, 100% 63.0673093737%, 100% 65.320459686%, 0% 65.320459686%);
-    transform: translate(-0.0818768856%, -0.1234610987%);
+    clip-path: polygon(0% 80.7297879161%, 100% 80.7297879161%, 100% 89.6564185509%, 0% 89.6564185509%);
+    transform: translate(6.4666421684%, -0.456955546%);
   }
   20%, 100% {
     clip-path: none;
@@ -231,34 +231,34 @@ body {
 }
 @keyframes rgb-shift-r {
   0% {
-    transform: translate(-1.1015652983%, 0.0056811925%);
+    transform: translate(-1.1226089737%, 0.3786066092%);
   }
   2% {
-    transform: translate(-0.3975124983%, -0.4796838896%);
+    transform: translate(-1.1667948112%, -0.0761505695%);
   }
   4% {
-    transform: translate(0.2902397833%, -0.3251089177%);
+    transform: translate(1.7362230845%, 0.2271430761%);
   }
   6% {
-    transform: translate(-1.558802779%, -0.2712014865%);
+    transform: translate(0.3952831262%, 0.3019413865%);
   }
   8% {
-    transform: translate(1.5289987465%, -0.2689757494%);
+    transform: translate(-1.4518063234%, -0.1633267264%);
   }
   10% {
-    transform: translate(1.8698497663%, 0.0085869202%);
+    transform: translate(-1.4707252362%, -0.282260984%);
   }
   12% {
-    transform: translate(-1.6189649441%, 0.4426641963%);
+    transform: translate(0.9411729171%, 0.4160914873%);
   }
   14% {
-    transform: translate(-1.2912689365%, 0.0586972623%);
+    transform: translate(-1.9057901786%, -0.1969008888%);
   }
   16% {
-    transform: translate(-1.3761055364%, -0.2797644657%);
+    transform: translate(0.8967857118%, -0.340021627%);
   }
   18% {
-    transform: translate(1.8457116665%, 0.0513010339%);
+    transform: translate(-1.5721213614%, -0.2943224873%);
   }
   20%, 100% {
     transform: none;
@@ -272,34 +272,34 @@ body {
 }
 @keyframes rgb-shift-g {
   0% {
-    transform: translate(1.312497764%, 0.3169509298%);
+    transform: translate(0.8464636527%, 0.3785391632%);
   }
   2% {
-    transform: translate(-0.4821851775%, 0.1433056689%);
+    transform: translate(-1.501990659%, 0.3709085145%);
   }
   4% {
-    transform: translate(1.7237454278%, -0.1760717518%);
+    transform: translate(0.0540019317%, 0.4512375211%);
   }
   6% {
-    transform: translate(1.3270237005%, -0.0239498616%);
+    transform: translate(-1.304077453%, -0.4635154203%);
   }
   8% {
-    transform: translate(0.9493866301%, -0.467648649%);
+    transform: translate(-0.5099561317%, -0.0904068654%);
   }
   10% {
-    transform: translate(1.5626908849%, -0.2130371755%);
+    transform: translate(0.6498745048%, -0.4594989069%);
   }
   12% {
-    transform: translate(0.8534560723%, 0.3229578944%);
+    transform: translate(1.6939302974%, 0.149440557%);
   }
   14% {
-    transform: translate(-0.0534958381%, -0.2100746762%);
+    transform: translate(1.5888007572%, 0.0730756304%);
   }
   16% {
-    transform: translate(-0.1673887896%, -0.1983940069%);
+    transform: translate(1.9832904524%, -0.3925488629%);
   }
   18% {
-    transform: translate(-1.1943788306%, -0.3614505093%);
+    transform: translate(-0.9182578915%, -0.1503026452%);
   }
   20%, 100% {
     transform: none;
@@ -313,34 +313,34 @@ body {
 }
 @keyframes rgb-shift-b {
   0% {
-    transform: translate(-0.9538018149%, 0.0012550302%);
+    transform: translate(-0.6244312814%, -0.0767498894%);
   }
   2% {
-    transform: translate(-0.9705111919%, 0.142498183%);
+    transform: translate(-0.7243206986%, 0.4863283343%);
   }
   4% {
-    transform: translate(-0.4761397762%, 0.3126929198%);
+    transform: translate(1.7853853095%, -0.3648575338%);
   }
   6% {
-    transform: translate(-1.2416904052%, 0.3126040923%);
+    transform: translate(-0.2619348766%, 0.3416412598%);
   }
   8% {
-    transform: translate(-0.5325189877%, 0.1095681274%);
+    transform: translate(0.9563770396%, 0.2438787018%);
   }
   10% {
-    transform: translate(-1.6109958421%, 0.4807057976%);
+    transform: translate(0.8039873544%, -0.3866252824%);
   }
   12% {
-    transform: translate(-0.1344129656%, 0.1007891994%);
+    transform: translate(1.4376384959%, 0.3964090517%);
   }
   14% {
-    transform: translate(1.0540314575%, 0.1588426764%);
+    transform: translate(-0.9299466666%, 0.2448108344%);
   }
   16% {
-    transform: translate(1.469469886%, 0.3783356652%);
+    transform: translate(1.0934087022%, 0.4561209155%);
   }
   18% {
-    transform: translate(-1.6722535302%, 0.2706955902%);
+    transform: translate(-0.6358616828%, 0.0354088743%);
   }
   20%, 100% {
     transform: none;
@@ -359,67 +359,67 @@ body {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(1px, 9999px, 61px, 0);
+    clip: rect(61px, 9999px, 93px, 0);
   }
   5% {
-    clip: rect(79px, 9999px, 10px, 0);
+    clip: rect(77px, 9999px, 8px, 0);
   }
   10% {
-    clip: rect(72px, 9999px, 97px, 0);
+    clip: rect(55px, 9999px, 40px, 0);
   }
   15% {
-    clip: rect(58px, 9999px, 23px, 0);
+    clip: rect(27px, 9999px, 47px, 0);
   }
   20% {
-    clip: rect(68px, 9999px, 31px, 0);
+    clip: rect(22px, 9999px, 59px, 0);
   }
   25% {
-    clip: rect(52px, 9999px, 54px, 0);
+    clip: rect(80px, 9999px, 9px, 0);
   }
   30% {
-    clip: rect(65px, 9999px, 5px, 0);
+    clip: rect(39px, 9999px, 38px, 0);
   }
   35% {
-    clip: rect(14px, 9999px, 85px, 0);
+    clip: rect(4px, 9999px, 27px, 0);
   }
   40% {
-    clip: rect(76px, 9999px, 51px, 0);
+    clip: rect(27px, 9999px, 72px, 0);
   }
   45% {
-    clip: rect(13px, 9999px, 91px, 0);
+    clip: rect(4px, 9999px, 33px, 0);
   }
   50% {
-    clip: rect(96px, 9999px, 12px, 0);
+    clip: rect(59px, 9999px, 93px, 0);
   }
   55% {
-    clip: rect(35px, 9999px, 32px, 0);
+    clip: rect(34px, 9999px, 97px, 0);
   }
   60% {
-    clip: rect(52px, 9999px, 34px, 0);
+    clip: rect(81px, 9999px, 88px, 0);
   }
   65% {
-    clip: rect(61px, 9999px, 86px, 0);
+    clip: rect(75px, 9999px, 13px, 0);
   }
   70% {
-    clip: rect(33px, 9999px, 59px, 0);
+    clip: rect(34px, 9999px, 19px, 0);
   }
   75% {
-    clip: rect(86px, 9999px, 35px, 0);
+    clip: rect(69px, 9999px, 49px, 0);
   }
   80% {
-    clip: rect(29px, 9999px, 97px, 0);
+    clip: rect(5px, 9999px, 16px, 0);
   }
   85% {
-    clip: rect(77px, 9999px, 57px, 0);
+    clip: rect(79px, 9999px, 9px, 0);
   }
   90% {
-    clip: rect(94px, 9999px, 30px, 0);
+    clip: rect(31px, 9999px, 23px, 0);
   }
   95% {
-    clip: rect(49px, 9999px, 37px, 0);
+    clip: rect(51px, 9999px, 66px, 0);
   }
   100% {
-    clip: rect(48px, 9999px, 15px, 0);
+    clip: rect(51px, 9999px, 21px, 0);
   }
 }
 :root {
@@ -546,67 +546,67 @@ body {
 }
 @keyframes noise-anim {
   0% {
-    clip: rect(51px, 9999px, 82px, 0);
+    clip: rect(8px, 9999px, 69px, 0);
   }
   5% {
-    clip: rect(44px, 9999px, 29px, 0);
+    clip: rect(47px, 9999px, 48px, 0);
   }
   10% {
-    clip: rect(78px, 9999px, 50px, 0);
+    clip: rect(91px, 9999px, 28px, 0);
   }
   15% {
-    clip: rect(72px, 9999px, 92px, 0);
+    clip: rect(12px, 9999px, 25px, 0);
   }
   20% {
-    clip: rect(14px, 9999px, 73px, 0);
+    clip: rect(16px, 9999px, 24px, 0);
   }
   25% {
-    clip: rect(84px, 9999px, 12px, 0);
+    clip: rect(62px, 9999px, 84px, 0);
   }
   30% {
-    clip: rect(98px, 9999px, 46px, 0);
+    clip: rect(69px, 9999px, 43px, 0);
   }
   35% {
-    clip: rect(13px, 9999px, 58px, 0);
+    clip: rect(26px, 9999px, 55px, 0);
   }
   40% {
-    clip: rect(66px, 9999px, 59px, 0);
+    clip: rect(7px, 9999px, 94px, 0);
   }
   45% {
-    clip: rect(65px, 9999px, 78px, 0);
+    clip: rect(87px, 9999px, 36px, 0);
   }
   50% {
-    clip: rect(41px, 9999px, 60px, 0);
+    clip: rect(66px, 9999px, 61px, 0);
   }
   55% {
-    clip: rect(24px, 9999px, 5px, 0);
+    clip: rect(46px, 9999px, 79px, 0);
   }
   60% {
-    clip: rect(90px, 9999px, 89px, 0);
+    clip: rect(43px, 9999px, 73px, 0);
   }
   65% {
-    clip: rect(2px, 9999px, 70px, 0);
+    clip: rect(29px, 9999px, 85px, 0);
   }
   70% {
-    clip: rect(99px, 9999px, 61px, 0);
+    clip: rect(50px, 9999px, 67px, 0);
   }
   75% {
-    clip: rect(19px, 9999px, 6px, 0);
+    clip: rect(69px, 9999px, 83px, 0);
   }
   80% {
-    clip: rect(35px, 9999px, 87px, 0);
+    clip: rect(85px, 9999px, 26px, 0);
   }
   85% {
-    clip: rect(86px, 9999px, 53px, 0);
+    clip: rect(64px, 9999px, 15px, 0);
   }
   90% {
-    clip: rect(15px, 9999px, 79px, 0);
+    clip: rect(32px, 9999px, 28px, 0);
   }
   95% {
-    clip: rect(84px, 9999px, 51px, 0);
+    clip: rect(95px, 9999px, 24px, 0);
   }
   100% {
-    clip: rect(6px, 9999px, 68px, 0);
+    clip: rect(27px, 9999px, 95px, 0);
   }
 }
 .glitchTextLoad {
@@ -621,67 +621,67 @@ body {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(31px, 9999px, 80px, 0);
+    clip: rect(81px, 9999px, 82px, 0);
   }
   5% {
-    clip: rect(39px, 9999px, 47px, 0);
+    clip: rect(25px, 9999px, 49px, 0);
   }
   10% {
-    clip: rect(57px, 9999px, 81px, 0);
+    clip: rect(71px, 9999px, 67px, 0);
   }
   15% {
-    clip: rect(8px, 9999px, 43px, 0);
+    clip: rect(93px, 9999px, 22px, 0);
   }
   20% {
-    clip: rect(98px, 9999px, 5px, 0);
+    clip: rect(21px, 9999px, 17px, 0);
   }
   25% {
-    clip: rect(13px, 9999px, 61px, 0);
+    clip: rect(27px, 9999px, 74px, 0);
   }
   30% {
-    clip: rect(78px, 9999px, 12px, 0);
+    clip: rect(36px, 9999px, 89px, 0);
   }
   35% {
-    clip: rect(92px, 9999px, 87px, 0);
+    clip: rect(94px, 9999px, 98px, 0);
   }
   40% {
-    clip: rect(22px, 9999px, 66px, 0);
+    clip: rect(77px, 9999px, 47px, 0);
   }
   45% {
-    clip: rect(60px, 9999px, 17px, 0);
+    clip: rect(39px, 9999px, 81px, 0);
   }
   50% {
-    clip: rect(5px, 9999px, 52px, 0);
+    clip: rect(29px, 9999px, 77px, 0);
   }
   55% {
-    clip: rect(34px, 9999px, 45px, 0);
+    clip: rect(8px, 9999px, 6px, 0);
   }
   60% {
-    clip: rect(8px, 9999px, 87px, 0);
+    clip: rect(29px, 9999px, 98px, 0);
   }
   65% {
-    clip: rect(57px, 9999px, 76px, 0);
+    clip: rect(39px, 9999px, 61px, 0);
   }
   70% {
-    clip: rect(36px, 9999px, 51px, 0);
+    clip: rect(58px, 9999px, 86px, 0);
   }
   75% {
-    clip: rect(53px, 9999px, 15px, 0);
+    clip: rect(82px, 9999px, 11px, 0);
   }
   80% {
-    clip: rect(97px, 9999px, 73px, 0);
+    clip: rect(25px, 9999px, 37px, 0);
   }
   85% {
-    clip: rect(38px, 9999px, 93px, 0);
+    clip: rect(40px, 9999px, 64px, 0);
   }
   90% {
-    clip: rect(23px, 9999px, 40px, 0);
+    clip: rect(35px, 9999px, 66px, 0);
   }
   95% {
-    clip: rect(21px, 9999px, 7px, 0);
+    clip: rect(74px, 9999px, 53px, 0);
   }
   100% {
-    clip: rect(55px, 9999px, 26px, 0);
+    clip: rect(51px, 9999px, 68px, 0);
   }
 }
 .glitchTextLoad:after {
@@ -699,67 +699,67 @@ body {
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(58px, 9999px, 97px, 0);
+    clip: rect(24px, 9999px, 92px, 0);
   }
   5% {
-    clip: rect(29px, 9999px, 9px, 0);
+    clip: rect(23px, 9999px, 84px, 0);
   }
   10% {
-    clip: rect(89px, 9999px, 94px, 0);
+    clip: rect(55px, 9999px, 37px, 0);
   }
   15% {
-    clip: rect(83px, 9999px, 96px, 0);
+    clip: rect(95px, 9999px, 65px, 0);
   }
   20% {
-    clip: rect(85px, 9999px, 35px, 0);
+    clip: rect(47px, 9999px, 49px, 0);
   }
   25% {
-    clip: rect(82px, 9999px, 17px, 0);
+    clip: rect(39px, 9999px, 68px, 0);
   }
   30% {
-    clip: rect(87px, 9999px, 15px, 0);
+    clip: rect(34px, 9999px, 45px, 0);
   }
   35% {
-    clip: rect(76px, 9999px, 88px, 0);
+    clip: rect(64px, 9999px, 60px, 0);
   }
   40% {
-    clip: rect(72px, 9999px, 80px, 0);
+    clip: rect(66px, 9999px, 53px, 0);
   }
   45% {
-    clip: rect(30px, 9999px, 53px, 0);
+    clip: rect(35px, 9999px, 78px, 0);
   }
   50% {
-    clip: rect(92px, 9999px, 65px, 0);
+    clip: rect(98px, 9999px, 13px, 0);
   }
   55% {
-    clip: rect(67px, 9999px, 87px, 0);
+    clip: rect(55px, 9999px, 60px, 0);
   }
   60% {
-    clip: rect(59px, 9999px, 41px, 0);
+    clip: rect(2px, 9999px, 92px, 0);
   }
   65% {
-    clip: rect(16px, 9999px, 70px, 0);
+    clip: rect(21px, 9999px, 87px, 0);
   }
   70% {
-    clip: rect(30px, 9999px, 83px, 0);
+    clip: rect(15px, 9999px, 19px, 0);
   }
   75% {
-    clip: rect(76px, 9999px, 65px, 0);
+    clip: rect(62px, 9999px, 34px, 0);
   }
   80% {
-    clip: rect(31px, 9999px, 93px, 0);
+    clip: rect(93px, 9999px, 63px, 0);
   }
   85% {
-    clip: rect(6px, 9999px, 36px, 0);
+    clip: rect(49px, 9999px, 59px, 0);
   }
   90% {
-    clip: rect(32px, 9999px, 96px, 0);
+    clip: rect(61px, 9999px, 6px, 0);
   }
   95% {
-    clip: rect(73px, 9999px, 56px, 0);
+    clip: rect(33px, 9999px, 41px, 0);
   }
   100% {
-    clip: rect(1px, 9999px, 7px, 0);
+    clip: rect(99px, 9999px, 77px, 0);
   }
 }
 .glitchTextLoad:before {
@@ -1498,8 +1498,6 @@ nav a {
   font-size: 5vw;
   font-family: "Dela Gothic One";
   display: inline-block;
-  top: 50%;
-  transform: translateY(-50%);
 }
 @media screen and (max-width: 750px) {
   .titleBox h2::before {
