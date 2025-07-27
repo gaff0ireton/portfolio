@@ -15,24 +15,24 @@ html, body {
 
 
 h2 {
-    font-size: getvwpc(128);
+    font-size: getVwPc(128);
     white-space: nowrap;
     line-height: 0.75em;
-    padding-top: getvwpc(16);
-    padding-bottom: getvwpc(32);
+    padding-top: getVwPc(16);
+    padding-bottom: getVwPc(32);
 
     @include sp{
-        font-size: getvwsp(60);
-        margin-bottom: getvwsp(32);
+        font-size: getVwSp(60);
+        margin-bottom: getVwSp(32);
     }
 }
 
 h3 {
-    font-size: getvwpc(64);
+    font-size: getVwPc(64);
     line-height: 0.8em;
 
     @include sp{
-        font-size: getvwsp(48);
+        font-size: getVwSp(48);
     }
 }
 
@@ -62,7 +62,7 @@ p {
     font-family: 'glitchGothic';
 
     @include sp{
-        font-size: getvwsp(24);
+        font-size: getVwSp(24);
     }
 }
 
@@ -71,63 +71,15 @@ img {
     height: auto;
 }
 
-@font-face {
-    font-family: "kalibers";
-    src:
-        url("../font/kalibers.ttf") format("truetype");
+.spOnly{
+    @include pc{
+        display: none;
+    }
 }
-
-@font-face {
-    font-family: 'hologen';
-    src: url(../font/HalogenbyPixelSurplus-Regular.otf) format("opentype");
-}
-
-@font-face {
-    font-family: "glitchGothic";
-    src:
-        url("../font/瀞ノグリッチ黒体H1.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "Melete";
-    src:
-        url("../font/Melete-UltraLight.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "Melete";
-    font-weight: bold;
-    src:
-        url("../font/Melete-Bold.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "Melete";
-    font-weight: lighter;
-    src:
-        url("../font/Melete-Light.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "Melete";
-    font-weight: medium;
-    src:
-        url("../font/Melete-Medium.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "Melete";
-    font-weight: normal;
-    src:
-        url("../font/Melete-Regular.otf") format("opentype");
-}
-
-
-
 
 body {
     // font-family: 'Dela Gothic One', sans-serif;
-    font-family: 'kalibers';
+    font-family: 'glitchGothic';
     background-color: black;
     color: white;
     cursor: crosshair
@@ -267,28 +219,28 @@ $split-color: #FF2C75;
     padding-top: calc(164/ 1920* 100vh);
 
     @include  sp{
-        padding-top: getvwsp(80);
+        padding-top: getVwSp(80);
     }
 
     p {
         color: $subColor;
-        font-size: getvwpc(24);
+        font-size: getVwPc(24);
         line-height: 1.25em;
 
         @include sp{
-            font-size: getvwsp(24);
+            font-size: getVwSp(24);
         }
     }
 
     h2::before {
         content: '-->';
         position: relative;
-        font-size: getvwpc(96);
-        font-family: 'Dela Gothic One';
+        font-size: getVwPc(96);
+        font-family: 'glitchGothic';
         display: inline-block;
 
         @include sp{
-            font-size: getvwsp(32);
+            font-size: getVwSp(32);
 
         }
     }
@@ -380,11 +332,11 @@ $split-color: #FF2C75;
 }
 
 .aboutBtn{
-    width: getvwpc(240);
+    width: getVwPc(240);
     position: relative;
 
     @include sp{
-        width: getvwsp(304);
+        width: getVwSp(304);
     }
 
     p{
@@ -414,7 +366,7 @@ $split-color: #FF2C75;
         line-height: 2em;
 
         @include sp{
-            font-size: getvwsp(24);
+            font-size: getVwSp(24);
         }
     }
 
@@ -428,7 +380,7 @@ $split-color: #FF2C75;
             font-size: 64px;
 
             @include sp{
-                font-size: getvwsp(48);
+                font-size: getVwSp(48);
             }
             padding-bottom: 0;
         }
@@ -595,8 +547,8 @@ $split-color: #FF2C75;
     left: calc(107/1920*100vw);
 
     @include sp{
-        font-size: getvwsp(20);
-        bottom: getvwsp(40);
+        font-size: getVwSp(20);
+        bottom: getVwSp(40);
     }
 
     // position: absolute;
@@ -762,12 +714,13 @@ $split-color: #FF2C75;
 }
 
 .icon-rectangle::before {
-    font-family: 'Dela Gothic One';
+    font-family: 'glitchGothic';
+    font-weight: 900;
     position: relative;
-    bottom: 1px;
-    left: 6px;
+    bottom: getVwPc(10);
+    left: calc(16/1080*100vh);
     content: "〼";
-    font-size: 32px;
+    font-size: getVwPc(40);
     color: rgb(12, 236, 124);
     text-shadow: rgba(12, 236, 124, 0.9) 0px 0.03em 0.5em, rgba(0, 0, 0, 0.3) 0px 0.202532em 0.139241em;
 }
@@ -972,7 +925,7 @@ canvas {
             margin: 0 auto;
 
             @include sp{
-                width: getvwsp(640);
+                width: getVwSp(640);
             }
         }
 
@@ -990,8 +943,8 @@ canvas {
       left: 0;
       width: 50px;
       height: 50px;
-      margin-top: -10px;  /* 真ん中に合わせる */
-      margin-left: -10px;
+      margin-top: -25px;  /* 真ん中に合わせる */
+      margin-left: -25px;
       background-color: rgba(0, 255, 234, 0.3);
       border-radius: 50%;
       pointer-events: none;  /* マウス操作を邪魔しない */
