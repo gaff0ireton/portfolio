@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  if(window.innerWidth <=750){
+    return;
+  }
   const sections = Array.from(document.querySelectorAll('.mainWrap > section'));
   const SWIPE_THRESHOLD = 5;     // スワイプ判定の最小距離（px）
   let touchStartY = 0;

@@ -8,3 +8,16 @@
         width: 30%;
     }
 }
+
+#work{
+    .inner{
+        div{
+            &:nth-child(2)> {
+                a{
+                    width: calc(960/1920*100vw);
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -214,7 +214,7 @@ $split-color: #FF2C75;
 
 /* セクションスタイル */
 .titleBox {
-    padding-top: calc(164/ 1920* 100vh);
+    padding-top: calc(64/ 1200* 100vh);
 
     @include  sp{
         padding-top: getVwSp(80);
@@ -361,7 +361,6 @@ $split-color: #FF2C75;
 
     p{
         font-size: 16px;
-        line-height: 2em;
 
         @include sp{
             font-size: getVwSp(24);
@@ -375,7 +374,7 @@ $split-color: #FF2C75;
         padding-bottom: 1rem;
 
         p {
-            font-size: 64px;
+            font-size: getVwPc(128);
 
             @include sp{
                 font-size: getVwSp(48);
@@ -840,8 +839,8 @@ canvas {
 }
 
 .cyber-frame {
-    width: 90%;
-    height: 90dvh;
+    width: 95%;
+    height: 95dvh;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -851,7 +850,7 @@ canvas {
     pointer-events: none;
 
     @include sp{
-        height: 95dvh;
+        display: none;
     }
 }
 
@@ -874,6 +873,10 @@ canvas {
         calc(100% - 1px) calc(100% - 26px), calc(100% - 1px) 1px, 26px 1px,
         1px 26px, 1px 100%
     );
+    
+    @include sp {
+        display: none;
+    }
 }
 
 // /* グリッチ用の揺らぎ枠 */
@@ -918,7 +921,7 @@ canvas {
             overflow-y: auto;
   overscroll-behavior: contain;
         .inner{
-            width: 80vw;
+            width: 90vw;
             height: 100%;
             margin: 0 auto;
 
