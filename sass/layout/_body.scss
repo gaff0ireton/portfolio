@@ -214,7 +214,7 @@ $split-color: #FF2C75;
 
 /* セクションスタイル */
 .titleBox {
-    padding-top: calc(64/ 1200* 100vh);
+    padding-top: calc(82/ 1080* 100vh);
 
     @include  sp{
         padding-top: getVwSp(80);
