@@ -1,0 +1,188 @@
+git archive 最新ID `git diff --name-only 取りたいところまでのID 最新ID --diff-filter=ACMR` -o archive.zip
+
+git archive 05beb9dc9e `git diff --name-only 0a9e8b19965 05beb9dc9e --diff-filter=ACMR` -o suntory-gift-2506_260130_01.zip
+
+git log --oneline --graph --decorate
+
+sass抜き
+git archive 05beb9dc9e \
+  $(git diff --name-only ea1e2bdfbf 05beb9dc9e --diff-filter=ACMR) \
+  -o ~/Desktop/suntory-gift-2506_260202_01.zip
+
+    **/*.scss → scss 全除外
+
+    **/sass/** → sass ディレクトリ丸ごと除外
+
+
+    シェル関数コマンド
+    diffzip a567088607 d1663808ad ~/Desktop/ccjc_affordable_2602_$(date +%Y%m%d).zip
+    
+    distzip 07b724baf0 3ecd5e80c8 ~/Desktop/ccjc-georgia-2603_$(date +%Y%m%d).zip
+
+    nano ~/.bashrc
+    source ~/.bashrc
+
+    code ~/.bashrc
+
+$ nano ~/.bashrc
+
+diffzip () {
+    # 1. 引数が足りない場合に使い方を表示
+    if [ $# -lt 3 ]; then
+        echo "Usage: diffzip <from-commit> <to-commit> <output-file>"
+        return 1
+    fi
+
+    local FROM=$1
+    local TO=$2
+    local OUT=$3
+
+    # 2. 差分ファイルリストを一度変数に格納
+    local DIFF_FILES=$(git diff --name-only "$FROM" "$TO" --diff-filter=ACMR | grep -vE '\.(sass|scss)$')
+
+    # 3. 差分がない場合にエラーを防ぐ
+    if [ -z "$DIFF_FILES" ]; then
+        echo "No files to archive."
+        return 0
+    fi
+
+    # 4. アーカイブ実行
+    git archive "$TO" $DIFF_FILES -o "$OUT"
+    echo "Saved diff to $OUT"
+}
+
+diffzip 95f75587f6 deb34e0d2d ~/Desktop/suntory-gift-2506_260202_03.zip
+
+
+
+git archive -o diff.zip HEAD $(git diff --name-only abc1234 HEAD)
+
+
+git archive -o diff.zip HEAD $(git diff --name-only ef6dbc5f9f HEAD)
+
+git diff --name-only 差分を取りたい一番過去のID HEAD | xargs git archive -o diff.zip HEAD -- 
+
+git diff --name-only 差分を取りたい一番過去のID HEAD | xargs git archive -o diff.zip HEAD -- 
+
+git diff --name-only --diff-filter=ACMRT 差分を取りたい一番過去のID HEAD \  | xargs git archive -o diff_yymmdd.zip HEAD --
+
+<!-- 直前のコミットメッセージの修正 -->
+git commit --amend -m "修正後のコミットメッセージ"
+
+$ git tag タグ名 <タグをつけたいコミットID>
+$ git push origin タグ名
+
+git checkout -b feature/xxx
+
+
+hywpに修正があったとき(マージ後の作業を行う場合)
+git checkout hywp(修正したいブランチ名)
+git rebase release_250401
+git push origin hywp(修正したいブランチ名)
+
+当選画面 選べるe-GIFT 1000円分
+
+【マスターブランチにタグをつける方法】
+ 
+①developブランチをmasterブランチにマージ（Backlog上で操作）
+ 
+②ローカルでmasterブランチに移動して最新化
+ 
+③vs code でtagsのプラスマーク押してタグ発行
+ 
+④git push origin master:refs/tags/タグ名　でタグ発行した分をリモートにpush
+ 
+ 
+【gitで並行して作業すすめるときmasterの更新を作業ブランチに反映する方法】
+
+①masterの最新を取得
+git checkout master
+git pull origin master
+ 
+②新しいブランチを作成（release_250401 の前に master のコミットを入れるためのブランチ）
+git checkout -b new_release_250401
+ 
+③master のコミットを入れる
+git merge --no-ff master
+ 
+④release_250401 の変更を入れる
+git merge --no-ff release_250401
+ 
+もしコンフリクトが出たら手動で解決し、以下のコマンドで確定
+git add .
+git commit
+ 
+⑤動作確認後、元のブランチと差し替え
+git branch -m release_250401 old_release_250401  # 元のブランチをバックアップ
+git branch -m new_release_250401 release_250401  # 新しいブランチを正式名称に
+ 
+⑥リモートブランチを更新
+git push origin --force release_250401
+
+git stash
+git stash apply or it stash pop
+
+コンフリクトした場合は下記コマンド実行
+git reset --hard HEAD
+注意: これをやると、スタッシュを適用する前に書いていた「未コミットの変更」も消えてしまうので、そこだけは注意。
+
+あらかじめコンフリクトしそうだとわかっている場合は、スタッシュの内容を新規ブランチとして切り出す。
+git stash branch <新しいブランチ名> stash@{0}
+
+diffzip () {
+    # 1. 引数が足りない場合に使い方を表示
+    if [ $# -lt 3 ]; then
+        echo "Usage: diffzip <from-commit> <to-commit> <output-file>"
+        return 1
+    fi
+
+    local FROM=$1
+    local TO=$2
+    local OUT=$3
+
+    # 2. 差分ファイルリストを一度変数に格納
+    local DIFF_FILES=$(git diff --name-only "$FROM" "$TO" --diff-filter=ACMR | grep -vE '\.(sass|scss)$')
+
+    # 3. 差分がない場合にエラーを防ぐ
+    if [ -z "$DIFF_FILES" ]; then
+        echo "No files to archive."
+        return 0
+    fi
+
+    # 4. アーカイブ実行
+    git archive "$TO" $DIFF_FILES -o "$OUT"
+    echo "Saved diff to $OUT"
+}
+
+distzip () {
+    if [ $# -lt 3 ]; then
+        echo "Usage: distzip <from-commit> <to-commit> <output-file>"
+        return 1
+    fi
+
+    local FROM=$1
+    local TO=$2
+    local OUT=$3
+
+    # 1. ヌル文字（\0）区切りで取得（スペースや改行を含むファイル名対策）
+    # 2. dist/ 始まりを抽出し、パスを削る
+    # 3. 配列 FILES に格納（Bash 3系でも動く互換性重視の書き方）
+    local FILES=()
+    while IFS= read -r -d $'\0' file; do
+        FILES+=("$file")
+    done < <(git diff -z --name-only "$FROM" "$TO" --diff-filter=ACMR | grep -z '^dist/' | sed -z 's|^dist/||')
+
+    if [ ${#FILES[@]} -eq 0 ]; then
+        echo "No files found in 'dist/' directory."
+        return 0
+    fi
+
+    # 4. git archive 実行
+    # -- よりも後に配列を展開するのが Git archive の作法
+    if git archive -o "$OUT" "$TO:dist" -- "${FILES[@]}"; then
+        echo "Successfully saved 'dist/' contents to $OUT"
+    else
+        echo "Error: Failed to create archive."
+        return 1
+    fi
+}
