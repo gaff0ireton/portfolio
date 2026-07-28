@@ -1,21 +1,27 @@
-.bannerBox{
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    width: 100%;
-    
-    .bannerItem{
-        width: 30%;
-    }
-}
+@use "../common" as *;
 
-#work{
-    .inner{
-        div{
-            &:nth-child(2)> {
-                a{
-                    width: calc(960/1920*100vw);
-                    display: block;
+.worksSection {
+    &__box {
+        > li {
+            display: flex;
+            gap: vw-pc(32);
+
+            figure {
+                width: vw-pc(850);
+            }
+
+            dl {
+                dt {
+                    color: $mainColor;
+                }
+            
+                dd {
+                    >ul {
+                        display: flex;
+                        li{
+                            font-size: vw-pc(128);
+                        }
+                    }
                 }
             }
         }

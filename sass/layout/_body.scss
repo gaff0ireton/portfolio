@@ -1,5 +1,6 @@
 // ① math モジュール
 @use "sass:math";
+@use "sass:map";
 
 // ② common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
@@ -13,33 +14,39 @@ html, body {
   margin: 0;
 }
 
+h1{
+    font-size: vw-pc(128);
+}
+
 
 h2 {
-    font-size: getVwPc(128);
+    font-size: vw-pc(128);
     white-space: nowrap;
     line-height: 0.75em;
-    padding-top: getVwPc(16);
-    padding-bottom: getVwPc(32);
+    padding-top: vw-pc(16);
+    padding-bottom: vw-pc(32);
 
-    @include sp{
-        font-size: getVwSp(60);
-        margin-bottom: getVwSp(32);
+    @include mq(){
+        font-size: vw(60,750);
+        margin-bottom: vw(32,750);
     }
 }
 
 h3 {
-    font-size: getVwPc(64);
+    font-size: vw-pc(64);
     line-height: 0.8em;
 
-    @include sp{
-        font-size: getVwSp(48);
+    @include mq(){
+        font-size: vw(48,750);
     }
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     letter-spacing: 0.5rem;
     color: $mainColor;
     text-transform: uppercase;
@@ -59,8 +66,8 @@ p {
     font-size: 16px;
     font-family: 'glitchGothic';
 
-    @include sp{
-        font-size: getVwSp(24);
+    @include mq(){
+        font-size: vw(24,750);
     }
 }
 
@@ -70,7 +77,7 @@ img {
 }
 
 .spOnly{
-    @include pc{
+    @include mq-min(){
         display: none;
     }
 }
@@ -81,6 +88,10 @@ body {
     background-color: black;
     color: white;
     cursor: crosshair
+}
+
+section{
+    position: relative;
 }
 
 /* ヘッダースタイル */
@@ -216,29 +227,29 @@ $split-color: #FF2C75;
 .titleBox {
     padding-top: calc(82/ 1080* 100vh);
 
-    @include  sp{
-        padding-top: getVwSp(80);
+    @include  mq(){
+        padding-top: vw(80,750);
     }
 
     p {
         color: $subColor;
-        font-size: getVwPc(24);
+        font-size: vw-pc(24);
         line-height: 1.25em;
 
-        @include sp{
-            font-size: getVwSp(24);
+        @include mq(){
+            font-size: vw(24,750);
         }
     }
 
     h2::before {
         content: '-->';
         position: relative;
-        font-size: getVwPc(96);
+        font-size: vw-pc(96);
         font-family: 'glitchGothic';
         display: inline-block;
 
-        @include sp{
-            font-size: getVwSp(32);
+        @include mq(){
+            font-size: vw(32,750);
 
         }
     }
@@ -314,7 +325,7 @@ $split-color: #FF2C75;
     display: flex;
     gap: 32px;
 
-    @include sp{
+    @include mq(){
         flex-direction: column;
     }
 }
@@ -323,18 +334,19 @@ $split-color: #FF2C75;
     flex-direction: column;
     gap: 16px;
 
-    @include sp{
+    @include mq(){
         flex-direction: row;
         flex-wrap: wrap;
+        gap: vw(32,750);
     }
 }
 
 .aboutBtn{
-    width: getVwPc(240);
+    width: vw-pc(240);
     position: relative;
 
-    @include sp{
-        width: getVwSp(304);
+    @include mq(){
+        width: vw(304,750);
     }
 
     p{
@@ -350,7 +362,7 @@ $split-color: #FF2C75;
     margin: 0 auto;
     justify-content: center;
 
-    @include sp{
+    @include mq(){
         width: 100%;
     }
 }
@@ -362,8 +374,8 @@ $split-color: #FF2C75;
     p{
         font-size: 16px;
 
-        @include sp{
-            font-size: getVwSp(24);
+        @include mq(){
+            font-size: vw(24,750);
         }
     }
 
@@ -374,10 +386,10 @@ $split-color: #FF2C75;
         padding-bottom: 1rem;
 
         p {
-            font-size: getVwPc(128);
+            font-size: vw-pc(128);
 
-            @include sp{
-                font-size: getVwSp(48);
+            @include mq(){
+                font-size: vw(48,750);
             }
             padding-bottom: 0;
         }
@@ -543,9 +555,9 @@ $split-color: #FF2C75;
     bottom: calc(54 / 1080 * 100vh);
     left: calc(107/1920*100vw);
 
-    @include sp{
-        font-size: getVwSp(20);
-        bottom: getVwSp(40);
+    @include mq(){
+        font-size: vw(20,750);
+        bottom: vw(40,750);
     }
 
     // position: absolute;
@@ -714,10 +726,10 @@ $split-color: #FF2C75;
     font-family: 'glitchGothic';
     font-weight: 900;
     position: relative;
-    bottom: getVwPc(10);
+    bottom: vw-pc(10);
     left: calc(16/1080*100vh);
     content: "〼";
-    font-size: getVwPc(40);
+    font-size: vw-pc(40);
     color: rgb(12, 236, 124);
     text-shadow: rgba(12, 236, 124, 0.9) 0px 0.03em 0.5em, rgba(0, 0, 0, 0.3) 0px 0.202532em 0.139241em;
 }
@@ -849,7 +861,7 @@ canvas {
     overflow: visible; /* 偽要素のはみ出しを許可 */
     pointer-events: none;
 
-    @include sp{
+    @include mq(){
         display: none;
     }
 }
@@ -874,7 +886,7 @@ canvas {
         1px 26px, 1px 100%
     );
     
-    @include sp {
+    @include mq(){
         display: none;
     }
 }
@@ -925,8 +937,8 @@ canvas {
             height: 100%;
             margin: 0 auto;
 
-            @include sp{
-                width: getVwSp(640);
+            @include mq(){
+                width: vw(640,750);
             }
         }
 

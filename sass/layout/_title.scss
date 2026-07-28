@@ -17,7 +17,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    @include sp{
+    @include mq(){
       height: 95dvh;
     }
   }
@@ -28,16 +28,10 @@
     top: 50%;
     left: 50%;
     width: 100%;
-    font-size: getVwPc(22);
     font-family: 'Melete';
     text-align: center;
-    overflow-wrap: break-word;
     transform: translate(-50%, -50%);
     letter-spacing: 0.05em;
-
-    @include sp{
-      font-size: getVwSp(18)
-    }
 
     
 
