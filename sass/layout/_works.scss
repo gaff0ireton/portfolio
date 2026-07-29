@@ -6,8 +6,12 @@
             display: flex;
             gap: vw-pc(32);
 
+            @include mq() {
+                flex-wrap: wrap;
+            }
+
             figure {
-                width: vw-pc(850);
+                width: clamp(500px,vw-pc(850),900px);
             }
 
             dl {
@@ -16,12 +20,7 @@
                 }
             
                 dd {
-                    >ul {
-                        display: flex;
-                        li{
-                            font-size: vw-pc(128);
-                        }
-                    }
+
                 }
             }
         }
