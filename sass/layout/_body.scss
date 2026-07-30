@@ -41,6 +41,7 @@ h3 {
     font-size: clamp(32px, vw-pc(32), 36px);
     padding-left: clamp(28px, vw-pc(28), 32px);
     position: relative;
+    text-transform: uppercase;
 
     @include mq() {
         font-size: vw(48, 750);

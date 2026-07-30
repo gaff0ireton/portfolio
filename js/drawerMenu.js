@@ -33,7 +33,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-button.addEventListener('click',function(){
-    message.textContent = "おやすみ🌙";
-});

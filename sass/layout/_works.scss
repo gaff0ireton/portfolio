@@ -2,26 +2,48 @@
 
 .worksSection {
     &__box {
-        > li {
+        display: flex;
+        height: auto;
+
+        >li {
             display: flex;
             gap: vw-pc(32);
+            width: 90vw;
 
             @include mq() {
                 flex-wrap: wrap;
             }
 
             figure {
-                width: clamp(500px,vw-pc(850),900px);
+                width: clamp(500px, vw-pc(850), 900px);
             }
 
             dl {
                 dt {
                     color: $mainColor;
                 }
-            
-                dd {
 
-                }
+                dd {}
+            }
+        }
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        bottom: 35px;
+
+        &-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: #D6D6D6;
+            opacity: 1;
+            margin: 5px 10px !important;
+            &-active {
+                background-color: $mainColor;
+            }
+
+            &:hover{
+                background-color: $mainColor;
             }
         }
     }
