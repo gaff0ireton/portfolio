@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,17 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
@@ -177,13 +165,24 @@
                             </span>
                         </h2>
                     </div>
-                    <div class="aboutOuter">
-                        <dl>
+                    <dl>
+                        <div>
                             <dt>Birthplace</dt>
                             <dd>兵庫県神戸市</dd>
-                        </dl>
-                        
-                    </div>
+                            <dt>Birthdate</dt>
+                            <dd>2000 / 01 / 21</dd>
+                            <dt>Hobby</dt>
+                            <dd>ゲーム / コーディング / 音楽鑑賞 / 映画鑑賞 / 読書</dd>
+                            <dt>Education</dt>
+                            <dd>2015 / 04 - 2018 / 03 : 神戸商業高等学校<br>2018 / 04 - 2020 / 03 : 嵯峨美術短期大学</dd>
+                            <dt>Career</dt>
+                            <dd>2022 / 04 - 2023 / 01 : 株式会社ブラフ6O<br>2024 / 04 - 2026 / 03 : 株式会社電通プロモーションエグゼ</dd>
+                        </div>
+                        <div>
+                            <dt>Self-PR</dt>
+                            <dd>私は、デザインからコーディングまで一貫して行えるフルスタックなWebデザイナーを目指しています。<br>デザインの知識を活かし、ユーザーにとって使いやすく、魅力的なWebサイトを作ることができます。<br>また、コーディングのスキルを活かし、デザインを忠実に再現することができます。<br>さらに、私は常に新しい技術やトレンドに敏感であり、学習意欲が高いです。<br>そのため、最新の技術を取り入れたWebサイトの制作が可能です。</dd>
+                        </div>
+                    </dl>
             </section>
 
             <section id="skill" class="skillSection">
@@ -223,70 +222,362 @@
                     <div class="swiper">
                         <ul class="worksSection__box swiper-wrapper">
                             <li class="swiper-slide">
-                                <div>
-                                    <article>
-                                        <a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank">
-                                            <figure><img src="images/w01.jpg" alt="CAFE CAMPANELLAのWebサイトのトップページ"></figure>
-                                        </a>
-                                        <h3>CAFE CAMPANELLA</h3>
-                                        <p><a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank" rel="noopener noreferrer">https://gaff0ireton.github.io/Cafe-Campanula/</a><br>架空のカフェのWebサイト。デザインからコーディングまで担当。<br>スマホンシブデザインでの制作。</p>
-                                    </article>
-                                </div>
-                                <dl>
-                                    <dt>Tech stack</dt>
-                                    <dd>HTML / SCSS / JAVASCRIPT</dd>
-                                    <dt>ROLE</dt>
-                                    <dd>DESIGN / CODING</dd>
-                                    <dt>duration</dt>
-                                    <dd>約一か月間（他の学習と並行）</dd>
-                                    <dt>IMPLEMENTATION</dt>
-                                    <dd>RESPONSIVE / CALENDAR / SWIPER / SCROLL ANIMATION</dd>
-                                </dl>
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>Cafe Campanula</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>PERSONAL PROJECTS</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
                             </li>
                             <li class="swiper-slide">
-                                <div>
-                                    <article>
-                                        <a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank">
-                                            <figure><img src="images/w01.jpg" alt="CAFE CAMPANELLAのWebサイトのトップページ"></figure>
-                                        </a>
-                                        <h3>CAFE CAMPANELLA</h3>
-                                        <p><a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank" rel="noopener noreferrer">https://gaff0ireton.github.io/Cafe-Campanula/</a><br>架空のカフェのWebサイト。デザインからコーディングまで担当。<br>スマホンシブデザインでの制作。</p>
-                                    </article>
-                                </div>
-                                <dl>
-                                    <dt>Tech stack</dt>
-                                    <dd>HTML / SCSS / JAVASCRIPT</dd>
-                                    <dt>ROLE</dt>
-                                    <dd>DESIGN / CODING</dd>
-                                    <dt>duration</dt>
-                                    <dd>約一か月間（他の学習と並行）</dd>
-                                    <dt>IMPLEMENTATION</dt>
-                                    <dd>RESPONSIVE / CALENDAR / SWIPER / SCROLL ANIMATION</dd>
-                                </dl>
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>Osolo | メリット | 花王株式会社</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>DEVELOPMENT</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-osolo"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-osolo-title">
+                                    VIEW DETAILS
+                                </button>
                             </li>
                             <li class="swiper-slide">
-                                <div>
-                                    <article>
-                                        <a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank">
-                                            <figure><img src="images/w01.jpg" alt="CAFE CAMPANELLAのWebサイトのトップページ"></figure>
-                                        </a>
-                                        <h3>CAFE CAMPANELLA</h3>
-                                        <p><a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank" rel="noopener noreferrer">https://gaff0ireton.github.io/Cafe-Campanula/</a><br>架空のカフェのWebサイト。デザインからコーディングまで担当。<br>スマホンシブデザインでの制作。</p>
-                                    </article>
-                                </div>
-                                <dl>
-                                    <dt>Tech stack</dt>
-                                    <dd>HTML / SCSS / JAVASCRIPT</dd>
-                                    <dt>ROLE</dt>
-                                    <dd>DESIGN / CODING</dd>
-                                    <dt>duration</dt>
-                                    <dd>約一か月間（他の学習と並行）</dd>
-                                    <dt>IMPLEMENTATION</dt>
-                                    <dd>RESPONSIVE / CALENDAR / SWIPER / SCROLL ANIMATION</dd>
-                                </dl>
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>ハイチオール リンクルメラノブースター ｜ ハイチオール【エスエス製薬】</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>DEVELOPMENT</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-osolo"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-osolo-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>ロートデジアイ | ロート製薬</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>DEVELOPMENT</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>氣志團万博2025 推し活応援部｜エプソン</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>DEVELOPMENT</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>学校・学術研究向け 大判プリンター大特価キャンペーン｜エプソン</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>DEVELOPMENT</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>第二回和漢川柳コンテスト | ロート製薬</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>DEVELOPMENT</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>1965 ダイバー | セイコーウオッチ</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>DEVELOPMENT</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>メリット | 花王株式会社</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>MAINTENANCE</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>本麒麟｜キリン</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>MAINTENANCE</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>Hello,変わっていける肌と私「ハイチオール」【エスエス製薬】</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>MAINTENANCE</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>ロートスキンサイエンス | ロート製薬</figcaption>
+                                </figure>
+                                <p><span>WEBPAGE</span><span>MAINTENANCE</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
+                            </li>
+                            <li class="swiper-slide">
+                                <figure><img src="images/w01.jpg" alt="">
+                                    <figcaption>サントリー『ノンデネ』</figcaption>
+                                </figure>
+                                <p><span>WEBAPP</span><span>MAINTENANCE</span></p>
+                                <button
+                                    type="button"
+                                    class="worksSection__detailButton"
+                                    data-modal-open="work-campanula"
+                                    aria-haspopup="dialog"
+                                    aria-labelledby="work-campanula-title">
+                                    VIEW DETAILS
+                                </button>
                             </li>
                         </ul>
                     </div>
+                    <ul>
+                        <li>
+                            <dialog class="worksSection__modal">
+                                <button class="worksSection__closeButton" data-modal-close aria-label="閉じる">
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <article>
+                                    <div>
+                                        <figure><img src="images/w01.jpg" alt="CAFE CAMPANELLAのWebサイトのトップページ"></figure>
+                                        <h3 id="work-campanella-title">CAFE CAMPANELLA</h3>
+                                        <p>架空のカフェのWebサイト。デザインからコーディングまで担当。<br>スマホンシブデザインでの制作。
+                                        </p>
+                                    </div>
+                                    <dl>
+                                        <dt>URL</dt>
+                                        <dd><a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank"
+                                                rel="noopener noreferrer">https://gaff0ireton.github.io/Cafe-Campanula/</a></dd>
+                                        <dt>Tech stack</dt>
+                                        <dd>HTML / SCSS / JAVASCRIPT</dd>
+                                        <dt>ROLE</dt>
+                                        <dd>DESIGN / CODING</dd>
+                                        <dt>duration</dt>
+                                        <dd>約一か月間（他の学習と並行）</dd>
+                                        <dt>IMPLEMENTATION</dt>
+                                        <dd>RESPONSIVE / CALENDAR / SWIPER / SCROLL ANIMATION</dd>
+                                    </dl>
+                                </article>
+                            </dialog>
+                        </li>
+                        <li>
+                            <dialog class="worksSection__modal">
+                                <button class="worksSection__closeButton" data-modal-close aria-label="閉じる">
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <article>
+                                    <div>
+                                        <a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank">
+                                            <figure><img src="images/w01.jpg" alt="CAFE CAMPANELLAのWebサイトのトップページ"></figure>
+                                        </a>
+                                        <h3>Osolo | メリット</h3>
+                                        <p>
+                                            花王「Osolo」のランディングページ。支給されたデザインをもとにコーディングを担当。<br>
+                                            レスポンシブ対応やSwiper、スクロールアニメーションを実装しました。<br>
+                                            デザインの都合上、背景画像の高さを指定する必要があったため、PC・スマートフォンの各画面幅でレイアウトが崩れないよう、要素の配置や余白を調整しながらコーディングを行いました。<br>
+                                            また、他案件のLP制作と進行時期が重なり、デザイン修正にも随時対応する必要があるタイトなスケジュールでした。優先順位を整理し、スケジュールを調整しながら実装を進めました。
+                                        </p>
+                                    </div>
+                                    <dl>
+                                        <dt>URL</dt>
+                                        <dd><a href="https://www.kao.co.jp/merit/osolo/" target="_blank"
+                                                rel="noopener noreferrer">https://www.kao.co.jp/merit/osolo/<span aria-hidden="true">↗</span></a></dd>
+                                        <dt>Tech stack</dt>
+                                        <dd>HTML / SCSS / JAVASCRIPT</dd>
+                                        <dt>ROLE</dt>
+                                        <dd>CODING</dd>
+                                        <dt>duration</dt>
+                                        <dd>約一か月間（他案件と並行）</dd>
+                                        <dt>IMPLEMENTATION</dt>
+                                        <dd>RESPONSIVE / SWIPER / SCROLL ANIMATION</dd>
+                                        <dt>FEATURED ON</dt>
+                                        <dd><a
+                                                href="https://sankoudesign.com/web/osolo/"
+                                                target="_blank"
+                                                rel="noopener noreferrer">
+                                                SANKOU! <span aria-hidden="true">↗</span>
+                                            </a> / 
+                                            <a
+                                                href="https://rdlp.jp/archives/otherdesign/lp/225338L"
+                                                target="_blank"
+                                                rel="noopener noreferrer">
+                                                LP ARCHIVE <span aria-hidden="true">↗</span>
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                </article>
+                            </dialog>
+                        </li>
+                        <li>
+                            <dialog class="worksSection__modal">
+                                <button class="worksSection__closeButton" data-modal-close aria-label="閉じる">
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <article>
+                                    <div>
+                                        <a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank">
+                                            <figure><img src="images/w01.jpg" alt="CAFE CAMPANELLAのWebサイトのトップページ"></figure>
+                                        </a>
+                                        <h3>ハイチオール<br>リンクルメラノブースター</h3>
+                                        <p><br>
+                                        </p>
+                                    </div>
+                                    <dl>
+                                        <dt>URL</dt>
+                                        <dd><a href="https://www.ssp.co.jp/hythiol/products/hwmb.html" target="_blank"
+                                                rel="noopener noreferrer">https://www.ssp.co.jp/hythiol/products/hwmb.html</a></dd>
+                                        <dt>Tech stack</dt>
+                                        <dd>HTML / SCSS / JAVASCRIPT</dd>
+                                        <dt>ROLE</dt>
+                                        <dd>CODING</dd>
+                                        <dt>duration</dt>
+                                        <dd>約一か月間</dd>
+                                        <dt>IMPLEMENTATION</dt>
+                                        <dd>RESPONSIVE / SWIPER </dd>
+                                    </dl>
+                                </article>
+                            </dialog>
+                        </li>
+                        <li>
+                            <dialog class="worksSection__modal">
+                                <button class="worksSection__closeButton" data-modal-close aria-label="閉じる">
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <article>
+                                    <div>
+                                        <a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank">
+                                            <figure><img src="images/w01.jpg" alt="CAFE CAMPANELLAのWebサイトのトップページ"></figure>
+                                        </a>
+                                        <h3>ロートデジアイ</h3>
+                                        <p><br>
+                                        </p>
+                                    </div>
+                                    <dl>
+                                        <dt>URL</dt>
+                                        <dd><a href="https://jp.rohto.com/digieye/" target="_blank"
+                                                rel="noopener noreferrer">https://jp.rohto.com/digieye/</a></dd>
+                                        <dt>Tech stack</dt>
+                                        <dd>HTML / SCSS / JAVASCRIPT</dd>
+                                        <dt>ROLE</dt>
+                                        <dd>CODING</dd>
+                                        <dt>duration</dt>
+                                        <dd>約一か月間（他案件と並行）</dd>
+                                        <dt>IMPLEMENTATION</dt>
+                                        <dd>RESPONSIVE / SCROLL ANIMATION</dd>
+                                    </dl>
+                                </article>
+                            </dialog>
+                        </li>
+                        <li>
+                            <dialog class="worksSection__modal">
+                                <button class="worksSection__closeButton" data-modal-close aria-label="閉じる">
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <article>
+                                    <div>
+                                        <a href="https://gaff0ireton.github.io/Cafe-Campanula/" target="_blank">
+                                            <figure><img src="images/w01.jpg" alt="CAFE CAMPANELLAのWebサイトのトップページ"></figure>
+                                        </a>
+                                        <h3>氣志團万博2025 推し活応援部</h3>
+                                        <p><br>
+                                        </p>
+                                    </div>
+                                    <dl>
+                                        <dt>URL</dt>
+                                        <dd><a href="https://www.epson.jp/ec/event/kbpk2025/" target="_blank"
+                                                rel="noopener noreferrer">https://www.epson.jp/ec/event/kbpk2025/</a></dd>
+                                        <dt>Tech stack</dt>
+                                        <dd>HTML / SCSS / JAVASCRIPT</dd>
+                                        <dt>ROLE</dt>
+                                        <dd>CODING</dd>
+                                        <dt>duration</dt>
+                                        <dd>約二週間</dd>
+                                        <dt>IMPLEMENTATION</dt>
+                                        <dd>RESPONSIVE / slick / SCROLL ANIMATION</dd>
+                                    </dl>
+                                </article>
+                            </dialog>
+                        </li>
+                    </ul>
                     <div class="swiper-pagination"></div>
                 </div >
             </section>

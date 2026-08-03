@@ -1,21 +1,25 @@
 @use "../common" as *;
 
 .worksSection {
+    section {
+        height: auto !important;
+    }
+
     &__box {
-        display: flex;
+        // display: flex;
         height: auto;
+        // gap: 30px;
 
         >li {
-            display: flex;
-            gap: vw-pc(32);
-            width: 90vw;
+            p {
 
-            @include mq() {
-                flex-wrap: wrap;
-            }
-
-            figure {
-                width: clamp(500px, vw-pc(850), 900px);
+                span {
+                    border: 1px solid #fff;
+                    border-radius: 50px;
+                    padding: 0 .5em;
+                    max-width: fit-content;
+                    white-space: nowrap;
+                }
             }
 
             dl {
@@ -24,6 +28,51 @@
                 }
 
                 dd {}
+            }
+        }
+    }
+
+    &__closeButton {
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        top: 20px;
+        right: vw-pc(230);
+        cursor: pointer;
+        z-index: 3;
+        display: inline-block;
+        pointer-events: auto;
+        border: solid $mainColor;
+
+        span {
+            display: block;
+            height: 4px;
+            margin: 6px 0;
+            background: $mainColor;
+            border-radius: 2px;
+
+            &:first-child {
+                transform: translateY(5px) rotate(45deg);
+            }
+
+            &:last-child {
+                transform: translateY(-6px) rotate(-45deg);
+            }
+        }
+    }
+
+    dialog {
+        background-color: #000;
+        border: solid 2px $mainColor;
+        width: clamp(1500px,vw-pc(1500),1800px);
+
+        article {
+            color: #fff;
+            display: flex;
+            gap: clamp(32px,vw-pc(32),38px);
+
+            >*{
+                width: 50%;
             }
         }
     }
@@ -38,11 +87,12 @@
             background-color: #D6D6D6;
             opacity: 1;
             margin: 5px 10px !important;
+
             &-active {
                 background-color: $mainColor;
             }
 
-            &:hover{
+            &:hover {
                 background-color: $mainColor;
             }
         }

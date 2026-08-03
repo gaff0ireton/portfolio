@@ -33,3 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+const btn = document.getElementById('btn');
+const box = document.querySelector('.box');
+
+btn.addEventListener('click', function () {
+    box.classList.add('active');
+});

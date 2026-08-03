@@ -106,6 +106,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ループ開始
     render();
-
-    
     
