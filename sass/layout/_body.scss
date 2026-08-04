@@ -12,6 +12,14 @@ html, body {
   overflow-y: auto;
   height: auto;
   margin: 0;
+  font-size: 100%;
+}
+
+.titleBox{
+    p{
+        font-family: 'glitchGothic';
+
+    }
 }
 
 h1,
@@ -20,31 +28,49 @@ h3,
 h4,
 h5,
 h6 {
-    letter-spacing: 0.5rem;
     color: $mainColor;
     text-transform: uppercase;
 }
 
-p,a,dd,li,figcaption{
-    font-size: clamp(16px,vw-pc(16),20px);
+h2{
+    letter-spacing: 0.5rem;
+}
+
+p,a,dd,figcaption,button{
+    font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+a{
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+p,
+a,
+dd,
+li,
+figcaption {
+    font-size: clamp(14px, vw-pc(16), 18px);
     text-transform: uppercase;
     line-height: 1.7;
 
     @include mq() {
-        font-size: vw(32,750);
+        font-size: vw(16,375);
     }
 }
 
 dt,
 h3 {
     color: $mainColor;
-    font-size: clamp(32px, vw-pc(32), 36px);
-    padding-left: clamp(28px, vw-pc(28), 32px);
+    font-size: clamp(30px,vw-pc(32),34px);
+    padding-left: clamp(24px, vw-pc(28), 32px);
     position: relative;
     text-transform: uppercase;
 
     @include mq() {
-        font-size: vw(48, 750);
+        font-size: vw(30,375);
+        padding-left: vw(24,375);
     }
 
     &::before {
@@ -54,10 +80,14 @@ h3 {
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-        font-size:clamp(24px,vw-pc(24),28px);
+        font-size:clamp(20px,vw-pc(24),28px);
         line-height: 1;
         color: rgb(12, 236, 124);
         text-shadow: rgba(12, 236, 124, 0.9) 0px 0.03em 0.5em, rgba(0, 0, 0, 0.3) 0px 0.202532em 0.139241em;
+
+        @include mq() {
+            font-size: vw(20,375);
+        }
     }
 }
 
@@ -108,15 +138,6 @@ h2 {
 
 h4 {
     font-size: 1.5rem;
-}
-
-p {
-    font-size: 16px;
-    font-family: 'glitchGothic';
-
-    @include mq(){
-        font-size: vw(24,750);
-    }
 }
 
 img {

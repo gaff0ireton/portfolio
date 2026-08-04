@@ -36,8 +36,8 @@
         width: 40px;
         height: 40px;
         position: fixed;
-        top: 20px;
-        right: vw-pc(230);
+        top: auto;
+        right: vw-pc(236);
         cursor: pointer;
         z-index: 3;
         display: inline-block;
@@ -64,15 +64,33 @@
     dialog {
         background-color: #000;
         border: solid 2px $mainColor;
-        width: clamp(1500px,vw-pc(1500),1800px);
+        width: vw-pc(1500);
+        padding: vw-pc(32);
+
+        @include mq('tab') {
+            padding-top: vw-pc(128);
+        }
+        
+        @include mq() {
+            width: vw(350,375);
+            padding: vw(32,375) vw(16,375) vw(16,375);
+        }
 
         article {
             color: #fff;
             display: flex;
-            gap: clamp(32px,vw-pc(32),38px);
+            gap: vw-pc(32);
 
-            >*{
-                width: 50%;
+            @include mq('tab') {
+                flex-flow: wrap;
+            }
+
+            >* {
+                flex-basis: 50%;
+
+                @include mq('tab') {
+                    flex-basis: 100%;
+                }
             }
         }
     }
