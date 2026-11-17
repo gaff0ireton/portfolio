@@ -4,7 +4,62 @@
 .hero-visual {
     width: 100%;
     height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    >* {
+        position: absolute;
+    }
+
+    h1 {
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    h1 {
+        line-height: .75;
+        text-align: center;
+        transform: scaleX(var(--scale, 1));
+        animation: glitch-p 11s infinite alternate;
+
+        &::before,
+        &::after {
+            --top: 0; // offset from top [0 - 10]
+            --left: 0; // offset from left [0.001 - 1]
+            --v-height: 30%; // visible part
+
+            --n-tenth: calc(var(--f-size) * .1 * var(--top));
+            --t-cut: calc(var(--n-tenth) / var(--f-size) * 100%);
+            --b-cut: calc(var(--t-cut) + var(--v-height));
+
+            content: attr(data-text);
+            position: absolute;
+            width: 100%;
+            left: 0;
+            text-align: center;
+
+            transform: translateX(calc(var(--left) * 100%));
+
+            // this helps to get rid of pixelization
+            filter: drop-shadow(0 0 transparent);
+
+            text-shadow: calc(var(--left) * -3em) 0 .02em $mainColor,
+                calc(var(--left) * -6em) 0 .02em $bgColor;
+
+            background-color: var(--bg);
+            clip-path: polygon(0% var(--t-cut), 100% var(--t-cut), 100% var(--b-cut), 0% var(--b-cut));
+        }
+
+        &::before {
+            animation: glitch-b 1.7s infinite alternate-reverse;
+        }
+
+        &::after {
+            animation: glitch-a 3.1s infinite alternate;
+        }
+    }
 }
 
 .mv {
@@ -188,5 +243,30 @@
             right: 20%;
             transform: rotate(-6deg);
         }
+    }
+}
+
+@keyframes glitch {
+
+    0%,
+    94%,
+    100% {
+        transform: translate(0);
+        filter: none;
+    }
+
+    95% {
+        transform: translate(5px, -2px);
+        filter: hue-rotate(90deg);
+    }
+
+    96% {
+        transform: translate(-5px, 2px);
+        filter: contrast(1.5);
+    }
+
+    97% {
+        transform: translate(0);
+        filter: none;
     }
 }
