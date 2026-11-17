@@ -1,0 +1,82 @@
+---
+import Sectionhead from './Sectionhead.astro';
+import { sections } from '../data/sections';
+
+import { works } from '../data/works';
+const featuredWorks = works.slice(0, 5);
+
+import WorksModal from './WorksModal.astro';
+---
+
+<section id={sections.works.id} class="works">
+  <Sectionhead section={sections.works} />
+  <span class="close-btn"><span></span><span></span></span>
+
+  <div class="works">
+    {
+      featuredWorks.map((work, index, array) => {
+        return (
+          <article class="worksCard">
+            <span class="corner corner--tl" />
+            <span class="corner corner--tr" />
+            <span class="corner corner--bl" />
+            <span class="corner corner--br" />
+
+            <p class="worksCard__number">
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <span>/{String(array.length).padStart(2, '0')}</span>
+            </p>
+
+            <div class="worksCard__image">
+              <img src={work.image} alt={work.title} />
+            </div>
+
+            <div class="worksCard__content">
+              <hgroup class="worksCard__heading">
+                <p class="worksCard__label">{work.category}</p>
+                <h3 class="worksCard__title">{work.title}</h3>
+                <p class="worksCard__client">{work.client}</p>
+              </hgroup>
+              <dl class="worksCard__detail">
+                <div>
+                  <dt>role</dt>
+                  <dd>{work.role}</dd>
+                </div>
+                <div>
+                  <dt>year</dt>
+                  <dd>{work.year}</dd>
+                </div>
+                <div>
+                  <dt>tech</dt>
+                  <dd>{work.tech.join(' / ')}</dd>
+                </div>
+              </dl>
+              <p class="worksCard__caption">{work.description}</p>
+            </div>
+            <button type="button" class="view-project" data-work-id={work.id}>
+              view project
+            </button>
+          </article>
+        );
+      })
+    }
+  </div>
+  <a class="view-project" href="../works/">view more</a>
+</section>
+
+<WorksModal works={featuredWorks} />
+
+<script>
+  const worksModals = document.querySelectorAll<HTMLDialogElement>('.worksModal');
+  const openBtns = document.querySelectorAll('.view-project');
+
+  openBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetModal = Array.from(worksModals).find((modal) => {
+        return modal.dataset.workId === btn.dataset.workId;
+      });
+
+      targetModal?.showModal();
+    });
+  });
+</script>

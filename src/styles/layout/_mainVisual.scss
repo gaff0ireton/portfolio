@@ -1,0 +1,192 @@
+// common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+.hero-visual {
+    width: 100%;
+    height: 100vh;
+
+}
+
+.mv {
+    position: relative;
+    container-type: inline-size;
+    z-index: 1;
+    width: min(90vw,
+            calc(90vh * 16 / 9),
+            1920px);
+    aspect-ratio: 16 / 9;
+
+    @include mq() {
+        aspect-ratio: 5 / 8;
+    }
+
+    margin: 0 auto;
+
+    &__bg {
+        position: relative;
+        background-image: url(/public/images/img_main_01.webp);
+        background-size: cover;
+        background-position: left top;
+        background-repeat: no-repeat;
+        border-radius: clamp(88px, vw-pc(100), 100px);
+        width: 100%;
+        height: 100%;
+        border: solid 5px $mainColor;
+        // border-radius: 10px;
+        box-shadow: clamp(28px, vw-pc(32), 32px) clamp(28px, vw-pc(32), 32px) 0px 0px $subColor;
+        overflow: hidden;
+        // animation: imageChange 15s infinite;
+
+        @include mq() {
+            background-image: url(/public/images/img_main_01_sp.webp);
+            border-width: vw(3, 375);
+            border-radius: vw(25, 375);
+            box-shadow: vw(16, 750) vw(16, 750) 0px 0px $subColor;
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            // z-index: 5;
+
+            background-color: $mainColor;
+
+            transform: translateX(-100%);
+            // animation: colorCover 15s infinite;
+        }
+    }
+
+    h1 {
+        font-size: min(calc(353 / 1920 * 100vw),
+                353px);
+        position: absolute;
+        // letter-spacing: 0.01rem;
+        bottom: calc(-44 / 972 * 100%);
+        // top: calc(745 / 972 * 100%);
+        left: calc(-85 / 1728 * 100%);
+        z-index: 10;
+        width: fit-content;
+        font-family: "Bungee", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 0.82;
+        letter-spacing: -0.04em;
+        color: #fff;
+        z-index: 20;
+        -webkit-text-stroke: 2px $mainColor;
+        text-shadow:
+            2px 2px 0 $subColor,
+            4px 4px 0 $subColor,
+            6px 6px 0 $subColor,
+            8px 8px 0 $subColor,
+            10px 10px 0 $subColor,
+            12px 12px 0 $subColor,
+            14px 14px 0 $subColor,
+            16px 16px 0 $subColor,
+            18px 18px 0 $subColor,
+            20px 20px 0 $subColor,
+            22px 22px 0 $subColor,
+            24px 24px 0 $subColor;
+
+        @include mq() {
+            font-size: vw(274, 750);
+            text-shadow:
+                vw(2, 750) vw(2, 750) 0 $subColor,
+                vw(4, 750) vw(4, 750) 0 $subColor,
+                vw(6, 750) vw(6, 750) 0 $subColor,
+                vw(8, 750) vw(8, 750) 0 $subColor,
+                vw(10, 750) vw(10, 750) 0 $subColor,
+                vw(12, 750) vw(12, 750) 0 $subColor,
+                vw(14, 750) vw(14, 750) 0 $subColor,
+                vw(16, 750) vw(16, 750) 0 $subColor,
+                vw(18, 750) vw(18, 750) 0 $subColor,
+                vw(20, 750) vw(20, 750) 0 $subColor,
+                vw(22, 750) vw(22, 750) 0 $subColor,
+                vw(24, 750) vw(24, 750) 0 $subColor;
+            left: vw(-42, 750);
+        }
+
+        >span {
+
+            &:last-child {
+                padding-left: .5em;
+
+            }
+        }
+    }
+
+    &__subtext {
+        position: absolute;
+        top: calc(-25 / 1920 * 100vw);
+        left: calc(-45 / 1920 * 100vw);
+        z-index: 2;
+
+        color: #fff;
+        font-size: min(calc(64 / 1920 * 90vw),
+                64px);
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: 0.12em;
+
+        @include mq() {
+            font-size: vw(50, 750);
+        }
+
+
+        >span {
+            display: inline-block;
+            border-left: 3px dotted rgba(0, 0, 0, 0.1);
+            border-right: 3px dotted rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+            &:first-child {
+                background: #000;
+                text-shadow: 2px 2px 0 $mainColor;
+                transform: rotate(-4deg);
+            }
+
+            &:last-child {
+                background: $mainColor;
+                text-shadow: 2px 2px 0 #000;
+                transform: rotate(-5deg);
+            }
+        }
+    }
+
+    &__sticker {
+        @extend %sticker;
+
+        &--cocktail {
+
+            top: 20%;
+            left: 5%;
+            transform: rotate(-10deg);
+        }
+
+        &--palm {
+            top: 5%;
+            right: 8%;
+            transform: rotate(12deg);
+        }
+
+        &--flower {
+            width: 12.5cqw;
+            bottom: 10%;
+            right: 5%;
+            transform: rotate(-20deg);
+
+            @include mq() {
+                width: vw(240, 750);
+                bottom: 17%;
+            }
+        }
+
+        &--suica {
+            bottom: 10%;
+            right: 20%;
+            transform: rotate(-6deg);
+        }
+    }
+}

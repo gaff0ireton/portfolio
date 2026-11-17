@@ -1,0 +1,45 @@
+// common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+.footer {
+
+    .inner {
+        border-top: 2px solid $mainColor;
+        max-width: 1024px;
+        width: 90%;
+        margin: 0 auto;
+        padding: 4rem 0;
+        @extend %flex-row;
+        align-items: center;
+
+        >div {
+            flex: 1;
+
+            &:nth-child(2) {
+                border-right: 2px solid $mainColor;
+                border-left: 2px solid $mainColor;
+                padding: 0 2rem;
+                margin: 0 2rem;
+            }
+        }
+
+        p,
+        li {
+            color: $mainColor;
+            font-size: 1.75rem;
+        }
+
+        p {
+            line-height: 1;
+            margin: 0;
+        }
+
+        li {
+            position: relative;
+
+            &:before {
+                content: "〼";
+            }
+        }
+    }
+}

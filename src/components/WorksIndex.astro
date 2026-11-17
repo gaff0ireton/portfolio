@@ -1,0 +1,82 @@
+---
+import Sectionhead from './Sectionhead.astro';
+import { sections } from '../data/sections';
+
+import { works } from '../data/works';
+const clientWorks = works.filter(({ type }) => type === 'client works');
+const personalWorks = works.filter(({ type }) => type === 'personal works');
+console.log(clientWorks);
+
+import WorksModal from './WorksModal.astro';
+---
+
+<section id={sections.works.id} class="works">
+  <Sectionhead section={sections.works} />
+
+  <div class="worksIndex">
+    <section class="worksIndex__client">
+      <h3 class="worksIndex__heading">
+        <span class="glitch-text-02 worksIndex__icon" aria-hidden="true"> 〼 </span><span
+          class="glitch-text-02 worksIndex__title">client works</span
+        ><span class="worksIndex__subtitle">実案件</span>
+      </h3>
+      <div class="worksIndex__inner">
+        {
+          clientWorks.map((work) => {
+            return (
+              <article class="worksIndex__item view-project" data-work-id={work.id}>
+                <div class="worksIndex__image">
+                  <img src={work.image} alt={work.title} />
+                </div>
+                <p class="workIndex__label">{work.category}</p>
+                <h3 class="worksIndex__name">{work.title}</h3>
+                <div class="worksIndex__tech">{work.tech.join(' / ')}</div>
+              </article>
+            );
+          })
+        }
+      </div>
+    </section>
+    <section class="worksIndex__persona">
+      <h3 class="worksIndex__heading">
+        <span class="glitch-text-02 worksIndex__icon" aria-hidden="true"> 〼 </span><span
+          class="glitch-text-02 worksIndex__title">personal works</span
+        ><span class="worksIndex__subtitle">自主制作</span>
+      </h3>
+      <div class="worksIndex__inner">
+        {
+          personalWorks.map((work) => {
+            return (
+              <article class="worksIndex__item view-project" data-work-id={work.id}>
+                <div class="worksIndex__image">
+                  <img src={work.image} alt={work.title} />
+                </div>
+                <p class="workIndex__label">{work.category}</p>
+                <h3 class="worksIndex__name">{work.title}</h3>
+                <div class="worksIndex__tech">{work.tech.join(' / ')}</div>
+              </article>
+            );
+          })
+        }
+      </div>
+    </section>
+  </div>
+</section>
+
+<WorksModal works={clientWorks} />
+<WorksModal works={personalWorks} />
+
+<script>
+  const worksModals = document.querySelectorAll<HTMLDialogElement>('.worksModal');
+  const openBtns = document.querySelectorAll('.view-project');
+
+  openBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetModal = Array.from(worksModals).find((modal) => {
+        return modal.dataset.workId === btn.dataset.workId;
+      });
+
+      targetModal?.showModal();
+    });
+  });
+</script>

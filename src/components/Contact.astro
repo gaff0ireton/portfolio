@@ -1,0 +1,146 @@
+---
+import Sectionhead from './Sectionhead.astro';
+import { sections } from '../data/sections';
+const contact = [
+  { key: 'name', type: 'text', placeholder: 'ENTER YOUR NAME...' },
+  { key: 'email', type: 'email', placeholder: 'ENTER EMAIL ADDRESS...' },
+  { key: 'message', placeholder: 'TYPE MESSAGE...' },
+];
+---
+
+<section id={sections.contact.id} class="contact">
+  <Sectionhead section={sections.contact} />
+  <span class="close-btn"><span></span><span></span></span>
+  <div class="contact__inner">
+    <ul class="contact__item">
+      {
+        contact.map((item) => {
+          return <li>{item.key}</li>;
+        })
+      }
+    </ul>
+    <form action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="2171b9ff-6615-4015-9703-25a4cd1f7cd1" />
+
+      <div class="formField">
+        {
+          contact.map((item) => {
+            return (
+              <div>
+                <label class="formField__label glitch-text-01" for={item.key}>
+                  {item.key}
+                </label>
+
+                {item.key === 'message' ? (
+                  <textarea
+                    id={item.key}
+                    class="formField__textarea"
+                    name={item.key}
+                    placeholder={item.placeholder}
+                    required
+                  />
+                ) : (
+                  <input
+                    id={item.key}
+                    class="formField__input"
+                    type={item.type}
+                    name={item.key}
+                    placeholder={item.placeholder}
+                    required
+                  />
+                )}
+              </div>
+            );
+          })
+        }
+      </div>
+      <button type="submit">send message</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  const errorMessages = {
+    name: '<p class="formField__status-error"><span aria-hidden="true">[!]</span> INPUT_ERROR // NAME_REQUIRED</p>',
+    email:
+      '<p class="formField__status-error"><span aria-hidden="true">[!]</span> INPUT_ERROR // EMAIL_ADDRESS_REQUIRED</p>',
+    message:
+      '<p class="formField__status-error"><span aria-hidden="true">[!]</span> INPUT_ERROR // MESSAGE_REQUIRED</p>',
+  };
+  const inputMessages = '<p class="formField__status-input">STATUS: INPUTTING. . .</p>';
+  const form = document.querySelector('form');
+  const requiredFields = document.querySelectorAll('.formField input[required], .formField textarea[required]');
+  const btn = document.querySelectorAll('[type="submit"]');
+  console.log(form);
+  console.log(requiredFields);
+  console.log(btn);
+
+  requiredFields.forEach((field) => {
+    field.addEventListener('input', () => {
+      const error = field.parentElement?.querySelector('.formField__status-error');
+      const input = field.parentElement?.querySelector('.formField__status-input');
+      error?.remove();
+      input?.remove();
+
+      if (field.value.trim()) {
+        field.classList.remove('is-error');
+        field.insertAdjacentHTML('afterend', inputMessages);
+      }
+    });
+  });
+
+  requiredFields.forEach((field, index) => {
+    field.addEventListener('blur', () => {
+      const error = field.parentElement?.querySelector('.formField__status-error');
+      const input = field.parentElement?.querySelector('.formField__status-input');
+      error?.remove();
+      input?.remove();
+
+      if (field.value.trim()) {
+        field.classList.remove('is-error');
+      } else {
+        field.classList.add('is-error');
+        field.insertAdjacentHTML('afterend', Object.values(errorMessages)[index]);
+      }
+
+      if (field.type === 'email' && field.validity.typeMismatch) {
+        field.classList.add('is-error');
+        field.insertAdjacentHTML('afterend', errorMessages.email);
+        return;
+      }
+    });
+  });
+
+  form?.addEventListener('submit', (e) => {
+    let hasError = false;
+
+    requiredFields.forEach((field, index) => {
+      const parent = field.parentElement;
+      const error = parent?.querySelector('.formField__status-error');
+      const input = parent?.parentElement?.querySelector('.formField__status-input');
+      error?.remove();
+      input?.remove();
+
+      if (!field.value.trim()) {
+        field.classList.add('is-error');
+        field.insertAdjacentHTML('afterend', Object.values(errorMessages)[index]);
+
+        hasError = true;
+        return;
+      }
+
+      if (field.type === 'email' && field.validity.typeMismatch) {
+        field.classList.add('is-error');
+        field.insertAdjacentHTML('afterend', errorMessages.email);
+        hasError = true;
+        return;
+      }
+
+      field.classList.remove('is-error');
+    });
+
+    if (hasError) {
+      e.preventDefault();
+    }
+  });
+</script>

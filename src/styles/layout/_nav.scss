@@ -1,0 +1,252 @@
+@use "../common" as *;
+
+.side-nav {
+    --panel-width: 90vw;
+    --panel-offset: -90vw;
+    --tab-width: 3rem;
+
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+
+    // タブの配置専用。メニュー本体のレイアウトから切り離す
+    &__tab {
+        position: absolute;
+        inset-block: 0;
+        right: 0;
+        z-index: 2;
+        width: var(--tab-width);
+        transform: translateX(0);
+        transition: transform 0.4s ease;
+        pointer-events: none;
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        left: 30px;
+
+        width: max-content;
+        padding: 0.75em 1.25em;
+
+        transform: translate(-50%, -50%) rotate(90deg);
+        transform-origin: center;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-family: "glitchGothic-h3";
+        font-size: 1rem;
+        line-height: 1;
+        white-space: nowrap;
+        color: #000;
+        background:
+            linear-gradient(135deg, transparent 5%, $mainColor 5%) top,
+            linear-gradient(-45deg, transparent 5%, $mainColor 5%) bottom;
+
+        background-size: 100% 60%;
+        background-repeat: no-repeat;
+
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+    &__body {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+
+        display: flex;
+        flex-direction: column;
+        width: var(--panel-width);
+        height: 100dvh;
+        box-sizing: border-box;
+        padding: 2rem 4rem;
+
+        background: $mainColor;
+        box-shadow: 0 0 10px $subColor;
+        overflow-y: auto;
+
+        transform: translateX(100%);
+        visibility: hidden;
+        transition:
+            transform 0.4s ease,
+            visibility 0s 0.4s;
+        pointer-events: auto;
+
+        header {
+            flex-shrink: 0;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #000;
+        }
+
+        p,
+        li {
+            color: #000;
+            font-family: "glitchGothic-h2";
+            line-height: 1;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 75%;
+            flex: 1;
+            min-height: 0;
+            gap: 2rem;
+        }
+
+        li {
+            display: inline-flex;
+            gap: 2rem;
+            align-items: center;
+            color: #000;
+
+            .number {
+                font-size: 1em;
+                position: relative;
+                display: inline-block;
+            }
+
+            .line {
+                flex: 1;
+                align-self: end;
+                border-bottom: 1px solid currentColor;
+                margin-bottom: 0.2em;
+            }
+
+            .arrow {
+                align-self: end;
+                font-size: 1.5em;
+                transition: transform 0.2s ease;
+                font-family: "glitchGothic-h2";
+            }
+
+            &:hover {
+                .arrow {
+                    transform: translateX(8px);
+                }
+            }
+        }
+
+        a {
+            font-family: "glitchGothic-h4";
+            font-size: 7rem;
+            display: inline-block;
+            position: relative;
+            line-height: 1;
+            transform: translate(0);
+            text-shadow: none;
+            color: #000;
+
+            &::before,
+            &::after {
+                content: attr(data-text);
+                position: absolute;
+                inset: 0;
+                color: #000;
+                pointer-events: none;
+            }
+
+            &::before {
+                transform: translate(-4px, 1px);
+                text-shadow: -4px 0 #00ffff;
+            }
+
+            &::after {
+                transform: translate(4px, -1px);
+                text-shadow: 4px 0 #ff003c;
+            }
+
+            &:hover::before {
+                animation: glitch-before 0.35s steps(1) 2;
+            }
+
+            &:hover::after {
+                animation: glitch-after 0.35s steps(1) 2;
+            }
+        }
+
+        @keyframes glitch-before {
+
+            0%,
+            100% {
+                clip-path: inset(0 0 0 0);
+                transform: translate(-4px, 1px);
+            }
+
+            20% {
+                clip-path: inset(10% 0 72% 0);
+                transform: translate(-8px, 0);
+            }
+
+            40% {
+                clip-path: inset(58% 0 22% 0);
+                transform: translate(6px, 0);
+            }
+
+            60% {
+                clip-path: inset(30% 0 50% 0);
+                transform: translate(-5px, 1px);
+            }
+
+            80% {
+                clip-path: inset(75% 0 8% 0);
+                transform: translate(8px, -1px);
+            }
+        }
+
+        @keyframes glitch-after {
+
+            0%,
+            100% {
+                clip-path: inset(0 0 0 0);
+                transform: translate(4px, -1px);
+            }
+
+            15% {
+                clip-path: inset(65% 0 18% 0);
+                transform: translate(7px, 0);
+            }
+
+            35% {
+                clip-path: inset(15% 0 68% 0);
+                transform: translate(-6px, 0);
+            }
+
+            55% {
+                clip-path: inset(42% 0 40% 0);
+                transform: translate(9px, 1px);
+            }
+
+            75% {
+                clip-path: inset(28% 0 55% 0);
+                transform: translate(-7px, -1px);
+            }
+        }
+
+        footer {
+            flex-shrink: 0;
+            padding-top: 2rem;
+            border-top: 1px solid #000;
+        }
+    }
+
+    &.is-open {
+        .side-nav__tab {
+            transform: translateX(var(--panel-offset));
+        }
+
+        .side-nav__body {
+            transform: translateX(0);
+            visibility: visible;
+            transition:
+                transform 0.4s ease,
+                visibility 0s;
+        }
+    }
+}

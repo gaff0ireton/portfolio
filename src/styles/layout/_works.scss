@@ -1,0 +1,344 @@
+@use "../common" as *;
+
+.works {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    >a {
+        @extend %button;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    &Card {
+        position: relative;
+        display: grid;
+        grid-template-columns:
+            max-content minmax(0, 1.5fr) minmax(0, 1fr);
+        gap: 2rem;
+        padding: 1.5rem;
+        border: 1px solid transparent;
+
+        @include mq(tab) {
+            grid-template-columns: max-content 1fr;
+            grid-template-rows: max-content;
+            padding: vw(12, 375);
+            gap: vw(16, 375);
+        }
+
+        &__number {
+            font-size: 3rem;
+            line-height: 1;
+            display: grid;
+            grid-template-columns: .3fr .7fr;
+            align-self: start;
+            align-content: start;
+
+            span {
+                display: block;
+                width: fit-content;
+
+
+                &:first-child {
+                    grid-column: 1/3;
+                    color: $mainColor;
+                }
+
+                &:last-child {
+                    color: $subColor;
+                    font-size: .5em;
+                    margin-left: auto;
+                    grid-column: 2/3;
+                }
+            }
+        }
+
+        &__label {
+            color: $mainColor;
+            padding: .25em;
+            border: 1px solid $mainColor;
+            width: fit-content;
+            line-height: 1;
+        }
+
+        &__image {
+            @include mq(tab) {
+                grid-column: 1/3;
+                grid-row: 1/2;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            padding: 0;
+        }
+
+        &__client {
+            font-size: 1.25rem;
+        }
+
+        &__detail {
+            >div {
+                display: flex;
+            }
+
+            dt,
+            dd {
+                font-size: 1rem;
+            }
+
+            dt {
+                padding-right: 1rem;
+                width: 100%;
+                max-width: 60px;
+                min-width: 60px;
+            }
+
+            dd {
+                position: relative;
+                padding-left: 1.25rem;
+
+                &:before {
+                    content: ':';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        &__caption {
+            font-size: 1rem;
+
+        }
+
+        button {
+            @extend %button;
+            grid-column: 3/4;
+
+            @include mq(tab) {
+                grid-column: 2/3;
+                grid-row: 3/4;
+            }
+        }
+    }
+
+    &Modal {
+        max-width: 1200px;
+        width: 80%;
+        outline: none;
+
+        &__inner {
+            display: grid;
+            grid-template-rows: auto minmax(0, 1fr) auto;
+            gap: 2rem;
+        }
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__back {
+            font-size: 1.5rem;
+            color: $mainColor;
+        }
+
+        &__number {
+            font-size: 2.5rem;
+
+            span {
+
+                &:first-child {
+                    grid-column: 1/3;
+                    color: $mainColor;
+                }
+
+                &:last-child {
+                    color: $subColor;
+                    font-size: .5em;
+                    margin-left: auto;
+                    grid-column: 2/3;
+                }
+            }
+        }
+
+        &__body {
+            display: flex;
+            gap: 2rem;
+
+            @include mq(tab) {
+                flex-direction: column;
+            }
+        }
+
+        &__img {
+            flex: 1;
+        }
+
+        &__textBox {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        &__detail {
+            >div {
+                display: flex;
+            }
+
+            dt,
+            dd {
+                font-size: 1rem;
+            }
+
+            dt {
+                padding-right: 1rem;
+                width: 100%;
+                max-width: 60px;
+                min-width: 60px;
+            }
+
+            dd {
+                position: relative;
+                padding-left: 1.25rem;
+
+                &:before {
+                    content: ':';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        &__label {
+            color: $mainColor;
+            padding: .25em;
+            border: 1px solid $mainColor;
+            width: fit-content;
+            line-height: 1;
+        }
+
+        &__title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            padding: 0;
+        }
+
+        &__nav {
+            display: flex;
+            justify-content: end;
+
+            >button {
+                color: $mainColor;
+            }
+        }
+
+        &__prev {
+            padding-right: 1rem;
+        }
+
+        &__next {
+            padding-left: 1rem;
+            border-left: 1px solid $mainColor;
+        }
+
+        .view-site {
+            @extend %button;
+        }
+    }
+
+    &Index {
+
+        &__inner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        &__name {
+            font-size: 1.25rem;
+        }
+
+        &__heading {
+            display: grid;
+            grid-template-columns: max-content minmax(0, 1fr);
+            column-gap: .4em;
+            row-gap: .4rem;
+            align-items: baseline;
+            color: $mainColor;
+            align-self: start;
+            align-content: start;
+            line-height: 1.3;
+            border-bottom: 2px solid $mainColor;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        &__icon {
+            font-size: 1.25rem;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        &__title {
+            font-size: 1.75rem;
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        &__subtitle {
+            grid-column: 2;
+            grid-row: 2;
+            color: $txtColor;
+        }
+    }
+
+    .corner {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+
+        /* 左上 */
+        &--tl {
+            top: 0;
+            left: 0;
+            border-top: 2px solid $mainColor;
+            border-left: 2px solid $mainColor;
+        }
+
+        /* 右上 */
+        &--tr {
+            top: 0;
+            right: 0;
+            border-top: 2px solid $mainColor;
+            border-right: 2px solid $mainColor;
+        }
+
+        /* 左下 */
+        &--bl {
+            bottom: 0;
+            left: 0;
+            border-bottom: 2px solid $mainColor;
+            border-left: 2px solid $mainColor;
+        }
+
+        /* 右下 */
+        &--br {
+            right: 0;
+            bottom: 0;
+            border-right: 2px solid $mainColor;
+            border-bottom: 2px solid $mainColor;
+        }
+    }
+}

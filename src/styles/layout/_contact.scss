@@ -1,0 +1,120 @@
+@use "../common" as *;
+
+:root {
+    --font-size-normal: 1rem;
+    --font-size-20: 1.25rem;
+    --font-size-24: 1.5rem;
+    --font-size-28: 1.75rem;
+    --font-size-32: 2rem;
+    --font-size-36: 2.25rem;
+    --font-size-40: 2.5rem;
+    --font-size-sub-head: 4rem;
+    --font-size-main-head: 8rem;
+}
+
+.contact {
+
+    &__inner {
+        @extend %flex-row;
+        gap: 4rem;
+
+        form {
+            flex: 1;
+        }
+    }
+
+    &__item {
+        li {
+            font-family: "glitchGothic-h2";
+            font-size: 1.75rem;
+            @extend %sub-head;
+
+            &:before {
+                @extend %sub-head__before;
+            }
+        }
+    }
+
+    input,
+    textarea {
+        color: $mainColor;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid currentColor;
+        outline: none;
+        font-family: "glitchGothic-h1", sans-serif;
+    }
+
+    .formField {
+
+        &__label {
+            display: block;
+            // margin-top: 1rem;
+            font-size: 1.75rem;
+            color: $mainColor;
+
+            &:before {
+                content: ">";
+            }
+        }
+
+        &__input,
+        &__textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid currentColor;
+            background: transparent;
+            outline: none;
+            margin-top: 1rem;
+            caret-shape: block;
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                -webkit-text-fill-color: $mainColor;
+                -webkit-box-shadow: 0 0 0 1000px #000 inset;
+                transition: background-color 9999s ease-out;
+                caret-color: $mainColor;
+                caret-shape: underscore;
+                font-family: "glitchGothic-h1";
+                border: 2px solid $mainColor;
+            }
+
+            &.is-error {
+                border: 2px solid $acColor;
+                color: $acColor;
+            }
+        }
+
+        &__status {
+            &-error {
+                font-family: "glitchGothic-H1", sans-serif;
+                color: $acColor;
+                font-size: 1.25em;
+                letter-spacing: 0.04em;
+
+                &::before {
+                    content: "> ";
+                }
+            }
+
+            &-input {
+                font-family: "glitchGothic-H1", sans-serif;
+                color: $mainColor;
+            }
+        }
+
+        &__textarea {
+            height: 20rem;
+            resize: none;
+            outline: none;
+            caret-shape: block;
+        }
+    }
+
+    button {
+        @extend %button;
+        margin-top: 3rem;
+    }
+}

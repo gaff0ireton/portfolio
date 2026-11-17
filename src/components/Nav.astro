@@ -1,0 +1,86 @@
+---
+import { sectionList } from '../data/sections';
+---
+
+<nav class="side-nav">
+  <div class="side-nav__tab">
+    <button
+      class="side-nav__button"
+      type="button"
+      aria-controls="side-nav-panel"
+      aria-expanded="false"
+      aria-label="ナビゲーションを開く"
+    >
+      NAVIGATION = CLICK TO OPEN
+    </button>
+  </div>
+
+  <div
+    class="side-nav__body"
+    id="side-nav-panel"
+    aria-hidden="true"
+    inert
+  >
+    <header><p>navigation</p></header>
+    <ul>
+      {
+        sectionList.map((section, index) => (
+          <li>
+            <span class="number" aria-hidden="true">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <a href={`#${section.id}`} data-text={section.title}>
+              {section.title}
+            </a>
+            <span class="line" aria-hidden="true" />
+            <span class="arrow" aria-hidden="true">--></span>
+          </li>
+        ))
+      }
+    </ul>
+    <footer><p>let's build<br />something great.</p></footer>
+  </div>
+</nav>
+<script>
+  const nav = document.querySelector<HTMLElement>('.side-nav');
+  const button = nav?.querySelector<HTMLButtonElement>('.side-nav__button');
+  const panel = nav?.querySelector<HTMLElement>('.side-nav__body');
+
+  if (nav && button && panel) {
+    const setNavState = (isOpen: boolean) => {
+      nav.classList.toggle('is-open', isOpen);
+      button.setAttribute('aria-expanded', String(isOpen));
+      button.setAttribute(
+        'aria-label',
+        isOpen ? 'ナビゲーションを閉じる' : 'ナビゲーションを開く',
+      );
+      panel.setAttribute('aria-hidden', String(!isOpen));
+      panel.toggleAttribute('inert', !isOpen);
+    };
+
+    const closeNav = () => setNavState(false);
+
+    button.addEventListener('click', () => {
+      setNavState(!nav.classList.contains('is-open'));
+    });
+
+    panel.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeNav);
+    });
+
+    window.addEventListener('scroll', closeNav);
+
+    document.addEventListener('click', (event) => {
+      if (event.target instanceof Node && !nav.contains(event.target)) {
+        closeNav();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+        closeNav();
+        button.focus();
+      }
+    });
+  }
+</script>

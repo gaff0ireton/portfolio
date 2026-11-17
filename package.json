@@ -6,15 +6,30 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --open",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.3.2"
+    "@astrojs/react": "7.1.8",
+    "@react-three/fiber": "^9.8.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "astro": "^7.3.2",
+    "destyle.css": "^4.0.1",
+    "gsap": "^3.15.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sass": "^1.104.1",
+    "tailwindcss": "^4.3.3",
+    "three": "^0.187.0"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@types/three": "^0.187.0"
   }
 }

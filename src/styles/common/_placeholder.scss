@@ -1,0 +1,216 @@
+@charset "UTF-8";
+// math モジュール
+@use "sass:math";
+@use "sass:map";
+
+// common/_index.scss を読み込む（mixin が使える）
+@use 'mixin' as *;
+@use 'var' as *;
+
+%flex-row {
+	display: flex;
+
+	@include mq() {
+		display: block;
+	}
+}
+
+%flex-column {
+	display: flex;
+	flex-direction: column;
+
+	@include mq() {
+		display: block;
+	}
+}
+
+%sub-head {
+	color: $mainColor;
+	text-transform: uppercase;
+	position: relative;
+	padding-left: 1em;
+}
+
+%sub-head__before {
+	content: "〼";
+	font-size: .75em;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	place-items: center;
+	text-shadow: $mainColor 0 .05em 0.5em, rgba(0, 0, 0, 0.3) 0px 0.25em 0.15em;
+}
+
+%button {
+	color: $mainColor;
+	font-family: "Source Han Sans JP";
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	width: 100%;
+	padding: .875rem 1rem;
+	border: 2px solid currentColor;
+	font-size: 1.5rem;
+	text-align: center;
+	position: relative;
+	text-transform: uppercase;
+
+	@include mq() {
+		font-size: vw(18, 375);
+		padding: vw(7, 375) vw(8, 375);
+	}
+
+	&:before,
+	&::after {
+		content: '';
+		width: .5em;
+		align-self: center;
+		height: 1.5em;
+		border-top: 2px solid $mainColor;
+		border-bottom: 2px solid $mainColor;
+	}
+
+	&:before {
+		border-left: 2px solid $mainColor;
+	}
+
+	&::after {
+		border-right: 2px solid $mainColor;
+	}
+}
+
+%section {
+	border: 2px solid $mainColor;
+	position: relative;
+}
+
+%swiper {
+	padding: 0px 25px 20px;
+	overflow: hidden;
+
+	@include mq() {
+		padding: 0px vw-sp(25) vw-sp(20);
+	}
+}
+
+%swiper__img {
+	width: 400px;
+	border-radius: 50px;
+	overflow: hidden;
+	margin: 0 auto;
+	display: block;
+
+	@include mq() {
+		width: vw-sp(400);
+		border-radius: vw-sp(50);
+	}
+}
+
+%swiper__txt {
+	width: 400px;
+	margin: 0 auto;
+	padding: 20px 10px;
+
+	@include mq() {
+		width: vw-sp(400);
+		padding: vw-sp(20) vw-sp(10);
+	}
+}
+
+%wave__bg {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	pointer-events: none;
+	background-color: #fff;
+	mask-image: url('../img/wave.svg'), linear-gradient(#fff, #fff);
+	mask-size: 1000px vw-sp(70),
+		100% calc(100% - vw-sp(68));
+	mask-repeat: repeat-x;
+	overflow: hidden;
+	animation: wave 5s var(--mh--easing04) infinite both;
+
+	@include mq() {
+		mask-size: 200vw 9.3333333333vw, 100% calc(100% - 9.0666666667vw);
+	}
+}
+
+%sticker {
+	position: absolute;
+	z-index: 10;
+	width: 6.25cqw;
+	filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.25));
+
+	@include mq(tab) {
+		width: 11.71875cqw;
+	}
+
+	@include mq() {
+		width: vw(120, 750);
+		filter: drop-shadow(vw(3, 375) vw(4, 375) vw(2, 375) rgba(0, 0, 0, 0.25));
+	}
+}
+
+%sticker_card {
+	position: absolute;
+	z-index: 10;
+	width: 17.16738197424893cqw;
+	filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.25));
+
+	@include mq(tab) {
+		width: 13.02931596091205cqw;
+	}
+
+	@include mq() {
+		width: vw(120, 750);
+		filter: drop-shadow(vw(3, 375) vw(4, 375) vw(2, 375) rgba(0, 0, 0, 0.25));
+	}
+}
+
+%sticker_img {
+	position: absolute;
+	z-index: 10;
+	width: 19.23076923076923cqw;
+	filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.25));
+
+	@include mq(tab) {
+		width: 14.03508771929825cqw;
+	}
+
+	@include mq() {
+		width: vw(120, 750);
+		filter: drop-shadow(vw(3, 375) vw(4, 375) vw(2, 375) rgba(0, 0, 0, 0.25));
+	}
+}
+
+%sticker_prof {
+	position: absolute;
+	z-index: 10;
+	width: 27.45995423340961cqw;
+	filter: drop-shadow(3px 4px 2px rgba(0, 0, 0, 0.25));
+
+	@include mq(tab) {
+		width: 13.02931596091205cqw;
+	}
+
+	@include mq() {
+		width: vw(120, 750);
+		filter: drop-shadow(vw(3, 375) vw(4, 375) vw(2, 375) rgba(0, 0, 0, 0.25));
+	}
+}
+
+%is-inview {
+	opacity: 0;
+	translate: 0 16px;
+	transition: 1s ease;
+}
+
+%is-view {
+	opacity: 1;
+	translate: 0 0;
+}

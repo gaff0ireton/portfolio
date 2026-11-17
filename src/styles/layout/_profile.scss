@@ -1,0 +1,58 @@
+// ② common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+/* ページ全体のスタイル */
+
+.profile {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 2fr);
+        gap: 1rem;
+
+        @include mq() {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+
+    &__heading {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        column-gap: 0.4em;
+        align-items: baseline;
+        color: $mainColor;
+        align-self: start;
+        align-content: start;
+    }
+
+    &__icon {
+        font-size: 1.25rem;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    &__title {
+        font-size: 1.75rem;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    &__subtitle {
+        grid-column: 2;
+        grid-row: 2;
+        color: $txtColor;
+    }
+
+    &__detail {
+        border-left: 2px solid $mainColor;
+        padding: .5rem 1rem 2rem;
+        white-space: pre-wrap;
+    }
+
+}

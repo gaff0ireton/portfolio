@@ -1,0 +1,169 @@
+// ② common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+/* ページ全体のスタイル */
+
+:root {
+  --font-size-normal: 1rem;
+  --font-size-20: 1.25rem;
+  --font-size-24: 1.5rem;
+  --font-size-28: 1.75rem;
+  --font-size-32: 2rem;
+  --font-size-36: 2.25rem;
+  --font-size-40: 2.5rem;
+  --font-size-sub-head: 4rem;
+  --font-size-main-head: 8rem;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Source Han Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: $txtColor;
+  background-color: $bgColor;
+  background-image: radial-gradient(circle, rgba($subColor, 0.25) 1px, transparent 1px);
+  background-size: 12px 12px;
+
+}
+
+dialog {
+  background-color: $bgColor;
+  color: inherit;
+  font: inherit;
+  border: none;
+  border: 2px solid $mainColor;
+  padding: 2rem;
+  margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dt,
+label {
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $mainColor;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px grey;
+}
+
+.sp-only {
+  @include mq() {
+    display: block;
+  }
+
+  @include mq-min() {
+    display: none !important;
+  }
+}
+
+.pc-only {
+  @include mq() {
+    display: none !important;
+  }
+
+  @include mq-min() {
+    display: block;
+  }
+}
+
+.glitch-text-01 {
+  font-family: "glitchGothic-h1", sans-serif;
+}
+
+.glitch-text-02 {
+  font-family: "glitchGothic-h2", sans-serif;
+}
+
+.glitch-text-03 {
+  font-family: "glitchGothic-h3", sans-serif;
+}
+
+.glitch-text-04 {
+  font-family: "glitchGothic-h4", sans-serif;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+section {
+  margin-bottom: 6rem;
+}
+
+h1 {
+  font-family: "glitchGothic-h4", sans-serif;
+  font-size: var(--font-size-main-head);
+  text-align: center;
+  height: 100vh;
+}
+
+p {
+  white-space: pre-wrap;
+
+  &+p {
+    margin-top: 0.5em;
+  }
+}
+
+picture {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.main-wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.no-scroll {
+  overflow: hidden;
+  touch-action: none;
+}
+
+.no-active {
+  transition-property: opacity;
+  transition-delay: 0.9s;
+  transition-duration: 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}

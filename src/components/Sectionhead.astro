@@ -1,0 +1,63 @@
+---
+interface Props {
+  section: {
+    title: string;
+  };
+}
+
+const { section } = Astro.props;
+---
+
+<header class="section-header">
+  <p class="glitch-text-04" aria-hidden="true">SYSTEM = CHECKING... “{section.title}”;</p>
+  <p class="glitch-text-03" aria-hidden="true">CHECK COMPLETE; STATUS; “{section.title}” FOUND;</p>
+  <p class="glitch-text-02" aria-hidden="true">(NO ERRORS)</p>
+  <h2 class="glitch-text-03">
+    {section.title}
+    <span class="caret" aria-hidden="true"> _ </span>
+  </h2>
+</header>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { TextPlugin } from 'gsap/TextPlugin';
+
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(TextPlugin);
+
+  const glitchTxt = gsap.utils.toArray('.section-header');
+
+  glitchTxt.forEach((txt) => {
+    const tl_Gallery = gsap.timeline({
+      scrollTrigger: {
+        trigger: txt,
+        start: 'top 70%',
+        end: '+=400',
+      },
+    });
+
+    const t = gsap.utils.selector(txt);
+    const groups = t('p,h2');
+
+    groups.forEach((group) => {
+      tl_Gallery.from(
+        group,
+        { text: textJumble(Math.max(1, group.textContent.length - Math.floor(Math.random() * 3))), duration: 0.4 },
+        '>',
+      );
+    });
+  });
+
+  function textJumble(length) {
+    let result = '';
+    const characters = `!"£$%^&*()SYSTEM_+{}:@<>?,./;'[]¬¦#~ERROR`;
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+  }
+</script>

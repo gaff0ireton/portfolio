@@ -1,0 +1,27 @@
+---
+import { sectionList } from '../data/sections';
+---
+
+<footer class="footer">
+  <div class="inner">
+    <div>
+      <p>SYSTEM = FINAL CHECK...</p>
+      <ul>
+        {
+          sectionList.map((section) => (
+            <li>
+              <span>{section.title}</span>
+              <span>LOADED</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <p>CHECK COMPLETE;</p>
+      <p>STATUS: ALL SECTIONS FOUND;</p>
+      <p>(NO ERRORS)</p>
+      <p>THANK YOU FOR VISITING<span class="caret"> _ </span></p>
+    </div>
+  </div>
+</footer>

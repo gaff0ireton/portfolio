@@ -1,0 +1,30 @@
+// $mainColor: #00fe91;
+// $subColor: #317055;
+// $bgColor: #050806;
+// $txtColor: #e8f0eb;
+// $acColor: #e84a57;
+
+// $bgColor: #050806;
+// $mainColor: #00fe91;
+// $subColor: #317055;
+// $txtColor: #e8f0eb;
+// $acColor: #e84a57;
+
+// $bgColor: #0b0f0d;
+// $mainColor: #00f08a;
+// $subColor: #3a6d59;
+// $txtColor: #dfe8e3;
+// $acColor: #e84a57;
+
+$bgColor: #050806;
+$mainColor: #00fe91;
+$subColor: #4f8b70;
+$txtColor: #f2f7f4;
+$acColor: #ff6b76;
+
+// math モジュール
+@use "sass:math";
+@use "sass:map";
+
+// common/_index.scss を読み込む（mixin が使える）
+@use 'mixin';

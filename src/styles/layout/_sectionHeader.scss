@@ -1,0 +1,56 @@
+// common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+:root {
+    --font-size-normal: 1rem;
+    --font-size-large-01: 1.25rem;
+    --font-size-large-02: 1.5rem;
+    --font-size-large-03: 1.75rem;
+    --font-size-sub-head: 4rem;
+    --font-size-main-head: 8rem;
+}
+
+.section-header {
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid $mainColor;
+
+    p {
+        font-size: var(--font-size-large-01);
+        line-height: 1.25;
+        color: $subColor;
+        margin: 0;
+        text-transform: uppercase;
+
+        @include mq() {
+            font-size: vw(14, 375);
+        }
+    }
+
+    h2 {
+        font-size: var(--font-size-sub-head);
+        line-height: 1;
+        color: $mainColor;
+        position: relative;
+        padding-left: 6rem;
+
+        @include mq() {
+            font-size: vw(32, 375);
+            padding-left: 1.5em;
+        }
+
+        &:before {
+            content: "-->";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9em;
+            display: inline-block;
+        }
+
+        .caret {
+            animation: blink 1s steps(1) infinite;
+        }
+    }
+}
