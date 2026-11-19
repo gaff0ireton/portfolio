@@ -9,63 +9,61 @@ interface Props {
 const { works } = Astro.props;
 ---
 
-{
-  works.map((work, index, array) => {
-    return (
-      <dialog class="worksModal" data-work-id={work.id}>
-        <article class="worksModal__inner">
-          <div class="worksModal__header">
-            <button class="worksModal__back" type="button">
-              WORKS
-            </button>
-            <p class="worksModal__number">
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <span>/{String(array.length).padStart(2, '0')}</span>
-            </p>
+{works.map((work, index, array) => {
+  return (
+    <dialog class="worksModal" data-work-id={work.id}>
+      <article class="worksModal__inner">
+        <div class="worksModal__header">
+          <button class="worksModal__back" type="button">
+            BACK
+          </button>
+          <p class="worksModal__number">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <span>/{String(array.length).padStart(2, '0')}</span>
+          </p>
+        </div>
+        <div class="worksModal__body">
+          <div class="worksModal__img">
+            <img src={work.image} alt={work.title} />
           </div>
-          <div class="worksModal__body">
-            <div class="worksModal__img">
-              <img src={work.image} alt={work.title} />
-            </div>
-            <div class="worksModal__textBox">
-              <hgroup class="worksModal__heading">
-                <p class="worksModal__label">{work.category}</p>
-                <h3 class="worksModal__title">{work.title}</h3>
-                <p class="worksModal__client">{work.client}</p>
-              </hgroup>
-              <dl class="worksModal__detail">
-                <div>
-                  <dt>role</dt>
-                  <dd>{work.role.join(' / ')}</dd>
-                </div>
-                <div>
-                  <dt>year</dt>
-                  <dd>{work.year}</dd>
-                </div>
-                <div>
-                  <dt>tech</dt>
-                  <dd>{work.tech.join(' / ')}</dd>
-                </div>
-              </dl>
-              <p class="worksModal__caption">{work.description}</p>
-              <a href={work.url} class="view-site" target="_blank">
-                view site
-              </a>
-            </div>
+          <div class="worksModal__textBox">
+            <hgroup class="worksModal__heading">
+              <p class="worksModal__label">{work.category}</p>
+              <h3 class="worksModal__title">{work.title}</h3>
+              <p class="worksModal__client">{work.client}</p>
+            </hgroup>
+            <dl class="worksModal__detail">
+              <div>
+                <dt>role</dt>
+                <dd>{work.role.join(' / ')}</dd>
+              </div>
+              <div>
+                <dt>year</dt>
+                <dd>{work.year}</dd>
+              </div>
+              <div>
+                <dt>tech</dt>
+                <dd>{work.tech.join(' / ')}</dd>
+              </div>
+            </dl>
+            <p class="worksModal__caption">{work.description}</p>
+            <a href={work.url} class="view-site" target="_blank">
+              view site
+            </a>
           </div>
-          <div class="worksModal__nav" aria-label="作品の切り替え">
-            <button class="worksModal__prev" type="button">
-              PREV
-            </button>
-            <button class="worksModal__next" type="button">
-              NEXT
-            </button>
-          </div>
-        </article>
-      </dialog>
-    );
-  })
-}
+        </div>
+        <div class="worksModal__nav" aria-label="作品の切り替え">
+          <button class="worksModal__prev" type="button">
+            PREV
+          </button>
+          <button class="worksModal__next" type="button">
+            NEXT
+          </button>
+        </div>
+      </article>
+    </dialog>
+  );
+})}
 <script>
   import { setupModalNavigation } from '../scripts/modalNavigation';
 

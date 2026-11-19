@@ -5,7 +5,6 @@ import { sections } from '../data/sections';
 import { works } from '../data/works';
 const clientWorks = works.filter(({ type }) => type === 'client works');
 const personalWorks = works.filter(({ type }) => type === 'personal works');
-console.log(clientWorks);
 
 import WorksModal from './WorksModal.astro';
 ---
@@ -16,48 +15,50 @@ import WorksModal from './WorksModal.astro';
   <div class="worksIndex">
     <section class="worksIndex__client">
       <h3 class="worksIndex__heading">
-        <span class="glitch-text-02 worksIndex__icon" aria-hidden="true"> 〼 </span><span
-          class="glitch-text-02 worksIndex__title">client works</span
-        ><span class="worksIndex__subtitle">実案件</span>
+        <span class="glitch-text-02 worksIndex__icon" aria-hidden="true">
+          {' '}
+          〼{' '}
+        </span>
+        <span class="glitch-text-02 worksIndex__title">client works</span>
+        <span class="worksIndex__subtitle">実案件</span>
       </h3>
       <div class="worksIndex__inner">
-        {
-          clientWorks.map((work) => {
-            return (
-              <article class="worksIndex__item view-project" data-work-id={work.id}>
-                <div class="worksIndex__image">
-                  <img src={work.image} alt={work.title} />
-                </div>
-                <p class="workIndex__label">{work.category}</p>
-                <h3 class="worksIndex__name">{work.title}</h3>
-                <div class="worksIndex__tech">{work.tech.join(' / ')}</div>
-              </article>
-            );
-          })
-        }
+        {clientWorks.map((work) => {
+          return (
+            <article class="worksIndex__item view-project" data-work-id={work.id}>
+              <div class="worksIndex__image">
+                <img src={work.image} alt={work.title} />
+              </div>
+              <p class="workIndex__label">{work.category}</p>
+              <h3 class="worksIndex__name">{work.title}</h3>
+              <div class="worksIndex__tech">{work.tech.join(' / ')}</div>
+            </article>
+          );
+        })}
       </div>
     </section>
     <section class="worksIndex__persona">
       <h3 class="worksIndex__heading">
-        <span class="glitch-text-02 worksIndex__icon" aria-hidden="true"> 〼 </span><span
-          class="glitch-text-02 worksIndex__title">personal works</span
-        ><span class="worksIndex__subtitle">自主制作</span>
+        <span class="glitch-text-02 worksIndex__icon" aria-hidden="true">
+          {' '}
+          〼{' '}
+        </span>
+        <span class="glitch-text-02 worksIndex__title">personal works</span>
+        <span class="worksIndex__subtitle">自主制作</span>
       </h3>
       <div class="worksIndex__inner">
-        {
-          personalWorks.map((work) => {
-            return (
-              <article class="worksIndex__item view-project" data-work-id={work.id}>
-                <div class="worksIndex__image">
-                  <img src={work.image} alt={work.title} />
-                </div>
-                <p class="workIndex__label">{work.category}</p>
-                <h3 class="worksIndex__name">{work.title}</h3>
-                <div class="worksIndex__tech">{work.tech.join(' / ')}</div>
-              </article>
-            );
-          })
-        }
+        {personalWorks.map((work) => {
+          return (
+            <article class="worksIndex__item view-project" data-work-id={work.id}>
+              <div class="worksIndex__image">
+                <img src={work.image} alt={work.title} />
+              </div>
+              <p class="workIndex__label">{work.category}</p>
+              <h3 class="worksIndex__name">{work.title}</h3>
+              <div class="worksIndex__tech">{work.tech.join(' / ')}</div>
+            </article>
+          );
+        })}
       </div>
     </section>
   </div>
