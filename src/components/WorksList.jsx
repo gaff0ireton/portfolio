@@ -1,4 +1,12 @@
+import { useState } from "react";
+import WorksModal from "./WorksModal";
+import { works } from "../data/works";
+const featuredWorks = works.slice(0, 5);
+
 export default function Works({ works }) {
+    const [show, setShow] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
     return (
         <div className="works">
             {
@@ -41,13 +49,20 @@ export default function Works({ works }) {
                                 </dl>
                                 <p className="worksCard__caption">{work.description}</p>
                             </div>
-                            <button type="button" className="view-project" data-work-id={work.id}>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setShow(true)
+                                    setCurrentIndex(index)
+                                }}
+                                className="view-project" data-work-id={work.id}>
                                 view project
                             </button>
                         </article>
                     );
                 })
             }
+            <WorksModal works={featuredWorks} state={show} setShow={setShow} clickedIndex={currentIndex} />
         </div>
     )
 }

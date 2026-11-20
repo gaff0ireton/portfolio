@@ -6,7 +6,7 @@ import { works } from '../data/works';
 const featuredWorks = works.slice(0, 5);
 
 import WorksModal from './WorksModal.astro';
-import Works from './Works';
+import WorksList from './WorksList';
 ---
 
 <section id={sections.works.id} class="works">
@@ -16,14 +16,14 @@ import Works from './Works';
     <span></span>
   </span>
 
-  <Works works={featuredWorks} client:load />
+  <WorksList works={featuredWorks} client:load />
 
   <a class="view-project" href="../works/">
     view more
   </a>
 </section>
 
-<WorksModal works={featuredWorks} />
+<!-- <WorksModal works={featuredWorks} /> -->
 
 <script>
   const worksModals = document.querySelectorAll<HTMLDialogElement>('.worksModal');

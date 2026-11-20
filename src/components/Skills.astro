@@ -2,7 +2,7 @@
 import Sectionhead from './Sectionhead.astro';
 import { sections } from '../data/sections';
 const skill = [
-  { title: 'FRONT-END', subtitle: 'フロントエンド', detail: 'HTML / CSS / Scss / JavaScript / Astro' },
+  { title: 'FRONT-END', subtitle: 'フロントエンド', detail: 'HTML / CSS / Scss / JavaScript / Astro / React' },
   { title: 'BACK-END', subtitle: 'バックエンド', detail: 'PHP / CodeIgniter' },
   {
     title: 'DESIGN TOOLS',
@@ -17,34 +17,35 @@ const skill = [
   {
     title: 'DATABASE',
     subtitle: 'データベース',
-    detail: 'MYSQL / MARIADB\nBasic SQL Operations',
+    detail: 'MySQL / MariaDB\nBasic SQL Operations',
   },
   {
     title: 'CMS',
-    detail: 'SITECORE\nPage Registration / Update / Publishing',
+    detail: 'SiteCore\nPage Registration / Update / Publishing',
   },
 ];
 ---
 
 <section id={sections.skills.id} class="skills">
   <Sectionhead section={sections.skills} />
-  <span class="close-btn"><span></span><span></span></span>
+  <span class="close-btn">
+    <span></span>
+    <span></span>
+  </span>
   <dl class="skills__list">
-    {
-      skill.map((item) => {
-        return (
-          <div class="skills__box">
-            <dt class="skills__heading">
-              <span class="glitch-text-02 skills__icon" aria-hidden="true">
-                〼
-              </span>
-              <span class="glitch-text-02 skills__title">{item.title}</span>
-              <span class="skills__subtitle">{item.subtitle}</span>
-            </dt>
-            <dd class="skills__detail">{item.detail}</dd>
-          </div>
-        );
-      })
-    }
+    {skill.map((item) => {
+      return (
+        <div class="skills__box">
+          <dt class="skills__heading">
+            <span class="glitch-text-02 skills__icon" aria-hidden="true">
+              〼
+            </span>
+            <span class="glitch-text-02 skills__title">{item.title}</span>
+            <span class="skills__subtitle">{item.subtitle}</span>
+          </dt>
+          <dd class="skills__detail">{item.detail}</dd>
+        </div>
+      );
+    })}
   </dl>
 </section>

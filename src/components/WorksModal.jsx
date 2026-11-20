@@ -1,31 +1,48 @@
+import { useEffect, useRef } from "react";
 
+export default function WorksModal({ works, state, setShow, clickedIndex }) {
+    const dialogRef = useRef(null);
 
-export default function WorksModal({ works }) {
+    useEffect(() => {
+        if (state) {
+            dialogRef.current?.showModal();
+        } else {
+            dialogRef.current?.close();
+        }
+    }, [state]);
+
+    useEffect(() => {
+        console.log(clickedIndex);
+        const work = works[clickedIndex];
+
+    }, [clickedIndex])
+
     return (
-        <dialog class="worksModal">
+        <dialog className="worksModal" ref={dialogRef}>
             {works.map((work, index, array) => {
                 return (
-                    <article class="worksModal__inner" key={work.id} data-work-id={work.id}>
-                        <div class="worksModal__header">
-                            <button class="worksModal__back" type="button">
+                    <article className="worksModal__inner" key={work.id} data-work-id={work.id}>
+                        <div className="worksModal__header">
+                            <button className="worksModal__back" type="button"
+                                onClick={() => setShow(false)}>
                                 BACK
                             </button>
-                            <p class="worksModal__number">
+                            <p className="worksModal__number">
                                 <span>{String(index + 1).padStart(2, '0')}</span>
                                 <span>/{String(array.length).padStart(2, '0')}</span>
                             </p>
                         </div>
-                        <div class="worksModal__body">
-                            <div class="worksModal__img">
+                        <div className="worksModal__body">
+                            <div className="worksModal__img">
                                 <img src={work.image} alt={work.title} />
                             </div>
-                            <div class="worksModal__textBox">
-                                <hgroup class="worksModal__heading">
-                                    <p class="worksModal__label">{work.category}</p>
-                                    <h3 class="worksModal__title">{work.title}</h3>
-                                    <p class="worksModal__client">{work.client}</p>
+                            <div className="worksModal__textBox">
+                                <hgroup className="worksModal__heading">
+                                    <p className="worksModal__label">{work.category}</p>
+                                    <h3 className="worksModal__title">{work.title}</h3>
+                                    <p className="worksModal__client">{work.client}</p>
                                 </hgroup>
-                                <dl class="worksModal__detail">
+                                <dl className="worksModal__detail">
                                     <div>
                                         <dt>role</dt>
                                         <dd>{work.role.join(' / ')}</dd>
@@ -39,17 +56,17 @@ export default function WorksModal({ works }) {
                                         <dd>{work.tech.join(' / ')}</dd>
                                     </div>
                                 </dl>
-                                <p class="worksModal__caption">{work.description}</p>
-                                <a href={work.url} class="view-site" target="_blank">
+                                <p className="worksModal__caption">{work.description}</p>
+                                <a href={work.url} className="view-site" target="_blank">
                                     view site
                                 </a>
                             </div>
                         </div>
-                        <div class="worksModal__nav" aria-label="作品の切り替え">
-                            <button class="worksModal__prev" type="button">
+                        <div className="worksModal__nav" aria-label="作品の切り替え">
+                            <button className="worksModal__prev" type="button">
                                 PREV
                             </button>
-                            <button class="worksModal__next" type="button">
+                            <button className="worksModal__next" type="button">
                                 NEXT
                             </button>
                         </div>
