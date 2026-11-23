@@ -1,27 +1,72 @@
 ---
 import { sectionList } from '../data/sections';
+
+const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <div class="inner">
-    <div>
-      <p>SYSTEM = FINAL CHECK...</p>
-      <ul>
-        {
-          sectionList.map((section) => (
-            <li>
-              <span>{section.title}</span>
-              <span>LOADED</span>
-            </li>
-          ))
-        }
-      </ul>
+  <div class="footer__inner">
+    <div class="footer__system">
+      <p class="footer__system-label">SYSTEM / SESSION COMPLETE</p>
+      <p class="footer__online">
+        <span class="footer__status-dot" aria-hidden="true"></span>
+        ONLINE
+      </p>
     </div>
-    <div>
-      <p>CHECK COMPLETE;</p>
-      <p>STATUS: ALL SECTIONS FOUND;</p>
-      <p>(NO ERRORS)</p>
-      <p>THANK YOU FOR VISITING<span class="caret"> _ </span></p>
+
+    <div class="footer__content">
+      <div class="footer__message">
+        <p class="footer__eyebrow">&gt; CHECK COMPLETE // EXIT CODE: 0</p>
+        <h2 class="footer__heading">
+          THANK YOU
+          <br />
+          FOR{' '}
+          <span class="footer__accent">
+            VISITING
+            <span class="footer__caret" aria-hidden="true">
+              _
+            </span>
+          </span>
+        </h2>
+        <p class="footer__description">All sections loaded successfully.</p>
+      </div>
+
+      <div class="footer__report">
+        <p class="footer__report-title">[ FINAL CHECK / {String(sectionList.length).padStart(2, '0')} MODULES ]</p>
+        <ul class="footer__section-list">
+          {sectionList.map((section) => (
+            <li class="footer__section-item">
+              <span class="footer__check-icon" aria-hidden="true"></span>
+              <span class="footer__section-name">{section.title}</span>
+              <span class="footer__loaded">LOADED</span>
+            </li>
+          ))}
+        </ul>
+        <p class="footer__result">
+          STATUS: ALL SECTIONS FOUND
+          <br />
+          NO ERRORS DETECTED
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <small class="footer__copyright">&copy; {year} gaff0ireton. All rights reserved.</small>
+      <nav class="footer__links" aria-label="フッターナビゲーション">
+        <a class="footer__link" href="https://github.com/gaff0ireton" target="_blank" rel="noopener noreferrer">
+          GITHUB <span aria-hidden="true">↗</span>
+        </a>
+        <button class="footer__link footer__back-top" type="button">
+          BACK TO TOP <span aria-hidden="true">↑</span>
+        </button>
+      </nav>
     </div>
   </div>
 </footer>
+
+<script>
+  document.querySelector<HTMLButtonElement>('.footer__back-top')?.addEventListener('click', () => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+</script>

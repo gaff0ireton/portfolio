@@ -7,6 +7,14 @@ export default function Works({ works }) {
     const [show, setShow] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const handleNext = () => {
+        setCurrentIndex(prev => (prev + 1) % works.length);
+    };
+
+    const handlePrev = () => {
+        setCurrentIndex(prev => (prev - 1 + works.length) % works.length);
+    };
+
     return (
         <div className="works">
             {
@@ -62,7 +70,7 @@ export default function Works({ works }) {
                     );
                 })
             }
-            <WorksModal works={featuredWorks} state={show} setShow={setShow} clickedIndex={currentIndex} />
+            <WorksModal works={featuredWorks} state={show} setShow={setShow} clickedIndex={currentIndex} nextFunc={handleNext} prevFunc={handlePrev} />
         </div>
     )
 }

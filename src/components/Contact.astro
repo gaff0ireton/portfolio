@@ -1,6 +1,7 @@
 ---
 import Sectionhead from './Sectionhead.astro';
 import { sections } from '../data/sections';
+import ContactForm from './ContactForm/ContactForm';
 const contact = [
   { key: 'name', type: 'text', placeholder: 'ENTER YOUR NAME...' },
   { key: 'email', type: 'email', placeholder: 'ENTER EMAIL ADDRESS...' },
@@ -10,56 +11,21 @@ const contact = [
 
 <section id={sections.contact.id} class="contact">
   <Sectionhead section={sections.contact} />
-  <span class="close-btn"><span></span><span></span></span>
+  <span class="close-btn">
+    <span></span>
+    <span></span>
+  </span>
   <div class="contact__inner">
     <ul class="contact__item">
-      {
-        contact.map((item) => {
-          return <li>{item.key}</li>;
-        })
-      }
+      {contact.map((item) => {
+        return <li>{item.key}</li>;
+      })}
     </ul>
-    <form action="https://api.web3forms.com/submit" method="POST" novalidate>
-      <input type="hidden" name="access_key" value="2171b9ff-6615-4015-9703-25a4cd1f7cd1" />
-
-      <div class="formField">
-        {
-          contact.map((item) => {
-            return (
-              <div>
-                <label class="formField__label glitch-text-01" for={item.key}>
-                  {item.key}
-                </label>
-
-                {item.key === 'message' ? (
-                  <textarea
-                    id={item.key}
-                    class="formField__textarea"
-                    name={item.key}
-                    placeholder={item.placeholder}
-                    required
-                  />
-                ) : (
-                  <input
-                    id={item.key}
-                    class="formField__input"
-                    type={item.type}
-                    name={item.key}
-                    placeholder={item.placeholder}
-                    required
-                  />
-                )}
-              </div>
-            );
-          })
-        }
-      </div>
-      <button type="submit">send message</button>
-    </form>
+    <ContactForm client:load data={contact} />
   </div>
 </section>
 
-<script>
+<!-- <script>
   const errorMessages = {
     name: '<p class="formField__status-error"><span aria-hidden="true">[!]</span> INPUT_ERROR // NAME_REQUIRED</p>',
     email:
@@ -143,4 +109,4 @@ const contact = [
       e.preventDefault();
     }
   });
-</script>
+</script> -->

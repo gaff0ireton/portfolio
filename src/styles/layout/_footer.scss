@@ -1,45 +1,268 @@
-// common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
 .footer {
+    position: relative;
+    border-top: 1px solid rgba($mainColor, 0.65);
+    background-color: $bgColor;
 
-    .inner {
-        border-top: 2px solid $mainColor;
-        max-width: 1024px;
+    // 光る境界線で最後のセクションと区切る
+    &::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: min(40%, 380px);
+        height: 1px;
+        background: linear-gradient(90deg, $mainColor, transparent);
+        box-shadow: 0 0 14px rgba($mainColor, 0.4);
+        pointer-events: none;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    &__inner {
         width: 90%;
-        margin: 0 auto;
-        padding: 4rem 0;
-        @extend %flex-row;
+        max-width: 1200px;
+        margin-inline: auto;
+        padding: 1.75rem 0 1.5rem;
+    }
+
+    &__system,
+    &__bottom {
+        display: flex;
         align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
 
-        >div {
-            flex: 1;
+    &__system-label,
+    &__online,
+    &__eyebrow,
+    &__report-title,
+    &__result,
+    &__section-list,
+    &__copyright,
+    &__links {
+        font-family: "Source Han Sans JP", sans-serif;
+        letter-spacing: 0.035em;
+    }
 
-            &:nth-child(2) {
-                border-right: 2px solid $mainColor;
-                border-left: 2px solid $mainColor;
-                padding: 0 2rem;
-                margin: 0 2rem;
-            }
+    &__system-label,
+    &__online,
+    &__eyebrow,
+    &__report-title {
+        color: $mainColor;
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+
+    &__online {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+    }
+
+    &__status-dot {
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: $mainColor;
+        box-shadow: 0 0 8px $mainColor;
+        animation: footer-pulse 2.4s ease-in-out infinite;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        align-items: center;
+        gap: clamp(2rem, 5vw, 5rem);
+        padding: clamp(3rem, 6vw, 5.5rem) 0;
+    }
+
+    &__heading {
+        margin: 0.85rem 0 1.35rem;
+        color: $txtColor;
+        font-family: "glitchGothic-h4", "Source Han Sans JP", sans-serif;
+        font-size: clamp(2.5rem, 5.7vw, 5.5rem);
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.025em;
+        overflow-wrap: anywhere;
+    }
+
+    &__accent {
+        color: $mainColor;
+    }
+
+    &__caret {
+        display: inline-block;
+        animation: footer-caret-blink 1.1s steps(1, end) infinite;
+    }
+
+    &__description {
+        color: rgba($txtColor, 0.7);
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+    }
+
+    &__report {
+        min-width: 0;
+        padding-left: clamp(1.25rem, 3vw, 2.25rem);
+        border-left: 1px solid rgba($mainColor, 0.5);
+    }
+
+    &__section-list {
+        margin: 1.4rem 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__section-item {
+        display: grid;
+        grid-template-columns: 0.875rem minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba($mainColor, 0.2);
+        font-size: 0.825rem;
+        line-height: 1.35;
+    }
+
+    &__check-icon {
+        display: block;
+        position: relative;
+        width: 0.875rem;
+        height: 0.875rem;
+        border: 1px solid $mainColor;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0.2rem;
+            top: 0.19rem;
+            width: 0.38rem;
+            height: 0.2rem;
+            border-left: 1px solid $mainColor;
+            border-bottom: 1px solid $mainColor;
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__section-name {
+        color: $txtColor;
+        text-transform: uppercase;
+    }
+
+    &__loaded {
+        color: $mainColor;
+        font-size: 0.75rem;
+    }
+
+    &__result {
+        color: rgba($mainColor, 0.85);
+        font-size: 0.75rem;
+        line-height: 1.7;
+    }
+
+    &__bottom {
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba($mainColor, 0.3);
+    }
+
+    &__copyright {
+        color: rgba($txtColor, 0.55);
+        font-size: 0.75rem;
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        flex-wrap: wrap;
+        font-size: 0.8rem;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $mainColor;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        cursor: pointer;
+
+        &:hover,
+        &:focus-visible {
+            color: $txtColor;
+            text-decoration: underline;
+            text-underline-offset: 0.3em;
         }
 
-        p,
-        li {
-            color: $mainColor;
-            font-size: 1.75rem;
+        &:focus-visible {
+            outline: 2px solid $mainColor;
+            outline-offset: 4px;
+        }
+    }
+
+    &__back-top {
+        border: 0;
+        padding: 0;
+        background: none;
+        font: inherit;
+    }
+
+    @include mq() {
+        &__inner {
+            padding-top: 1.25rem;
         }
 
-        p {
-            line-height: 1;
-            margin: 0;
+        &__content {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            padding: 2.75rem 0 3rem;
         }
 
-        li {
-            position: relative;
-
-            &:before {
-                content: "〼";
-            }
+        &__heading {
+            font-size: clamp(2.35rem, 9vw, 4.25rem);
         }
+
+        &__report {
+            padding: 1.5rem 0 0;
+            border-left: 0;
+            border-top: 1px solid rgba($mainColor, 0.5);
+        }
+
+        &__bottom {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        &__status-dot,
+        &__caret {
+            animation: none;
+        }
+
+        &__link {
+            transition: none;
+        }
+    }
+}
+
+@keyframes footer-pulse {
+    50% {
+        opacity: 0.35;
+        box-shadow: none;
+    }
+}
+
+@keyframes footer-caret-blink {
+    50% {
+        opacity: 0;
     }
 }

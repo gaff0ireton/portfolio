@@ -26,6 +26,9 @@ importers:
       astro:
         specifier: ^7.3.2
         version: 7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0)(sass@1.104.1)(yaml@2.9.1)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       destyle.css:
         specifier: ^4.0.1
         version: 4.0.1
