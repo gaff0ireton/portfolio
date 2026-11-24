@@ -1,6 +1,6 @@
 import { useState } from "react";
 import WorksModal from "./WorksModal";
-import { works } from "../data/works";
+import { works } from "../../data/works";
 const featuredWorks = works.slice(0, 5);
 
 export default function Works({ works }) {
