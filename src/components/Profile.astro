@@ -2,9 +2,24 @@
 import Sectionhead from './Sectionhead.astro';
 import { sections } from '../data/sections';
 const profile = [
-  { title: 'Birthplace', subtitle: '出生地', detail: '兵庫県神戸市' },
-  { title: 'Birthdate', subtitle: '生年月日', detail: '2000 / 01 / 21' },
-  { title: 'Hobby', subtitle: '趣味', detail: 'ゲーム / コーディング / 音楽鑑賞 / 読書' },
+  {
+    title: 'Birthplace',
+    subtitle: '出生地',
+    detail: '兵庫県神戸市',
+    subDetail: 'Kobe, Hyogo, Japan',
+  },
+  {
+    title: 'Birthdate',
+    subtitle: '生年月日',
+    detail: '2000 / 01 / 21',
+    subDetail: 'Jan 21, 2000',
+  },
+  {
+    title: 'Hobby',
+    subtitle: '趣味',
+    detail: 'ゲーム / コーディング / 音楽鑑賞 / 読書',
+    subDetail: 'Game / Coding / Music / Book',
+  },
   {
     title: 'Education',
     subtitle: '学歴',
@@ -26,23 +41,32 @@ const profile = [
 
 <section id={sections.profile.id} class="profile">
   <Sectionhead section={sections.profile} />
-  <span class="close-btn"><span></span><span></span></span>
+  <span class="close-btn">
+    <span></span>
+    <span></span>
+  </span>
   <dl class="profile__list">
-    {
-      profile.map((item) => {
-        return (
-          <div class="profile__box">
-            <dt class="profile__heading">
-              <span class="glitch-text-02 profile__icon" aria-hidden="true">
-                〼
-              </span>
-              <span class="glitch-text-02 profile__title">{item.title}</span>
-              <span class="profile__subtitle">{item.subtitle}</span>
-            </dt>
-            <dd class="profile__detail">{item.detail}</dd>
-          </div>
-        );
-      })
-    }
+    {profile.map((item) => {
+      return (
+        <div class="profile__box">
+          <dt class="profile__heading">
+            <span class="glitch-text-02 profile__icon" aria-hidden="true">
+              〼
+            </span>
+            <span class="glitch-text-02 profile__title">{item.title}</span>
+            <span class="profile__subtitle">{item.subtitle}</span>
+          </dt>
+          <dd class="profile__detail">
+            {item.detail}
+            {item.subDetail && (
+              <>
+                <br />
+                <span>{item.subDetail}</span>
+              </>
+            )}
+          </dd>
+        </div>
+      );
+    })}
   </dl>
 </section>

@@ -134,7 +134,7 @@
         }
 
         a {
-            font-family: "glitchGothic-h4";
+            font-family: "glitchGothic-h1";
             font-size: 7rem;
             display: inline-block;
             position: relative;
@@ -143,32 +143,6 @@
             text-shadow: none;
             color: #000;
 
-            &::before,
-            &::after {
-                content: attr(data-text);
-                position: absolute;
-                inset: 0;
-                color: #000;
-                pointer-events: none;
-            }
-
-            &::before {
-                transform: translate(-4px, 1px);
-                text-shadow: -4px 0 #00ffff;
-            }
-
-            &::after {
-                transform: translate(4px, -1px);
-                text-shadow: 4px 0 #ff003c;
-            }
-
-            &:hover::before {
-                animation: glitch-before 0.35s steps(1) 2;
-            }
-
-            &:hover::after {
-                animation: glitch-after 0.35s steps(1) 2;
-            }
         }
 
         @keyframes glitch-before {
