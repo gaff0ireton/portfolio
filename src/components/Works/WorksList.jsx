@@ -70,7 +70,13 @@ export default function Works({ works }) {
                     );
                 })
             }
-            <WorksModal works={featuredWorks} state={show} setShow={setShow} clickedIndex={currentIndex} nextFunc={handleNext} prevFunc={handlePrev} />
+            <WorksModal
+                works={featuredWorks}
+                state={show}
+                setShow={setShow}
+                clickedIndex={currentIndex}
+                nextFunc={handleNext}
+                prevFunc={handlePrev} />
         </div>
     )
 }

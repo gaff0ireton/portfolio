@@ -17,7 +17,7 @@ export default function WorksModal({ works, state, setShow, clickedIndex, nextFu
                 <div className="worksModal__header">
                     <button className="worksModal__back" type="button"
                         onClick={() => setShow(false)}>
-                        BACK
+                        ◀︎BACK
                     </button>
                     <p className="worksModal__number">
                         <span>{String(clickedIndex + 1).padStart(2, '0')}</span>

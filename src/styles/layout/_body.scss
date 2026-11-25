@@ -17,6 +17,11 @@
 
 html {
   font-size: 100%;
+  scrollbar-gutter: stable;
+
+  &:has(dialog:modal) {
+    overflow: hidden;
+  }
 }
 
 body {
@@ -28,7 +33,7 @@ body {
   letter-spacing: 0.04em;
   color: $txtColor;
   background-color: $bgColor;
-  background-image: radial-gradient(circle, rgba($subColor, 0.25) 1px, transparent 1px);
+  // background-image: radial-gradient(circle, rgba($subColor, 0.25) 1px, transparent 1px);
   background-size: 12px 12px;
 
 }

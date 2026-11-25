@@ -18,12 +18,15 @@ export default function WorksIndexList({ works }) {
         <>
             <div className="worksIndex__inner">
                 {
-                    works.map((work) => {
+                    works.map((work, index) => {
                         return (
                             <article
                                 className="worksIndex__item view-project"
                                 data-work-id={work.id}
-                                onClick={() => setShow(true)}
+                                onClick={() => {
+                                    setShow(true)
+                                    setCurrentIndex(index)
+                                }}
                                 key={work.id}>
                                 <div className="worksIndex__image">
                                     <img src={work.image} alt={work.title} />
@@ -36,7 +39,13 @@ export default function WorksIndexList({ works }) {
                     })
                 }
             </div>
-            <WorksModal works={works} state={show} setShow={setShow} clickedIndex={currentIndex} nextFunc={handleNext} prevFunc={handlePrev} />
+            <WorksModal
+                works={works}
+                state={show}
+                setShow={setShow}
+                clickedIndex={currentIndex}
+                nextFunc={handleNext}
+                prevFunc={handlePrev} />
         </>
     )
 }
