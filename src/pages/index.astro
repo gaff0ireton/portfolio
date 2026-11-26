@@ -16,8 +16,8 @@ import HeroVisual from '../components/HeroVisual';
   <!-- <Nav /> -->
   <Navigation client:load />
   <main>
+    <HeroVisual client:only="React" />
     <div class="main-wrapper">
-      <HeroVisual client:only="React" />
       <Profile />
       <Skills />
       <Works />

@@ -24,6 +24,10 @@
     }
 
     &__item {
+        @include mq() {
+            display: none;
+        }
+
         li {
             font-family: "glitchGothic-h2";
             font-size: 1.75rem;
@@ -49,9 +53,12 @@
 
         &__label {
             display: block;
-            // margin-top: 1rem;
             font-size: 1.75rem;
             color: $mainColor;
+
+            @include mq() {
+                font-size: vw(24, 375);
+            }
 
             &:before {
                 content: ">";
@@ -67,6 +74,11 @@
             outline: none;
             margin-top: 1rem;
             caret-shape: block;
+
+            @include mq() {
+                padding: vw(14, 750) vw(16, 750);
+                margin-top: vw(16, 750);
+            }
 
             &:-webkit-autofill,
             &:-webkit-autofill:hover,
@@ -93,6 +105,10 @@
                 color: $acColor;
                 font-size: 1.25em;
                 letter-spacing: 0.04em;
+
+                @include mq() {
+                    font-size: vw(12, 375);
+                }
 
                 &::before {
                     content: "> ";

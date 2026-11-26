@@ -15,6 +15,11 @@
     margin-bottom: 3rem;
     border-bottom: 2px solid $mainColor;
 
+    @include mq() {
+        padding-bottom: vw(24, 375);
+        margin-bottom: vw(24, 375);
+    }
+
     p {
         font-size: var(--font-size-large-01);
         line-height: 1.25;

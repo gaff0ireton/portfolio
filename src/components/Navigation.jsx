@@ -15,8 +15,8 @@ export default function Navigation() {
         setIsOpen(false)
     }
 
-    // エスケープキー押下で、ナビゲーション非表示
-    // button要素をキーボード操作可に
+    // * エスケープキー押下で、ナビゲーション非表示
+    // * button要素をキーボード操作可に
 
     useEffect(() => {
         function handleKeyDown(event) {
@@ -33,7 +33,7 @@ export default function Navigation() {
         };
     }, [isOpen]);
 
-    // スクロールで、ナビゲーション非表示
+    // * スクロールで、ナビゲーション非表示
 
     useEffect(() => {
         function handleScroll() {
@@ -47,7 +47,7 @@ export default function Navigation() {
         };
     }, []);
 
-    // ナビゲーション外部クリックで、ナビゲーション非表示
+    // * ナビゲーション外部クリックで、ナビゲーション非表示
 
     useEffect(() => {
         function handleOutsideClick(event) {
@@ -97,7 +97,6 @@ export default function Navigation() {
                                     {section.title}
                                 </a>
                                 <span className="line" aria-hidden="true" />
-                                <span className="arrow" aria-hidden="true">--&gt;</span>
                             </li>
                         ))
                     }

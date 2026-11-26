@@ -55,6 +55,10 @@
         padding: .5rem 1rem 2rem;
         white-space: pre-wrap;
 
+        @include mq() {
+            font-size: vw(14, 375);
+        }
+
         span {
             font-size: .9em;
             color: $txtColor .5;

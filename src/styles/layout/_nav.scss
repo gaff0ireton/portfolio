@@ -51,6 +51,8 @@
 
         cursor: pointer;
         pointer-events: auto;
+
+        @include mq() {}
     }
 
     &__body {
@@ -77,10 +79,18 @@
             visibility 0s 0.4s;
         pointer-events: auto;
 
+        @include mq() {
+            padding: vw(24, 375) vw(20, 375);
+        }
+
         header {
             flex-shrink: 0;
             padding-bottom: 2rem;
             border-bottom: 1px solid #000;
+
+            @include mq() {
+                padding-bottom: vw(24, 375);
+            }
         }
 
         p,
@@ -98,6 +108,11 @@
             flex: 1;
             min-height: 0;
             gap: 2rem;
+
+            @include mq() {
+                width: 100%;
+                gap: vw(24, 375);
+            }
         }
 
         li {
@@ -105,6 +120,10 @@
             gap: 2rem;
             align-items: center;
             color: #000;
+
+            @include mq() {
+                gap: vw(16, 375);
+            }
 
             .number {
                 font-size: 1em;
@@ -142,6 +161,10 @@
             transform: translate(0);
             text-shadow: none;
             color: #000;
+
+            @include mq() {
+                font-size: vw(36, 375);
+            }
 
         }
 
@@ -207,6 +230,11 @@
             flex-shrink: 0;
             padding-top: 2rem;
             border-top: 1px solid #000;
+
+
+            @include mq() {
+                padding-top: vw(24, 375);
+            }
         }
     }
 

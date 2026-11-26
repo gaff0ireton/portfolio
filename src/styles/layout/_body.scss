@@ -12,7 +12,7 @@
   --font-size-36: 2.25rem;
   --font-size-40: 2.5rem;
   --font-size-sub-head: 4rem;
-  --font-size-main-head: 8rem;
+  --font-size-main-head: 7rem;
 }
 
 html {
@@ -46,6 +46,11 @@ dialog {
   border: 2px solid $mainColor;
   padding: 2rem;
   margin: auto;
+  scrollbar-width: none;
+
+  @include mq() {
+    padding: vw(16, 375);
+  }
 }
 
 h1,
@@ -58,6 +63,10 @@ dt,
 label {
   letter-spacing: .02em;
   text-transform: uppercase;
+}
+
+button {
+  outline: none;
 }
 
 ::-webkit-scrollbar {
@@ -121,6 +130,10 @@ label {
 
 section {
   margin-bottom: 6rem;
+
+  @include mq() {
+    margin-bottom: vw(32, 375);
+  }
 }
 
 h1 {

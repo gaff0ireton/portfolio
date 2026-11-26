@@ -16,7 +16,7 @@ export default function Works({ works }) {
     };
 
     return (
-        <div className="works">
+        <div className="works__box">
             {
                 works.map((work, index, array) => {
                     return (
