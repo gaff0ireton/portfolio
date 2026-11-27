@@ -101,6 +101,10 @@
 
         &__client {
             font-size: 1.25rem;
+
+            @include mq() {
+                font-size: vw(18, 375);
+            }
         }
 
         &__detail {
@@ -341,6 +345,13 @@
 
         &__name {
             font-size: 1.25rem;
+        }
+
+        &__image {
+            mask-image: url('../../assets/images/img_works_frame.svg');
+            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
+            mask-position: center;
         }
 
         &__heading {

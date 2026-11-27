@@ -5,36 +5,37 @@ const profile = [
   {
     title: 'Birthplace',
     subtitle: '出生地',
-    detail: '兵庫県神戸市',
-    subDetail: 'Kobe, Hyogo, Japan',
+    detail: ['兵庫県神戸市'],
+    subDetail: ['Kobe, Hyogo, Japan'],
   },
   {
     title: 'Birthdate',
     subtitle: '生年月日',
-    detail: '2000 / 01 / 21',
-    subDetail: 'Jan 21, 2000',
+    detail: ['2000 / 01 / 21'],
+    subDetail: ['Jan 21, 2000'],
   },
   {
     title: 'Hobby',
     subtitle: '趣味',
-    detail: 'ゲーム / コーディング / 音楽鑑賞 / 読書',
-    subDetail: 'Game / Coding / Music / Book',
+    detail: ['ゲーム', 'コーディング', '音楽鑑賞', '読書'],
+    subDetail: ['Game', 'Coding', 'Music', 'Book'],
   },
   {
     title: 'Education',
     subtitle: '学歴',
-    detail: '2015 / 04 - 2018 / 03 : 神戸商業高等学校\n2018 / 04 - 2020 / 03 : 嵯峨美術短期大学',
+    detail: ['2015 / 04 - 2018 / 03 : 神戸商業高等学校\n2018 / 04 - 2020 / 03 : 嵯峨美術短期大学'],
   },
   {
     title: 'Career',
     subtitle: '職歴',
-    detail: '2022 / 04 - 2023 / 01 : 株式会社ブラフ6O\n2024 / 04 - 2026 / 03 : 株式会社電通プロモーションエグゼ',
+    detail: ['2022 / 04 - 2023 / 01 : 株式会社ブラフ6O\n2024 / 04 - 2026 / 03 : 株式会社電通プロモーションエグゼ'],
   },
   {
     title: 'Self-PR',
     subtitle: '自己紹介',
-    detail:
+    detail: [
       '美術大学でデザインを学び、Web制作の現場でコーディングの経験を積んできました。\nデザインの意図をくみ取り、見た目の再現だけでなく、使いやすさやアクセシビリティにも配慮した実装を心がけています。\nHTML・CSS・JavaScriptを中心に、AstroやTypeScriptなどの技術を活用した制作にも取り組んでいます。\n新しい技術を学び、試行錯誤しながら、より良いWebサイトを作り上げていくことが好きです。\n現在はReactの学習にも力を入れ、技術とユーザー体験の両面から価値を生み出せるフロントエンドエンジニアを目指しています。',
+    ],
   },
 ];
 ---
@@ -53,11 +54,11 @@ const profile = [
             <span class="profile__subtitle">{item.subtitle}</span>
           </dt>
           <dd class="profile__detail">
-            {item.detail}
+            {item.detail.join(' / ')}
             {item.subDetail && (
               <>
                 <br />
-                <span>{item.subDetail}</span>
+                <span>{item.subDetail.join(' / ')}</span>
               </>
             )}
           </dd>

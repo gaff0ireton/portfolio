@@ -44,7 +44,7 @@ export default function Works({ works }) {
                                 <dl className="worksCard__detail">
                                     <div>
                                         <dt>role</dt>
-                                        <dd>{work.role}</dd>
+                                        <dd>{work.role.join(' / ')}</dd>
                                     </div>
                                     <div>
                                         <dt>year</dt>

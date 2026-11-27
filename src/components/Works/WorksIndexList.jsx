@@ -28,6 +28,9 @@ export default function WorksIndexList({ works }) {
                                     setCurrentIndex(index)
                                 }}
                                 key={work.id}>
+                                <header>
+                                    <p>FILE_{String(index + 1).padStart(2, '0')}</p>
+                                </header>
                                 <div className="worksIndex__image">
                                     <img src={work.image} alt={work.title} />
                                 </div>

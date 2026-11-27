@@ -134,8 +134,17 @@
             .line {
                 flex: 1;
                 align-self: end;
-                border-bottom: 1px solid currentColor;
+                background: linear-gradient(#000) right bottom / 0% 2px no-repeat;
+                background-size: 100%;
+                height: 1px;
                 margin-bottom: 0.2em;
+                transition: .5s;
+            }
+
+            &:hover {
+                .line {
+                    background-size: 0%;
+                }
             }
 
             .arrow {

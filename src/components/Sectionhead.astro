@@ -9,12 +9,21 @@ const { section } = Astro.props;
 ---
 
 <header class="section-header">
-  <p class="glitch-text-04" aria-hidden="true">SYSTEM = CHECKING... “{section.title}”;</p>
-  <p class="glitch-text-03" aria-hidden="true">CHECK COMPLETE; STATUS; “{section.title}” FOUND;</p>
-  <p class="glitch-text-02" aria-hidden="true">(NO ERRORS)</p>
+  <p class="glitch-text-04" aria-hidden="true">
+    SYSTEM = CHECKING... “{section.title}”;
+  </p>
+  <p class="glitch-text-03" aria-hidden="true">
+    CHECK COMPLETE; STATUS; “{section.title}” FOUND;
+  </p>
+  <p class="glitch-text-02" aria-hidden="true">
+    (NO ERRORS)
+  </p>
   <h2 class="glitch-text-03">
     {section.title}
-    <span class="caret" aria-hidden="true"> _ </span>
+    <span class="caret" aria-hidden="true">
+      {' '}
+      _{' '}
+    </span>
   </h2>
 </header>
 
@@ -32,8 +41,9 @@ const { section } = Astro.props;
     const tl_Gallery = gsap.timeline({
       scrollTrigger: {
         trigger: txt,
-        start: 'top 70%',
-        end: '+=400',
+        start: 'top 50%',
+        once: true,
+        markers: true,
       },
     });
 

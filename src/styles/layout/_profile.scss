@@ -8,6 +8,10 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
+
+        @include mq() {
+            gap: vw(16, 375);
+        }
     }
 
     &__box {
@@ -17,7 +21,7 @@
 
         @include mq() {
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: vw(8, 375);
         }
     }
 
@@ -42,12 +46,20 @@
         font-size: 1.75rem;
         grid-column: 2;
         grid-row: 1;
+
+        @include mq() {
+            font-size: vw(24, 375);
+        }
     }
 
     &__subtitle {
         grid-column: 2;
         grid-row: 2;
         color: $txtColor;
+
+        @include mq() {
+            font-size: vw(16, 375);
+        }
     }
 
     &__detail {

@@ -101,7 +101,7 @@ function Tetrahedron({ position, speedY, speedX, scale }) {
 
 export default function HeroVisual() {
     return (
-        <div className="hero-visual">
+        <>
             <h1 data-text="portfolio">portfolio</h1>
             <Canvas camera={{ position: [0, 0, 5] }}>
                 <group>
@@ -117,6 +117,6 @@ export default function HeroVisual() {
                     }
                 </group>
             </Canvas>
-        </div>
+        </>
     );
 }
